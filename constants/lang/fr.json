@@ -1,0 +1,363 @@
+{
+  "Document": {
+    "Title": "Fiamane - Une solution de suivi de colis unique"
+  },
+  "Footer": {
+    "NotRegistered": {
+      "Title": "Vous etes agence ou transporteur?",
+      "Paragraph": "Vous pouvez rejoigner la communauté Fiamane dès aujourd’hui"
+    }
+  },
+  "Constants": {
+    "KiloString": "Kilo",
+    "VerifiedByFiamane": "Vérifié par Fiamane",
+    "From": "de",
+    "To": "à",
+    "Rating": "avis",
+    "DeparatureText": "Départ",
+    "ArrivalText": "Arrivée",
+    "DepartureDateText": "Date de départ",
+    "ArrivalDateText": "Date d'arrivée",
+    "DeparatureAddressText": "Lieu de ramassage",
+    "ArrivalAddressText": "Lieu de livraison",
+    "PossibleHomePickup": "Ramassage à domicile possible",
+    "PossibleHomeDelivery": "Livraison à domicile possible",
+    "StopOverText": "Escale",
+    "StopOverTextPlural": "Escales",
+    "PriceText": "Prix",
+    "PricePerKiloText": "Prix au kilo",
+    "PricePerPieceText": "Prix à la pièce",
+    "SendingDateText": "Date d'envoi",
+    "DimensionsText": "Dimensions",
+    "WeightText": "Poids",
+    "NoInfo": "Aucune information disponible",
+    "ReadMore": "Lire plus",
+    "ReadLess": "Lire moins"
+  },
+  "Messages": {
+    "Errors": {
+      "NoResults": "Aucun résultat",
+      "Required": "Ce champ est obligatoire",
+      "Email": "Veuillez entrer une adresse email valide",
+      "Password": "Le mot de passe doit contenir au moins 8 caractères",
+      "Confirm": "Les mots de passe ne correspondent pas",
+      "Phone": "Veuillez entrer un numéro de téléphone valide",
+      "CompanyCode": "Veuillez entrer un numéro de RC ou KBIS valide",
+      "ClientType": "Veuillez choisir un type de client",
+      "ClientTypeCompany": "Veuillez choisir un type de transporteur",
+      "Country": "Veuillez choisir un pays",
+      "Date": "Veuillez choisir une date"
+    },
+    "Success": {
+      "Register": "Votre compte a été créé avec succès",
+      "Login": "Vous êtes connecté avec succès",
+      "ForgotPassword": "Un email vous a été envoyé avec les instructions pour réinitialiser votre mot de passe"
+    },
+    "Helpers": {
+      "SeeMore": "Voir plus",
+      "PriceIsNegociable": "Le prix est négociable"
+    }
+  },
+  "Buttons": {
+    "Login": "Connexion",
+    "Register": "Inscription",
+    "SignUp": "S'inscrire",
+    "LogOut": "Déconnexion",
+    "Next": "Suivant",
+    "Back": "Retour",
+    "Cancel": "Annuler",
+    "Submit": "Valider",
+    "Search": "Rechercher",
+    "Filter": "Filtrer",
+    "Add": "Ajouter",
+    "Edit": "Modifier",
+    "Delete": "Supprimer",
+    "Duplicate": "Dupliquer",
+    "Save": "Enregistrer",
+    "Publish": "Publier",
+    "Close": "Fermer",
+    "Yes": "Oui",
+    "No": "Non",
+    "Confirm": "Confirmer",
+    "Complete": "Terminer",
+    "RequestQuotation": "Demander un devis",
+    "SendQuotation": "Envoyer un devis",
+    "SeeProfile": "Voir profil",
+    "SendAMessage": "Envoyer un message",
+    "Useful": "Utile",
+    "PublishAnOffer": "Publier une offre"
+  },
+  "Navbar": {
+    "Links": {
+      "FindTransporter": "Trouver un transporteur",
+      "Yearly": "Annuaire",
+      "TrackAnItem": "Suivre un colis",
+      "FiamaneCompany": "Fiamane entreprise"
+    },
+    "LoginAvatar": {
+      "LoginText": "Connexion",
+      "NewAccountText": "Nouveau client ? Inscrivez-vous",
+      "MarkedText": "Inscrivez-vous"
+    }
+  },
+  "Modals": {
+    "Auth": {
+      "Register": {
+        "ClientTypeStep": {
+          "Title": "Que souhaitez-vous faire sur fiamane ?",
+          "Paragraph": "Dites nous ce qui vous amène sur Fiamane, cela nous permettra de vous orienter au mieux.",
+          "ClientType": {
+            "Personal": "Transporter mes colis et bagages",
+            "Company": "Devenir un partenaire, je suis transporteur"
+          }
+        },
+        "ClientInfoStep": {
+          "Title": "Complèter vos informations",
+          "Paragraph": "Pour une meilleure visibilité, nous vous invitons à remplir ces champs",
+          "InputFirstNamePlaceHolder": "Prénom",
+          "InputLastNamePlaceHolder": "Nom",
+          "SelectContryPlaceHolder": "Pays",
+          "InputPhonePlaceHolder": "Téléphone"
+        },
+        "CompanyInfoStep": {
+          "Title": "Complèter vos informations",
+          "Paragraph": "Pour une meilleure visibilité, nous vous invitons à remplir ces champs",
+          "CompanyNamePlaceholder": "Nom de la société",
+          "CompanyCodePlaceholder": "N° RC ou KBIS",
+          "SelectClientTypePLaceHolder": "Type de transporteur"
+        },
+        "EmailStep": {
+          "Title": "Inscrivez-vous",
+          "Paragraph": "Et profiter pleinement de fiamane",
+          "InputEmailPlaceholder": "Votre adresse mail",
+          "InputPassPlaceholder": "Mot de passe",
+          "InputConfirmPassPlaceholder": "Confirmer votre mot de passe",
+          "TermsAndConditions": "En continuant, vous acceptez les Termes & Conditions de fiamane",
+          "TermsAndConditionsLink": "Termes & Conditions",
+          "AlreadyHaveAccount": "Vous êtes déja inscris? Connectez-vous",
+          "AlreadyHaveAccountLink": "Connectez-vous"
+        }
+      },
+      "Login": {
+        "UserTypeStep": {
+          "Title": "Se connecter en tant qu'agence ou client",
+          "Paragraph": "Pour une meilleure visibilité, nous vous invitons à compléter ces champs",
+          "UserType": {
+            "Client": "Je suis un client",
+            "Company": "Je suis un transporteur"
+          }
+        },
+        "LoginStep": {
+          "Title": "Se connecter",
+          "LoginWithGoogle": "Se connecter avec Google",
+          "LoginWithFacebook": "Se connecter avec Facebook",
+          "InputEmailPlaceholder": "Email",
+          "InputPassPlaceholder": "Mot de passe",
+          "ForgotPassword": "Mot de passe oublié ?",
+          "ForgotPasswordLink": "Réinitialiser",
+          "TermsAndConditions": "En continuant, vous acceptez les Conditions Générales d'utilisation de fiamane",
+          "TermsAndConditionsLink": "Conditions Générales d'utilisation",
+          "DontHaveAccount": "Vous n'avez pas de compte ? Inscrivez-vous",
+          "DontHaveAccountLink": "Inscrivez-vous"
+        }
+      },
+      "ForgotPassword": {
+        "Title": "Mot de passe oublié ?",
+        "Paragraph": "Entrez votre adresse Email que vous avez utilisé pour vous inscrire. Nous vous enverrons un email avec les instructions pour réinitialiser votre mot de passe.",
+        "InputEmailPlaceholder": "Votre adresse mail"
+      }
+    },
+    "AppModal": {
+      "AddNewMerchandiseModal": {
+        "Title": "Ajouter une nouvelle marchandise",
+        "SelectCategorie": {
+          "Label": "Nomenclature de la marchandise",
+          "PlaceHolder": "Selectionner une categorie"
+        },
+        "EnterPriceInput": {
+          "Label": "Valeur de la marchandise",
+          "PlaceHolder": "Entrer un prix"
+        },
+        "RadioButtons": {
+          "Label": "Nature de la marchandise",
+          "NewMerchandise": "Neuve",
+          "UsedMerchandise": "Occasion"
+        },
+        "DimensionsInputLabel": "Dimensions",
+        "WeightInput": {
+          "Label": "Poids",
+          "PlaceHolder": "Entrer un poids"
+        },
+        "ImportImgLabel": "Photo de la marchandise",
+        "MerchandiseDescription": {
+          "Label": "Information complèmentaire sur votre offre",
+          "PlaceHolder": "Description..."
+        }
+      }
+    }
+  },
+  "Pages": {
+    "SearchPage": {
+      "Banner": {
+        "Title": "Trouver un transporteur",
+        "Search": {
+          "Switch": {
+            "Offers": "Offres",
+            "Deparatures": "Départs"
+          },
+          "InputDeparturePlaceholder": "Ville/pays de départ",
+          "InputDestinationPlaceholder": "Ville/pays d’arrivée",
+          "InputDatePlaceholder": "Selectionner une date",
+          "SearchAgencyPlaceholder": "Entrer une agence"
+        }
+      },
+      "FilteringArea": {
+        "Periods": {
+          "Now": "Le plus tôt",
+          "PLusSevenDays": "+ 7 jours",
+          "PLusTenDays": "+ 10 jours"
+        },
+        "FilteringButtons": {
+          "Cheap": "Moins cher",
+          "Fast": "Plus rapide"
+        }
+      }
+    },
+    "Annually": {
+      "Banner": {
+        "Title": "Annuaire",
+        "Search": {
+          "Switch": {
+            "All": "Tout",
+            "Agencies": "Agences",
+            "Transporters": "Transporteurs"
+          },
+          "InputSearchPlaceholder": "Rechercher par nom",
+          "InputDeparturePlaceholder": "Ville/pays de départ",
+          "InputDestinationPlaceholder": "Ville/pays d’arrivée"
+        }
+      },
+      "Pagination": {
+        "Show": "Afficher",
+        "ResultsPerPage": "résultats par page"
+      }
+    },
+    "DeparatureDetailsPage": {
+      "DeparatureInfoTitle": "Informations sur le voyage"
+    },
+    "OfferDetailsPage": {
+      "OfferInfoTitle": "Informations sur le départ",
+      "MerchandiseTypeTitle": "Informations sur la marchandise",
+      "OfferDescriptionTitle": "Informations complémentaires",
+      "Modals": {
+        "ConfirmSendQuotation": {
+          "ModalTitle": "Demander un devis",
+          "Paragraph": "Vous êtes sur le point de demander un devis à l’agence Maghreb",
+          "MarkedParagraph": "Tourisme & Transport"
+        },
+        "SendQuotationModal": {
+          "ModalTitle": "Envoyer un devis",
+          "InputWithSelect": {
+            "Label": "Prix proposé",
+            "PlaceHolder": "prix"
+          },
+          "SwitchInput": {
+            "Label": "Accepter négociation"
+          },
+          "TextAreaInput": {
+            "Label": "Information complèmentaire sur votre offre",
+            "PlaceHolder": "description du devis ..."
+          }
+        }
+      }
+    },
+    "AgencyProfile": {
+      "DescriptionTitle": "A propos",
+      "LawInfoTitle": "Information juridique",
+      "ReviewsTitle": "Avis recommandés",
+      "GaleriePhotos": "Galerie des photos"
+    },
+    "AppPages": {
+      "OffersPage": {
+        "Title": "Mes offres",
+        "AllOffers": "Toutes les offres",
+        "Search": {
+          "InputSearchPlaceholder": "Rechercher..."
+        },
+        "Table": {
+          "Columns": {
+            "Merchandise": "Marchandise",
+            "Departure": "Départ",
+            "Arrival": "Arrivé",
+            "SendingDate": "Date D’envoi",
+            "Destination": "Destinataire",
+            "Status": "Statut"
+          },
+          "Status": {
+            "Pending": "En attente",
+            "Accepted": "Accepté",
+            "Refused": "Refusé"
+          }
+        }
+      },
+      "PublishAnOfferPage": {
+        "NavLocations": {
+          "MyOffers": "Mes offres",
+          "PublishAnOffer": "Publier une offre"
+        },
+        "DeparatureInformations": {
+          "SectionTitle": "Informations sur le départ",
+          "DepartureAddress": {
+            "Label": "Lieu de départ",
+            "PlaceHolder": "Selectionnez lieu"
+          },
+          "ArrivalAddress": {
+            "Label": "Lieu d’arrivée",
+            "PlaceHolder": "Selectionnez lieu"
+          },
+          "SendingDate": {
+            "Label": "Date d’envoi",
+            "PlaceHolder": "Selectionnez date"
+          },
+          "AgencyDepositSwitchLabel": "Dépôt en agence",
+          "HomeDeliverySwitchLabel": "Ramassage à domicile",
+          "PickupAddress": {
+            "Label": "Adresse de ramassage",
+            "PlaceHolder": "Exemple: Rue Mouhamed 5"
+          }
+        },
+        "DestinationInformations": {
+          "SectionTitle": "Informations sur le destinataire",
+          "DestinationFullNamePlaceHolder": "Nom et pénom de destinataire",
+          "DestinationEmailPlaceHolder": "E-mail de destinataire",
+          "DestinationPhonePlaceHolder": "Numéro de téléphone",
+          "AddAnotherPhoneNumber": "Ajouter un autre numéro de téléphone"
+        },
+        "MerchandiseInformations": {
+          "SectionTitle": "Informations sur la marchandise",
+          "SectionParagraph": "Décrivez votre marchandise que vous voulez transporter. Ajouter autant de marchandise que vous voulez",
+          "NoMerchansise": {
+            "AddNewMerchandiseBtn": "Ajouter une nouvelle marchandise"
+          },
+          "DimensionsText": "Dimensions",
+          "WeightText": "Poids",
+          "AddAnotherMerchandiseBtn": "Ajouter une autre marchandise"
+        }
+      }
+    }
+  },
+  "TrackAnItem": {
+    "Title": "Suivre votre colis",
+    "Paragraph": "Entrez le numéro de suivi de votre colis pour suivre son état d’avancement",
+    "InputPlaceholder": "N° envoi, sans espaces",
+    "Button": "Suivre"
+  },
+  "AppSideBar": {
+    "MyOffers": "Mes offres",
+    "MyDeparatures": "Mes départs",
+    "MyQuotations": "Mes devis",
+    "MyProfile": "Mon profil",
+    "MyBookmars": "Mes agences",
+    "Settings": "Parametres"
+  }
+}

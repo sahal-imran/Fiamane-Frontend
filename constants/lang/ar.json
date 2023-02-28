@@ -1,0 +1,363 @@
+{
+  "Document": {
+    "Title": "في أمان - حل فريد لتتبع الطرود"
+  },
+  "Footer": {
+    "NotRegistered": {
+      "Title": "هل أنت وكالة أو شركة شحن؟",
+      "Paragraph": "يمكنك الانضمام إلى مجتمع في أمان"
+    }
+  },
+  "Constants": {
+    "KiloString": "كيلو",
+    "VerifiedByFiamane": "موثق من قبل في أمان",
+    "From": "من",
+    "To": "إلى",
+    "Rating": "تقييم",
+    "DeparatureText": "المغادرة",
+    "ArrivalText": "الوصول",
+    "DepartureDateText": "تاريخ المغادرة",
+    "ArrivalDateText": "تاريخ الوصول",
+    "DeparatureAddressText": "مكان الاستلام",
+    "ArrivalAddressText": "مكان التسليم",
+    "PossibleHomePickup": "الاستلام من المنزل ممكن",
+    "PossibleHomeDelivery": "التوصيل إلى المنزل ممكن",
+    "StopOverText": "المحطات",
+    "StopOverTextPlural": "توقفات",
+    "PriceText": "السعر",
+    "PricePerKiloText": "السعر لكل كيلو",
+    "PricePerPieceText": "السعر لكل قطعة",
+    "SendingDateText": "تاريخ الإرسال",
+    "DimensionsText": "الأبعاد",
+    "WeightText": "الوزن",
+    "NoInfo": "لا توجد معلومات متاحة",
+    "ReadMore": "اقرأ المزيد",
+    "ReadLess": "اقرأ أقل"
+  },
+  "Messages": {
+    "Errors": {
+      "NoResults": "لا توجد نتائج",
+      "Required": "هذا الحقل مطلوب",
+      "Email": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+      "Password": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+      "Confirm": "كلمات المرور غير متطابقة",
+      "Phone": "الرجاء إدخال رقم هاتف صالح",
+      "CompanyCode": "الرجاء إدخال رقم RC أو KBIS صالح",
+      "ClientType": "الرجاء اختيار نوع العميل",
+      "ClientTypeCompany": "الرجاء اختيار نوع الناقل",
+      "Country": "الرجاء اختيار البلد",
+      "Date": "الرجاء اختيار تاريخ"
+    },
+    "Success": {
+      "Register": "تم إنشاء حسابك بنجاح",
+      "Login": "Vous êtes connecté avec succès",
+      "ForgotPassword": "Un email vous a été envoyé avec les instructions pour réinitialiser votre mot de passe"
+    },
+    "Helpers": {
+      "SeeMore": "عرض المزيد",
+      "PriceIsNegociable": "السعر قابل للتفاوض"
+    }
+  },
+  "Buttons": {
+    "Login": " تسجيل الدخول",
+    "Register": "تسجيل",
+    "SignUp": "اشتراك",
+    "LogOut": "تسجيل الخروج",
+    "Next": "التالي",
+    "Back": "السابق",
+    "Cancel": "إلغاء",
+    "Submit": "إرسال",
+    "Search": "بحث",
+    "Filter": "فلتره",
+    "Add": "إضافة",
+    "Edit": "تعديل",
+    "Delete": "حذف",
+    "Duplicate": "تكرار",
+    "Save": "حفظ",
+    "Publish": "نشر",
+    "Close": "إغلاق",
+    "Yes": "نعم",
+    "No": "لا",
+    "Confirm": "تأكيد",
+    "Complete": "إكمال",
+    "RequestQuotation": "طلب عرض سعر",
+    "SendQuotation": "إرسال عرض سعر",
+    "SeeProfile": "عرض الملف الشخصي",
+    "SendAMessage": "إرسال رسالة",
+    "Useful": "مفيد",
+    "PublishAnOffer": "نشر عرض"
+  },
+  "Navbar": {
+    "Links": {
+      "FindTransporter": "العثور على موصل",
+      "Yearly": "سنوي",
+      "TrackAnItem": "تتبع الحزمة",
+      "FiamaneCompany": "شركة في أمان"
+    },
+    "LoginAvatar": {
+      "LoginText": "تسجيل الدخول",
+      "NewAccountText": "زبون جديد ؟ اشتراك",
+      "MarkedText": "اشتراك"
+    }
+  },
+  "Modals": {
+    "Auth": {
+      "Register": {
+        "ClientTypeStep": {
+          "Title": "ما الذي تريد أن تفعله على في أمان؟",
+          "Paragraph": "أخبرنا ما تريد أن تفعله على في أمان، وسنساعدك في الوصول إلى الهدف.",
+          "ClientType": {
+            "Personal": "نقل أغراضي وأمتعتي",
+            "Company": "أصبح شريكًا، أنا شركة نقل"
+          }
+        },
+        "ClientInfoStep": {
+          "Title": "إكمال معلوماتك",
+          "Paragraph": "لتحسين الرؤية، ننصحك بملء هذه الحقول",
+          "InputFirstNamePlaceHolder": "الاسم الأول",
+          "InputLastNamePlaceHolder": "الكنية",
+          "SelectContryPlaceHolder": "اختر البلد",
+          "InputPhonePlaceHolder": "رقم الهاتف"
+        },
+        "CompanyInfoStep": {
+          "Title": "إكمال معلوماتك",
+          "Paragraph": "لتحسين الرؤية، ننصحك بملء هذه الحقول",
+          "CompanyNamePlaceholder": "اسم الشركة",
+          "CompanyCodePlaceholder": "رقم السجل التجاري",
+          "SelectClientTypePLaceHolder": "نوع الناقل"
+        },
+        "EmailStep": {
+          "Title": "اشتراك",
+          "Paragraph": "واستمتع بالكامل مع في أمان",
+          "InputEmailPlaceholder": "عنوان بريدك الإلكتروني",
+          "InputPassPlaceholder": "كلمه السر",
+          "InputConfirmPassPlaceholder": "تأكيد كلمة المرور الخاصة بك",
+          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على شروط الاستخدام",
+          "TermsAndConditionsLink": "شروط الاستخدام",
+          "AlreadyHaveAccount": "لديك حساب بالفعل؟ تسجيل الدخول",
+          "AlreadyHaveAccountLink": "تسجيل الدخول"
+        }
+      },
+      "Login": {
+        "UserTypeStep": {
+          "Title": "تسجيل الدخول كوكالة أو عميل",
+          "Paragraph": "لرؤية أفضل ، ندعوكم لإكمال هذه الحقول",
+          "UserType": {
+            "Client": "أنا عميل",
+            "Company": "أنا شركة"
+          }
+        },
+        "LoginStep": {
+          "Title": "تسجيل الدخول",
+          "LoginWithGoogle": "تسجيل الدخول باستخدام جوجل",
+          "LoginWithFacebook": "تسجيل الدخول باستخدام فيسبوك",
+          "InputEmailPlaceholder": "البريد الإلكتروني",
+          "InputPassPlaceholder": "كلمه السر",
+          "ForgotPassword": "هل نسيت كلمة المرور؟",
+          "ForgotPasswordLink": "إعادة تعيين",
+          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على شروط وأحكام في أمان",
+          "TermsAndConditionsLink": "شروط وأحكام",
+          "DontHaveAccount": "ليس لديك حساب؟ سجل",
+          "DontHaveAccountLink": "سجل"
+        }
+      },
+      "ForgotPassword": {
+        "Title": "هل نسيت كلمة المرور؟",
+        "Paragraph": "أدخل عنوان البريد الإلكتروني الذي استخدمته للتسجيل. سنرسل لك بريدًا إلكترونيًا يحتوي على تعليمات لإعادة تعيين كلمة المرور الخاصة بك.",
+        "InputEmailPlaceholder": "عنوان بريدك الإلكتروني"
+      }
+    },
+    "AppModal": {
+      "AddNewMerchandiseModal": {
+        "Title": "إضافة سلعة جديدة",
+        "SelectCategorie": {
+          "Label": "تصنيف السلعة",
+          "PlaceHolder": "اختر تصنيف"
+        },
+        "EnterPriceInput": {
+          "Label": "السعر",
+          "PlaceHolder": "أدخل السعر"
+        },
+        "RadioButtons": {
+          "Label": "طبيعة السلعة",
+          "NewMerchandise": "جديد",
+          "UsedMerchandise": "مستعمل"
+        },
+        "DimensionsInputLabel": "الأبعاد",
+        "WeightInput": {
+          "Label": "الوزن",
+          "PlaceHolder": "أدخل الوزن"
+        },
+        "ImportImgLabel": "صورة السلعة",
+        "MerchandiseDescription": {
+          "Label": "معلومات إضافية عن عرضك",
+          "PlaceHolder": "الوصف..."
+        }
+      }
+    }
+  },
+  "Pages": {
+    "SearchPage": {
+      "Banner": {
+        "Title": "العثور على موصل",
+        "Search": {
+          "Switch": {
+            "Offers": "العروض",
+            "Deparatures": "المغادرات"
+          },
+          "InputDeparturePlaceholder": "مدينة / بلد المغادرة",
+          "InputDestinationPlaceholder": "مدينة / بلد الوصول",
+          "InputDatePlaceholder": "اختر تاريخ",
+          "SearchAgencyPlaceholder": "أدخل وكالة"
+        }
+      },
+      "FilteringArea": {
+        "Periods": {
+          "Now": "الآن",
+          "PLusSevenDays": "+ 7 أيام",
+          "PLusTenDays": "+ 10 أيام"
+        },
+        "FilteringButtons": {
+          "Cheap": "رخيص",
+          "Fast": "سريع"
+        }
+      }
+    },
+    "Annually": {
+      "Banner": {
+        "Title": "سنوي",
+        "Search": {
+          "Switch": {
+            "All": "الكل",
+            "Agencies": "وكالات",
+            "Transporters": "ناقلات"
+          },
+          "InputSearchPlaceholder": "البحث عن طريق الاسم",
+          "InputDeparturePlaceholder": "مدينة / بلد المغادرة",
+          "InputDestinationPlaceholder": "مدينة / بلد الوجهة"
+        }
+      },
+      "Pagination": {
+        "Show": "عرض",
+        "ResultsPerPage": "نتائج لكل صفحة"
+      }
+    },
+    "DeparatureDetailsPage": {
+      "DeparatureInfoTitle": "معلومات الرحلة"
+    },
+    "OfferDetailsPage": {
+      "OfferInfoTitle": "معلومات العرض",
+      "MerchandiseTypeTitle": "معلومات البضاعة",
+      "OfferDescriptionTitle": "معلومات إضافية",
+      "Modals": {
+        "ConfirmSendQuotation": {
+          "ModalTitle": "طلب عرض سعر",
+          "Paragraph": "أنت على وشك طلب عرض للوكالة العربية",
+          "MarkedParagraph": "السياحة والنقل"
+        },
+        "SendQuotationModal": {
+          "ModalTitle": "إرسال عرض سعر",
+          "InputWithSelect": {
+            "Label": "السعر المقترح",
+            "PlaceHolder": "السعر"
+          },
+          "SwitchInput": {
+            "Label": "قبول التفاوض"
+          },
+          "TextAreaInput": {
+            "Label": "معلومات إضافية حول عرضك",
+            "PlaceHolder": "وصف المواصفات...."
+          }
+        }
+      }
+    },
+    "AgencyProfile": {
+      "DescriptionTitle": "حول الوكالة",
+      "LawInfoTitle": "معلومات قانونية",
+      "ReviewsTitle": "المراجعات الموصى بها",
+      "GaleriePhotos": "معرض الصور"
+    },
+    "AppPages": {
+      "OffersPage": {
+        "Title": "عروضي",
+        "AllOffers": "كل العروض",
+        "Search": {
+          "InputSearchPlaceholder": "بحث..."
+        },
+        "Table": {
+          "Columns": {
+            "Merchandise": "البضائع",
+            "Departure": "المغادرة",
+            "Arrival": "الوصول",
+            "SendingDate": "تاريخ الإرسال",
+            "Destination": "المستلم",
+            "Status": "الحالة"
+          },
+          "Status": {
+            "Pending": "قيد الانتظار",
+            "Accepted": "مقبول",
+            "Refused": "مرفوض"
+          }
+        }
+      },
+      "PublishAnOfferPage": {
+        "NavLocations": {
+          "MyOffers": "عروضي",
+          "PublishAnOffer": "نشر عرض"
+        },
+        "DeparatureInformations": {
+          "SectionTitle": "معلومات الإنطلاق",
+          "DepartureAddress": {
+            "Label": "عنوان المغادرة",
+            "PlaceHolder": "حدد العنوان"
+          },
+          "ArrivalAddress": {
+            "Label": "عنوان الوصول",
+            "PlaceHolder": "حدد العنوان"
+          },
+          "SendingDate": {
+            "Label": "تاريخ الإرسال",
+            "PlaceHolder": "حدد التاريخ"
+          },
+          "AgencyDepositSwitchLabel": "إيداع في الوكالة",
+          "HomeDeliverySwitchLabel": "تسليم المنزل",
+          "PickupAddress": {
+            "Label": "عنوان الاستلام",
+            "PlaceHolder": "مثال: شارع محمد 5"
+          }
+        },
+        "DestinationInformations": {
+          "SectionTitle": "معلومات الوجهة",
+          "DestinationFullNamePlaceHolder": "اسم الوجهة الكامل",
+          "DestinationEmailPlaceHolder": "البريد الإلكتروني للوجهة",
+          "DestinationPhonePlaceHolder": "هاتف الوجهة",
+          "AddAnotherPhoneNumber": "أضف رقم هاتف آخر"
+        },
+        "MerchandiseInformations": {
+          "SectionTitle": "معلومات البضائع",
+          "SectionParagraph": "وصف البضائع التي تريد نقلها. أضف كل البضائع التي تريد",
+          "NoMerchansise": {
+            "AddNewMerchandiseBtn": "أضف بضاعة جديدة"
+          },
+          "DimensionsText": "الأبعاد",
+          "WeightText": "الوزن",
+          "AddAnotherMerchandiseBtn": "أضف بضاعة أخرى"
+        }
+      }
+    }
+  },
+  "TrackAnItem": {
+    "Title": "تتبع الحزمة الخاصة بك",
+    "Paragraph": "أدخل رقم تتبع الحزمة الخاصة بك لتتبع تقدمها",
+    "InputPlaceholder": "رقم التتبع، بدون مسافات",
+    "Button": "تتبع"
+  },
+  "AppSideBar": {
+    "MyOffers": "عروضي",
+    "MyDeparatures": "رحلاتي",
+    "MyQuotations": "عروضي",
+    "MyProfile": "ملفي الشخصي",
+    "MyBookmars": "الوكلاء المفضلين",
+    "Settings": "الإعدادات"
+  }
+}

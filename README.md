@@ -1,38 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fiamane Transporter Front-end
 
-## Getting Started
+## Project structure
 
-First, run the development server:
+- `components/` - All the app components
+  - `components/shared/` - Shared components
+  - `components/app/` - All components used in the dashboard
+  - `components/agence/` - All components used in the agency page
+  - `components/depart/` - All components used in the departure page
+  - `components/offre/` - All components used in the offer page
+- `config/` - Configuration files
+  - `config/env.ts` - Environment variables
+  - `config/messages.ts` - All the app messages (imported from the json files in `constants/lang`)
+- `constants/` - Constants
+  - `constants/lang/` - All the app messages in all languages
+  - `constants/data/` - Some fake data may coming handy
+- `hooks/` - Custom hooks
+- `layouts/` - All the app layouts
+- `pages/` - All the app pages
+- `public/` - Public files
+- `styles/` - All the app styles
+- `types/` - All the app types
+- `utils/` - All the app utils
+- `lib/` - All the app libraries configurations
+- `types/` - All the app types
+
+## Multi language
+
+When you want to change the language simply prefix all your paths with `/lang` where `lang` is the chosen language.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# English
+http://localhost:3000/en/{rest of the path}
+# French
+http://localhost:3000/fr/{rest of the path}
+... etc
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+if you don't specify the language it will default to `fr`.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Translation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+You can translate the messages and content using `useTranslation` hook imported from `hooks/useTranslation.ts` file.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```tsx
+const translate = useTranslation();
+const title = translate("Navbar.Links.FindTransporter");
+// title = "Trouver un transporteur"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Authentication
 
-## Learn More
+The authentication is handled by the `useAuth` hook imported from `hooks/useAuth.ts` file if you want to use redux let me know.
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+const { user, setUser, isAuthenticated, setIsAuthenticated, logout } =
+  useAuth();
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+console.log(user); // { id: 1, name: "John Doe",...}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Environment variables
 
-## Deploy on Vercel
+The environment variables we are currently using are:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:5000 # Or any valid url so you don't get an error
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Server rendred pages
+
+You can create the UI for server rendred pages by creating a file in page folder as `index.tsx` with fake data then I will get the data from the server and replace the fake data with the real data in `[id].tsx` or `[slug].tsx` file.
+
+## Some extra notes
+
+- Create the UI for the pages in `layouts/pages` folder then import it in the corresponding page in `pages` folder.
+- Extract the hooks logic to `hooks` folder.
+- Try to export the components and pages by name instead of exporting them as `Index`
+
+## Final thoughts
+
+We really appreciate your time and effort here at `Fiamane` and we hope you enjoy working on this project as much as we do and if you have any question let `Mohamed Achaq` know.

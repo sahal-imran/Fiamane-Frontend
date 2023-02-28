@@ -1,0 +1,363 @@
+{
+  "Document": {
+    "Title": "Fiamane - Eine einzigartige Paketverfolgungslösung"
+  },
+  "Footer": {
+    "NotRegistered": {
+      "Title": "Sind Sie eine Agentur oder ein Spediteur?",
+      "Paragraph": "Sie können sich heute der Fiamane-Community anschließen"
+    }
+  },
+  "Constants": {
+    "KiloString": "Kilo",
+    "VerifiedByFiamane": "Verifiziert von Fiamane",
+    "From": "von",
+    "To": "bis",
+    "Rating": "Bewertung",
+    "DeparatureText": "Abfahrt",
+    "ArrivalText": "Ankunft",
+    "DepartureDateText": "Abfahrtsdatum",
+    "ArrivalDateText": "Ankunftsdatum",
+    "DeparatureAddressText": "Abholort",
+    "ArrivalAddressText": "Lieferort",
+    "PossibleHomePickup": "Abholung zu Hause möglich",
+    "PossibleHomeDelivery": "Lieferung nach Hause möglich",
+    "StopOverText": "Zwischenstopp",
+    "StopOverTextPlural": "Zwischenstopps",
+    "PriceText": "Preis",
+    "PricePerKiloText": "Preis pro Kilo",
+    "PricePerPieceText": "Preis pro Stück",
+    "SendingDateText": "Versanddatum",
+    "DimensionsText": "Abmessungen",
+    "WeightText": "Gewicht",
+    "NoInfo": "Keine Informationen verfügbar",
+    "ReadMore": "Mehr lesen",
+    "ReadLess": "Weniger lesen"
+  },
+  "Messages": {
+    "Errors": {
+      "NoResults": "Keine Ergebnisse",
+      "Required": "Dieses Feld ist erforderlich",
+      "Email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "Password": "Das Passwort muss mindestens 8 Zeichen enthalten",
+      "Confirm": "Die Passwörter stimmen nicht überein",
+      "Phone": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "CompanyCode": "Bitte geben Sie eine gültige RC- oder KBIS-Nummer ein",
+      "ClientType": "Bitte wählen Sie einen Kundenart",
+      "ClientTypeCompany": "Bitte wählen Sie eine Transportart",
+      "Country": "Bitte wählen Sie ein Land",
+      "Date": "Bitte wählen Sie ein Datum"
+    },
+    "Success": {
+      "Register": "Ihr Konto wurde erfolgreich erstellt",
+      "Login": "Vous êtes connecté avec succès",
+      "ForgotPassword": "Un email vous a été envoyé avec les instructions pour réinitialiser votre mot de passe"
+    },
+    "Helpers": {
+      "SeeMore": "Mehr anzeigen",
+      "PriceIsNegociable": "Der Preis ist verhandelbar"
+    }
+  },
+  "Navbar": {
+    "Links": {
+      "FindTransporter": "Finden Sie einen Spediteur",
+      "Yearly": "Telefonbuch",
+      "TrackAnItem": "Verfolgen Sie ein Paket",
+      "FiamaneCompany": "Firma Fiamane"
+    },
+    "LoginAvatar": {
+      "LoginText": "Anmeldung",
+      "NewAccountText": "Neukunde ? Anmelden",
+      "MarkedText": "Anmelden"
+    }
+  },
+  "Buttons": {
+    "Login": "Anmelden",
+    "Register": "Registrieren",
+    "LogOut": "Abmelden",
+    "SignUp": "Anmelden",
+    "Next": "Weiter",
+    "Back": "Zurück",
+    "Cancel": "Abbrechen",
+    "Submit": "Einreichen",
+    "Search": "Suche",
+    "Filter": "Filter",
+    "Add": "Hinzufügen",
+    "Edit": "Bearbeiten",
+    "Delete": "Löschen",
+    "Duplicate": "Duplizieren",
+    "Save": "Speichern",
+    "Publish": "Veröffentlichen",
+    "Close": "Schließen",
+    "Yes": "Ja",
+    "No": "Nein",
+    "Confirm": "Bestätigen",
+    "Complete": "Vollständig",
+    "RequestQuotation": "Angebot anfordern",
+    "SendQuotation": "Senden Sie ein Angebot",
+    "SeeProfile": "Profil anzeigen",
+    "SendAMessage": "Nachricht senden",
+    "Useful": "Nützlich",
+    "PublishAnOffer": "Angebot veröffentlichen"
+  },
+  "Modals": {
+    "Auth": {
+      "Register": {
+        "ClientTypeStep": {
+          "Title": "Was möchtest du auf fiamane tun?",
+          "Paragraph": "Lassen Sie uns wissen, was Sie zu Fiamane bringt, damit wir Sie besser beraten können.",
+          "ClientType": {
+            "Personal": "Meine Pakete und Gepäck transportieren",
+            "Company": "Ein Partner werden, ich bin ein Spediteur"
+          }
+        },
+        "ClientInfoStep": {
+          "Title": "Vervollständigen Sie Ihre Informationen",
+          "Paragraph": "Für eine bessere Sichtbarkeit laden wir Sie ein, diese Felder auszufüllen",
+          "InputFirstNamePlaceHolder": "Vorname",
+          "InputLastNamePlaceHolder": "Nachname",
+          "SelectContryPlaceHolder": "Land",
+          "InputPhonePlaceHolder": "Telefonnummer"
+        },
+        "CompanyInfoStep": {
+          "Title": "Vervollständigen Sie Ihre Informationen",
+          "Paragraph": "Für eine bessere Sichtbarkeit laden wir Sie ein, diese Felder auszufüllen",
+          "CompanyNamePlaceholder": "Name der Gesellschaft",
+          "CompanyCodePlaceholder": "N° RC oder KBIS",
+          "SelectClientTypePLaceHolder": "Art der Gesellschaft"
+        },
+        "EmailStep": {
+          "Title": "Registrieren",
+          "Paragraph": "Und genießen Sie fiamane in vollen Zügen",
+          "InputEmailPlaceholder": "Ihre E-Mail-Adresse",
+          "InputPassPlaceholder": "Passwort",
+          "InputConfirmPassPlaceholder": "Bestätigen Sie Ihr Passwort",
+          "TermsAndConditions": "Indem Sie fortfahren, akzeptieren Sie die Allgemeinen Geschäftsbedingungen",
+          "TermsAndConditionsLink": "Allgemeine Geschäftsbedingungen",
+          "AlreadyHaveAccount": "Sie haben bereits ein Konto? Anmelden",
+          "AlreadyHaveAccountLink": "Anmelden"
+        }
+      },
+      "Login": {
+        "UserTypeStep": {
+          "Title": "Anmeldung als Agentur oder Kunde",
+          "Paragraph": "Um eine bessere Sichtbarkeit zu gewährleisten, laden wir Sie ein, diese Felder auszufüllen",
+          "UserType": {
+            "Client": "Ich bin ein Kunde",
+            "Company": "Ich bin eine Firma"
+          }
+        },
+        "LoginStep": {
+          "Title": "Anmeldung",
+          "LoginWithGoogle": "Mit Google anmelden",
+          "LoginWithFacebook": "Mit Facebook anmelden",
+          "InputEmailPlaceholder": "Email",
+          "InputPassPlaceholder": "Passwort",
+          "ForgotPassword": "Passwort vergessen?",
+          "ForgotPasswordLink": "Zurücksetzen",
+          "TermsAndConditions": "Durch die Fortsetzung akzeptieren Sie die Allgemeinen Geschäftsbedingungen von fiamane",
+          "TermsAndConditionsLink": "Allgemeinen Geschäftsbedingungen",
+          "DontHaveAccount": "Sie haben noch kein Konto? Registrieren",
+          "DontHaveAccountLink": "Registrieren"
+        }
+      },
+      "ForgotPassword": {
+        "Title": "Passwort vergessen?",
+        "Paragraph": "Geben Sie Ihre E-Mail-Adresse ein, die Sie für die Registrierung verwendet haben. Wir senden Ihnen eine E-Mail mit den Anweisungen zum Zurücksetzen Ihres Passworts.",
+        "InputEmailPlaceholder": "Ihre E-Mail-Adresse"
+      }
+    },
+    "AppModal": {
+      "AddNewMerchandiseModal": {
+        "Title": "Fügen Sie ein neues Produkt hinzu",
+        "SelectCategorie": {
+          "Label": "Produkt-Nomenklatur",
+          "PlaceHolder": "Wählen Sie eine Kategorie aus"
+        },
+        "EnterPriceInput": {
+          "Label": "Preis",
+          "PlaceHolder": "Geben Sie einen Preis ein"
+        },
+        "RadioButtons": {
+          "Label": "Art der Ware",
+          "NewMerchandise": "Neu",
+          "UsedMerchandise": "Gebraucht"
+        },
+        "DimensionsInputLabel": "Abmessungen",
+        "WeightInput": {
+          "Label": "Gewicht",
+          "PlaceHolder": "Geben Sie ein Gewicht ein"
+        },
+        "ImportImgLabel": "Produktfoto",
+        "MerchandiseDescription": {
+          "Label": "Zusätzliche Informationen zu Ihrem Angebot",
+          "PlaceHolder": "Beschreibung..."
+        }
+      }
+    }
+  },
+  "Pages": {
+    "SearchPage": {
+      "Banner": {
+        "Title": "Finden Sie einen Spediteur",
+        "Search": {
+          "Switch": {
+            "Offers": "Angebote",
+            "Deparatures": "Abfahrten"
+          },
+          "InputDeparturePlaceholder": "Abfahrtsstadt/Land",
+          "InputDestinationPlaceholder": "Zielstadt/Land",
+          "InputDatePlaceholder": "Datum auswählen",
+          "SearchAgencyPlaceholder": "Geben Sie eine Agentur ein"
+        }
+      },
+      "FilteringArea": {
+        "Periods": {
+          "Now": "Am frühesten",
+          "PLusSevenDays": "+ 7 Tage",
+          "PLusTenDays": "+ 10 Tage"
+        },
+        "FilteringButtons": {
+          "Cheap": "Am billigsten",
+          "Fast": "Am schnellsten"
+        }
+      }
+    },
+    "Annually": {
+      "Banner": {
+        "Title": "Jährlich",
+        "Search": {
+          "Switch": {
+            "All": "Alle",
+            "Agencies": "Agenturen",
+            "Transporters": "Transporteure"
+          },
+          "InputSearchPlaceholder": "Suche nach Namen",
+          "InputDeparturePlaceholder": "Abfahrtsort",
+          "InputDestinationPlaceholder": "Zielort"
+        }
+      },
+      "Pagination": {
+        "Show": "Anzeigen",
+        "ResultsPerPage": "Ergebnisse pro Seite"
+      }
+    },
+    "DeparatureDetailsPage": {
+      "DeparatureInfoTitle": "Reiseinformationen"
+    },
+    "OfferDetailsPage": {
+      "OfferInfoTitle": "Angebotsinformationen",
+      "MerchandiseTypeTitle": "Informationen zur Ware",
+      "OfferDescriptionTitle": "Zusätzliche Informationen",
+      "Modals": {
+        "ConfirmSendQuotation": {
+          "ModalTitle": "Angebot anfordern",
+          "Paragraph": "Sie sind dabei, ein Angebot an die Agentur Maghreb zu senden",
+          "MarkedParagraph": "Tourismus und Transport"
+        },
+        "SendQuotationModal": {
+          "ModalTitle": "Senden Sie ein Angebot",
+          "InputWithSelect": {
+            "Label": "Vorgeschlagener Preis",
+            "PlaceHolder": "Preis"
+          },
+          "SwitchInput": {
+            "Label": "Verhandlung akzeptieren"
+          },
+          "TextAreaInput": {
+            "Label": "Zusätzliche Informationen zu Ihrem Angebot",
+            "PlaceHolder": "Angebotsbeschreibung ..."
+          }
+        }
+      }
+    },
+    "AgencyProfile": {
+      "DescriptionTitle": "Über",
+      "LawInfoTitle": "Rechtliche Informationen",
+      "ReviewsTitle": "Empfohlene Bewertungen",
+      "GaleriePhotos": "Galerie der Fotos"
+    },
+    "AppPages": {
+      "OffersPage": {
+        "Title": "Meine Angebote",
+        "AllOffers": "Alle Angebote",
+        "Search": {
+          "InputSearchPlaceholder": "Suche..."
+        },
+        "Table": {
+          "Columns": {
+            "Merchandise": "Ware",
+            "Departure": "Abfahrt",
+            "Arrival": "Ankunft",
+            "SendingDate": "Sendungsdatum",
+            "Destination": "Empfänger",
+            "Status": "Status"
+          },
+          "Status": {
+            "Pending": "Ausstehend",
+            "Accepted": "Akzeptiert",
+            "Refused": "Abgelehnt"
+          }
+        }
+      },
+      "PublishAnOfferPage": {
+        "NavLocations": {
+          "MyOffers": "Meine Angebote",
+          "PublishAnOffer": "Angebot veröffentlichen"
+        },
+        "DeparatureInformations": {
+          "SectionTitle": "Abfahrtsinformationen",
+          "DepartureAddress": {
+            "Label": "Abfahrtsadresse",
+            "PlaceHolder": "Adresse auswählen"
+          },
+          "ArrivalAddress": {
+            "Label": "Ankunftsadresse",
+            "PlaceHolder": "Adresse auswählen"
+          },
+          "SendingDate": {
+            "Label": "Sendetermin",
+            "PlaceHolder": "Datum auswählen"
+          },
+          "AgencyDepositSwitchLabel": "Agenturablage",
+          "HomeDeliverySwitchLabel": "Lieferung nach Hause",
+          "PickupAddress": {
+            "Label": "Abholadresse",
+            "PlaceHolder": "Beispiel: Mouhamed Straße 5"
+          }
+        },
+        "DestinationInformations": {
+          "SectionTitle": "Zielinformationen",
+          "DestinationFullNamePlaceHolder": "Vollständiger Name des Ziels",
+          "DestinationEmailPlaceHolder": "E-Mail-Adresse des Ziels",
+          "DestinationPhonePlaceHolder": "Telefonnummer des Ziels",
+          "AddAnotherPhoneNumber": "Weitere Telefonnummer hinzufügen"
+        },
+        "MerchandiseInformations": {
+          "SectionTitle": "Wareninformationen",
+          "SectionParagraph": "Beschreiben Sie Ihre Waren, die Sie transportieren möchten. Fügen Sie so viele Waren hinzu, wie Sie möchten",
+          "NoMerchansise": {
+            "AddNewMerchandiseBtn": "Neue Ware hinzufügen"
+          },
+          "DimensionsText": "Abmessungen",
+          "WeightText": "Gewicht",
+          "AddAnotherMerchandiseBtn": "Fügen Sie eine weitere Ware hinzu"
+        }
+      }
+    }
+  },
+  "TrackAnItem": {
+    "Title": "Verfolgen Sie Ihr Paket",
+    "Paragraph": "Geben Sie Ihre Paketverfolgungsnummer ein, um den Fortschritt zu verfolgen",
+    "InputPlaceholder": "Tracking-Nummer, ohne Leerzeichen",
+    "Button": "Verfolgen"
+  },
+  "AppSideBar": {
+    "MyOffers": "Meine Angebote",
+    "MyDeparatures": "Meine Abfahrten",
+    "MyQuotations": "Meine Angebote",
+    "MyProfile": "Mein Profil",
+    "MyBookmars": "Meine Agenten",
+    "Settings": "Einstellungen"
+  }
+}

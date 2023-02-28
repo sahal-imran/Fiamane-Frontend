@@ -1,0 +1,363 @@
+{
+  "Document": {
+    "Title": "Fiamane - Een unieke pakket tracking oplossing"
+  },
+  "Footer": {
+    "NotRegistered": {
+      "Title": "Bent u een agent of vervoerder?",
+      "Paragraph": "U kunt zich vandaag aansluiten bij de Fiamane-gemeenschap"
+    }
+  },
+  "Constants": {
+    "KiloString": "Kilo",
+    "VerifiedByFiamane": "Geverifieerd door Fiamane",
+    "From": "van",
+    "To": "tot",
+    "Rating": "Beoordeling",
+    "DeparatureText": "Vertrek",
+    "ArrivalText": "Aankomst",
+    "DepartureDateText": "Vertrekdatum",
+    "ArrivalDateText": "Aankomstdatum",
+    "DeparatureAddressText": "Afhaallocatie",
+    "ArrivalAddressText": "Afleverlocatie",
+    "PossibleHomePickup": "Afhalen aan huis mogelijk",
+    "PossibleHomeDelivery": "Thuisbezorging mogelijk",
+    "StopOverText": "Stopover",
+    "StopOverTextPlural": "Stopovers",
+    "PriceText": "Prijs",
+    "PricePerKiloText": "Prijs per kilo",
+    "PricePerPieceText": "Prijs per stuk",
+    "SendingDateText": "Verzenddatum",
+    "DimensionsText": "Afmetingen",
+    "WeightText": "Gewicht",
+    "NoInfo": "Geen informatie beschikbaar",
+    "ReadMore": "Lees meer",
+    "ReadLess": "Lees minder"
+  },
+  "Messages": {
+    "Errors": {
+      "NoResults": "Geen resultaten",
+      "Required": "Dit veld is verplicht",
+      "Email": "Vul een geldig e-mailadres in",
+      "Password": "Het wachtwoord moet minimaal 8 tekens bevatten",
+      "Confirm": "De wachtwoorden komen niet overeen",
+      "Phone": "Vul een geldig telefoonnummer in",
+      "CompanyCode": "Vul een geldig RC of KBIS-nummer in",
+      "ClientType": "Kies een klanttype",
+      "ClientTypeCompany": "Kies een transporttype",
+      "Country": "Kies een land",
+      "Date": "Kies een datum"
+    },
+    "Success": {
+      "Register": "Uw account is succesvol aangemaakt",
+      "Login": "U bent succesvol ingelogd",
+      "ForgotPassword": "Er is een e-mail naar u verzonden met instructies om uw wachtwoord opnieuw in te stellen"
+    },
+    "Helpers": {
+      "SeeMore": "Meer zien",
+      "PriceIsNegociable": "De prijs is onderhandelbaar"
+    }
+  },
+  "Buttons": {
+    "Login": "Inloggen",
+    "Register": "Registreren",
+    "SignUp": "Aanmelden",
+    "LogOut": "Uitloggen",
+    "Next": "Volgende",
+    "Back": "Terug",
+    "Cancel": "Annuleren",
+    "Submit": "Verzenden",
+    "Search": "Zoeken",
+    "Filter": "Filter",
+    "Add": "Toevoegen",
+    "Edit": "Bewerken",
+    "Delete": "Verwijderen",
+    "Duplicate": "Dupliceren",
+    "Save": "Opslaan",
+    "Publish": "Publiceren",
+    "Close": "Sluiten",
+    "Yes": "Ja",
+    "No": "Nee",
+    "Confirm": "Bevestigen",
+    "Complete": "Voltooien",
+    "RequestQuotation": "Vraag een offerte aan",
+    "SendQuotation": "Stuur een offerte",
+    "SeeProfile": "Bekijk profiel",
+    "SendAMessage": "Stuur een bericht",
+    "Useful": "Handig",
+    "PublishAnOffer": "Een aanbieding publiceren"
+  },
+  "Navbar": {
+    "Links": {
+      "FindTransporter": "Vind een vervoerder",
+      "Yearly": "Jaarboek",
+      "TrackAnItem": "Volg een item",
+      "FiamaneCompany": "Fiamane bedrijf"
+    },
+    "LoginAvatar": {
+      "LoginText": "Inloggen",
+      "NewAccountText": "Nieuwe klant? Registreer",
+      "MarkedText": "Registreer"
+    }
+  },
+  "Modals": {
+    "Auth": {
+      "Register": {
+        "ClientTypeStep": {
+          "Title": "Wat wilt u doen op fiamane ?",
+          "Paragraph": "Vertel ons wat u naar fiamane brengt, dit zal ons helpen u beter te begeleiden.",
+          "ClientType": {
+            "Personal": "Transporteer mijn pakketten en bagage",
+            "Company": "Word een partner, ik ben een transporteur"
+          }
+        },
+        "ClientInfoStep": {
+          "Title": "Vul uw informatie in",
+          "Paragraph": "Voor een betere zichtbaarheid, nodigen we u uit om deze velden in te vullen",
+          "InputFirstNamePlaceHolder": "Voornaam",
+          "InputLastNamePlaceHolder": "Naam",
+          "SelectContryPlaceHolder": "Land",
+          "InputPhonePlaceHolder": "Telefoon"
+        },
+        "CompanyInfoStep": {
+          "Title": "Vul uw informatie in",
+          "Paragraph": "Voor een betere zichtbaarheid, nodigen we u uit om deze velden in te vullen",
+          "CompanyNamePlaceholder": "Naam van het bedrijf",
+          "CompanyCodePlaceholder": "N ° RC of KBIS",
+          "SelectClientTypePLaceHolder": "Type transporteur"
+        },
+        "EmailStep": {
+          "Title": "Schrijf je in",
+          "Paragraph": "En profiteer volledig van fiamane",
+          "InputEmailPlaceholder": "Uw e-mailadres",
+          "InputPassPlaceholder": "Wachtwoord",
+          "InputConfirmPassPlaceholder": "Bevestig uw wachtwoord",
+          "TermsAndConditions": "Door verder te gaan, accepteert u de Algemene voorwaarden van fiamane",
+          "TermsAndConditionsLink": "Algemene voorwaarden",
+          "AlreadyHaveAccount": "U bent al ingeschreven? Log in",
+          "AlreadyHaveAccountLink": "Log in"
+        }
+      },
+      "Login": {
+        "UserTypeStep": {
+          "Title": "Login als een agent of klant",
+          "Paragraph": "Voor een betere zichtbaarheid, nodigen we u uit om deze velden in te vullen",
+          "UserType": {
+            "Client": "Ik ben een klant",
+            "Company": "Ik ben een vervoerder"
+          }
+        },
+        "LoginStep": {
+          "Title": "Login",
+          "LoginWithGoogle": "Inloggen met Google",
+          "LoginWithFacebook": "Inloggen met Facebook",
+          "InputEmailPlaceholder": "Email",
+          "InputPassPlaceholder": "Wachtwoord",
+          "ForgotPassword": "Wachtwoord vergeten?",
+          "ForgotPasswordLink": "Reset",
+          "TermsAndConditions": "Door verder te gaan, accepteert u de Algemene Voorwaarden van fiamane",
+          "TermsAndConditionsLink": "Algemene Voorwaarden",
+          "DontHaveAccount": "Heb je nog geen account? Registreer",
+          "DontHaveAccountLink": "Registreer"
+        }
+      },
+      "ForgotPassword": {
+        "Title": "Wachtwoord vergeten ?",
+        "Paragraph": "Voer het e-mailadres in dat u heeft gebruikt om u in te schrijven. We sturen u een e-mail met instructies om uw wachtwoord opnieuw in te stellen.",
+        "InputEmailPlaceholder": "Uw e-mailadres"
+      }
+    },
+    "AppModal": {
+      "AddNewMerchandiseModal": {
+        "Title": "Voeg een nieuw product toe",
+        "SelectCategorie": {
+          "Label": "Productnomenclatuur",
+          "PlaceHolder": "Selecteer een categorie"
+        },
+        "EnterPriceInput": {
+          "Label": "Prijs",
+          "PlaceHolder": "Voer een prijs in"
+        },
+        "RadioButtons": {
+          "Label": "Aard van het product",
+          "NewMerchandise": "Nieuw",
+          "UsedMerchandise": "Gebruikt"
+        },
+        "DimensionsInputLabel": "Afmetingen",
+        "WeightInput": {
+          "Label": "Gewicht",
+          "PlaceHolder": "Voer een gewicht in"
+        },
+        "ImportImgLabel": "Productfoto",
+        "MerchandiseDescription": {
+          "Label": "Aanvullende informatie over uw aanbod",
+          "PlaceHolder": "Beschrijving..."
+        }
+      }
+    }
+  },
+  "Pages": {
+    "SearchPage": {
+      "Banner": {
+        "Title": "Vind een vervoerder",
+        "Search": {
+          "Switch": {
+            "Offers": "Aanbiedingen",
+            "Deparatures": "Vertrekken"
+          },
+          "InputDeparturePlaceholder": "Vertrekstad/land",
+          "InputDestinationPlaceholder": "Bestemmingstad/land",
+          "InputDatePlaceholder": "Selecteer een datum",
+          "SearchAgencyPlaceholder": "Voer een bureau in"
+        }
+      },
+      "FilteringArea": {
+        "Periods": {
+          "Now": "Het vroegst",
+          "PLusSevenDays": "+ 7 dagen",
+          "PLusTenDays": "+ 10 dagen"
+        },
+        "FilteringButtons": {
+          "Cheap": "Goedkoopste",
+          "Fast": "Snelste"
+        }
+      }
+    },
+    "Annually": {
+      "Banner": {
+        "Title": "Jaarlijks",
+        "Search": {
+          "Switch": {
+            "All": "Alles",
+            "Agencies": "Agentschappen",
+            "Transporters": "Transporteurs"
+          },
+          "InputSearchPlaceholder": "Zoeken op naam",
+          "InputDeparturePlaceholder": "Vertrekstad/land",
+          "InputDestinationPlaceholder": "Bestemming stad/land"
+        }
+      },
+      "Pagination": {
+        "Show": "Toon",
+        "ResultsPerPage": "resultaten per pagina"
+      }
+    },
+    "DeparatureDetailsPage": {
+      "DeparatureInfoTitle": "Reisinformatie"
+    },
+    "OfferDetailsPage": {
+      "OfferInfoTitle": "Vertrek informatie",
+      "MerchandiseTypeTitle": "Informatie over de goederen",
+      "OfferDescriptionTitle": "Aanvullende informatie",
+      "Modals": {
+        "ConfirmSendQuotation": {
+          "ModalTitle": "Vraag een offerte aan",
+          "Paragraph": "U staat op het punt een offerte aan de Maghreb Agency te vragen",
+          "MarkedParagraph": "Toerisme en Transport"
+        },
+        "SendQuotationModal": {
+          "ModalTitle": "Stuur een offerte",
+          "InputWithSelect": {
+            "Label": "Voorgestelde prijs",
+            "PlaceHolder": "prijs"
+          },
+          "SwitchInput": {
+            "Label": "Accepteer onderhandeling"
+          },
+          "TextAreaInput": {
+            "Label": "Aanvullende informatie over uw aanbieding",
+            "PlaceHolder": "offerte beschrijving ..."
+          }
+        }
+      }
+    },
+    "AgencyProfile": {
+      "DescriptionTitle": "Over",
+      "LawInfoTitle": "Juridische informatie",
+      "ReviewsTitle": "Aanbevolen beoordelingen",
+      "GaleriePhotos": "Galerij van foto's"
+    },
+    "AppPages": {
+      "OffersPage": {
+        "Title": "Mijn aanbiedingen",
+        "AllOffers": "Alle aanbiedingen",
+        "Search": {
+          "InputSearchPlaceholder": "Zoeken..."
+        },
+        "Table": {
+          "Columns": {
+            "Merchandise": "Goederen",
+            "Departure": "Vertrek",
+            "Arrival": "Aankomst",
+            "SendingDate": "Verzenddatum",
+            "Destination": "Bestemming",
+            "Status": "Status"
+          },
+          "Status": {
+            "Pending": "In afwachting",
+            "Accepted": "Geaccepteerd",
+            "Refused": "Geweigerd"
+          }
+        }
+      },
+      "PublishAnOfferPage": {
+        "NavLocations": {
+          "MyOffers": "Mijn aanbiedingen",
+          "PublishAnOffer": "Een aanbieding plaatsen"
+        },
+        "DeparatureInformations": {
+          "SectionTitle": "Vertrek informatie",
+          "DepartureAddress": {
+            "Label": "Vertrek adres",
+            "PlaceHolder": "Selecteer adres"
+          },
+          "ArrivalAddress": {
+            "Label": "Aankomst adres",
+            "PlaceHolder": "Selecteer adres"
+          },
+          "SendingDate": {
+            "Label": "Verzend datum",
+            "PlaceHolder": "Selecteer datum"
+          },
+          "AgencyDepositSwitchLabel": "Agentuur aflevering",
+          "HomeDeliverySwitchLabel": "Thuis levering",
+          "PickupAddress": {
+            "Label": "Afhaal adres",
+            "PlaceHolder": "Voorbeeld: Mouhamed straat 5"
+          }
+        },
+        "DestinationInformations": {
+          "SectionTitle": "Bestemming informatie",
+          "DestinationFullNamePlaceHolder": "Volledige naam van de bestemming",
+          "DestinationEmailPlaceHolder": "E-mail van de bestemming",
+          "DestinationPhonePlaceHolder": "Telefoon nummer van de bestemming",
+          "AddAnotherPhoneNumber": "Voeg een ander telefoon nummer toe"
+        },
+        "MerchandiseInformations": {
+          "SectionTitle": "Informatie over de goederen",
+          "SectionParagraph": "Beschrijf uw goederen die u wilt vervoeren. Voeg zoveel goederen toe als u wilt",
+          "NoMerchansise": {
+            "AddNewMerchandiseBtn": "Voeg nieuwe goederen toe"
+          },
+          "DimensionsText": "Afmetingen",
+          "WeightText": "Gewicht",
+          "AddAnotherMerchandiseBtn": "Voeg nog een goederen toe"
+        }
+      }
+    }
+  },
+  "TrackAnItem": {
+    "Title": "Volg uw pakket",
+    "Paragraph": "Voer het trackingnummer van uw pakket in om de status te volgen",
+    "InputPlaceholder": "Trackingnummer, geen spaties",
+    "Button": "Volgen"
+  },
+  "AppSideBar": {
+    "MyOffers": "Mijn aanbiedingen",
+    "MyDeparatures": "Mijn vertrekken",
+    "MyQuotations": "Mijn offertes",
+    "MyProfile": "Mijn profiel",
+    "MyBookmars": "Mijn agenten",
+    "Settings": "Instellingen"
+  }
+}
