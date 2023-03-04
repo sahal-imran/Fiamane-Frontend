@@ -67,7 +67,7 @@
     },
     "LoginAvatar": {
       "LoginText": "Login",
-      "NewAccountText": "New customer ? Sign up",
+      "NewAccountText": "New customer ?",
       "MarkedText": "Sign up"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "Your email address",
           "InputPassPlaceholder": "Password",
           "InputConfirmPassPlaceholder": "Confirm your password",
-          "TermsAndConditions": "By continuing, you accept the Terms & Conditions of fiamane",
+          "TermsAndConditions": "By continuing, you agree to fiamane's ",
           "TermsAndConditionsLink": "Terms & Conditions",
-          "AlreadyHaveAccount": "Already have an account? Login",
+          "AlreadyHaveAccount": "Already have an account?",
           "AlreadyHaveAccountLink": "Login"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "Password",
           "ForgotPassword": "Forgot your password?",
           "ForgotPasswordLink": "Reset",
-          "TermsAndConditions": "By continuing, you accept the Terms & Conditions of fiamane",
+          "TermsAndConditions": "By continuing, you agree to fiamane's ",
           "TermsAndConditionsLink": "Terms & Conditions",
-          "DontHaveAccount": "Don't have an account? Sign up",
+          "DontHaveAccount": "Don't have an account?",
           "DontHaveAccountLink": "Sign up"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "My departures",
     "MyQuotations": "My quotations",
     "MyProfile": "My profile",
-    "MyBookmars": "My agents",
+    "MyBookmars": "My favourites",
     "Settings": "Settings"
   }
 }

@@ -67,7 +67,7 @@
     },
     "LoginAvatar": {
       "LoginText": "Anmeldung",
-      "NewAccountText": "Neukunde ? Anmelden",
+      "NewAccountText": "Neukunde ?",
       "MarkedText": "Anmelden"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "Ihre E-Mail-Adresse",
           "InputPassPlaceholder": "Passwort",
           "InputConfirmPassPlaceholder": "Bestätigen Sie Ihr Passwort",
-          "TermsAndConditions": "Indem Sie fortfahren, akzeptieren Sie die Allgemeinen Geschäftsbedingungen",
+          "TermsAndConditions": "Indem Sie fortfahren, akzeptieren Sie die",
           "TermsAndConditionsLink": "Allgemeine Geschäftsbedingungen",
-          "AlreadyHaveAccount": "Sie haben bereits ein Konto? Anmelden",
+          "AlreadyHaveAccount": "Sie haben bereits ein Konto?",
           "AlreadyHaveAccountLink": "Anmelden"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "Passwort",
           "ForgotPassword": "Passwort vergessen?",
           "ForgotPasswordLink": "Zurücksetzen",
-          "TermsAndConditions": "Durch die Fortsetzung akzeptieren Sie die Allgemeinen Geschäftsbedingungen von fiamane",
-          "TermsAndConditionsLink": "Allgemeinen Geschäftsbedingungen",
-          "DontHaveAccount": "Sie haben noch kein Konto? Registrieren",
+          "TermsAndConditions": "Indem Sie fortfahren, akzeptieren Sie die",
+          "TermsAndConditionsLink": "Allgemeine Geschäftsbedingungen",
+          "DontHaveAccount": "Sie haben noch kein Konto?",
           "DontHaveAccountLink": "Registrieren"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "Meine Abfahrten",
     "MyQuotations": "Meine Angebote",
     "MyProfile": "Mein Profil",
-    "MyBookmars": "Meine Agenten",
+    "MyBookmars": "Meine Favoriten",
     "Settings": "Einstellungen"
   }
 }

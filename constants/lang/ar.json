@@ -96,7 +96,7 @@
     },
     "LoginAvatar": {
       "LoginText": "تسجيل الدخول",
-      "NewAccountText": "زبون جديد ؟ اشتراك",
+      "NewAccountText": "زبون جديد ؟ ",
       "MarkedText": "اشتراك"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "عنوان بريدك الإلكتروني",
           "InputPassPlaceholder": "كلمه السر",
           "InputConfirmPassPlaceholder": "تأكيد كلمة المرور الخاصة بك",
-          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على شروط الاستخدام",
+          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على ",
           "TermsAndConditionsLink": "شروط الاستخدام",
-          "AlreadyHaveAccount": "لديك حساب بالفعل؟ تسجيل الدخول",
+          "AlreadyHaveAccount": "لديك حساب بالفعل؟",
           "AlreadyHaveAccountLink": "تسجيل الدخول"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "كلمه السر",
           "ForgotPassword": "هل نسيت كلمة المرور؟",
           "ForgotPasswordLink": "إعادة تعيين",
-          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على شروط وأحكام في أمان",
-          "TermsAndConditionsLink": "شروط وأحكام",
-          "DontHaveAccount": "ليس لديك حساب؟ سجل",
+          "TermsAndConditions": "متابعة الاستخدام يعني الموافقة على ",
+          "TermsAndConditionsLink": "شروط الاستخدام",
+          "DontHaveAccount": "ليس لديك حساب؟ ",
           "DontHaveAccountLink": "سجل"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "رحلاتي",
     "MyQuotations": "عروضي",
     "MyProfile": "ملفي الشخصي",
-    "MyBookmars": "الوكلاء المفضلين",
+    "MyBookmars": "المفضلة لدي",
     "Settings": "الإعدادات"
   }
 }

@@ -96,7 +96,7 @@
     },
     "LoginAvatar": {
       "LoginText": "Inloggen",
-      "NewAccountText": "Nieuwe klant? Registreer",
+      "NewAccountText": "Nieuwe klant?",
       "MarkedText": "Registreer"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "Uw e-mailadres",
           "InputPassPlaceholder": "Wachtwoord",
           "InputConfirmPassPlaceholder": "Bevestig uw wachtwoord",
-          "TermsAndConditions": "Door verder te gaan, accepteert u de Algemene voorwaarden van fiamane",
-          "TermsAndConditionsLink": "Algemene voorwaarden",
-          "AlreadyHaveAccount": "U bent al ingeschreven? Log in",
+          "TermsAndConditions": "Door verder te gaan, accepteert u de van fiamane",
+          "TermsAndConditionsLink": "Algemene Voorwaarden",
+          "AlreadyHaveAccount": "U bent al ingeschreven?",
           "AlreadyHaveAccountLink": "Log in"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "Wachtwoord",
           "ForgotPassword": "Wachtwoord vergeten?",
           "ForgotPasswordLink": "Reset",
-          "TermsAndConditions": "Door verder te gaan, accepteert u de Algemene Voorwaarden van fiamane",
+          "TermsAndConditions": "Door verder te gaan, accepteert u de van fiamane",
           "TermsAndConditionsLink": "Algemene Voorwaarden",
-          "DontHaveAccount": "Heb je nog geen account? Registreer",
+          "DontHaveAccount": "Heb je nog geen account?",
           "DontHaveAccountLink": "Registreer"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "Mijn vertrekken",
     "MyQuotations": "Mijn offertes",
     "MyProfile": "Mijn profiel",
-    "MyBookmars": "Mijn agenten",
+    "MyBookmars": "Mijn favorieten",
     "Settings": "Instellingen"
   }
 }

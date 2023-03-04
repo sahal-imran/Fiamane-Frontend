@@ -96,7 +96,7 @@
     },
     "LoginAvatar": {
       "LoginText": "Connexion",
-      "NewAccountText": "Nouveau client ? Inscrivez-vous",
+      "NewAccountText": "Nouveau client ?",
       "MarkedText": "Inscrivez-vous"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "Votre adresse mail",
           "InputPassPlaceholder": "Mot de passe",
           "InputConfirmPassPlaceholder": "Confirmer votre mot de passe",
-          "TermsAndConditions": "En continuant, vous acceptez les Termes & Conditions de fiamane",
+          "TermsAndConditions": "En continuant, vous acceptez les de fiamane",
           "TermsAndConditionsLink": "Termes & Conditions",
-          "AlreadyHaveAccount": "Vous êtes déja inscris? Connectez-vous",
+          "AlreadyHaveAccount": "Vous êtes déja inscris?",
           "AlreadyHaveAccountLink": "Connectez-vous"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "Mot de passe",
           "ForgotPassword": "Mot de passe oublié ?",
           "ForgotPasswordLink": "Réinitialiser",
-          "TermsAndConditions": "En continuant, vous acceptez les Conditions Générales d'utilisation de fiamane",
-          "TermsAndConditionsLink": "Conditions Générales d'utilisation",
-          "DontHaveAccount": "Vous n'avez pas de compte ? Inscrivez-vous",
+          "TermsAndConditions": "En continuant, vous acceptez les de fiamane",
+          "TermsAndConditionsLink": "Termes & Conditions",
+          "DontHaveAccount": "Vous n'avez pas de compte ?",
           "DontHaveAccountLink": "Inscrivez-vous"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "Mes départs",
     "MyQuotations": "Mes devis",
     "MyProfile": "Mon profil",
-    "MyBookmars": "Mes agences",
+    "MyBookmars": "Mes favoris",
     "Settings": "Parametres"
   }
 }

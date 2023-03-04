@@ -67,7 +67,7 @@
     },
     "LoginAvatar": {
       "LoginText": "Login",
-      "NewAccountText": "Nuovo cliente ? Iscrizione",
+      "NewAccountText": "Nuovo cliente ?",
       "MarkedText": "Iscrizione"
     }
   },
@@ -132,9 +132,9 @@
           "InputEmailPlaceholder": "Il tuo indirizzo email",
           "InputPassPlaceholder": "Password",
           "InputConfirmPassPlaceholder": "Conferma la tua password",
-          "TermsAndConditions": "Continuando, accetti i Termini & Condizioni di fiamane",
+          "TermsAndConditions": "Continuando, accetti i di fiamane",
           "TermsAndConditionsLink": "Termini & Condizioni",
-          "AlreadyHaveAccount": "Sei già registrato? Accedi",
+          "AlreadyHaveAccount": "Sei già registrato?",
           "AlreadyHaveAccountLink": "Accedi"
         }
       },
@@ -155,9 +155,9 @@
           "InputPassPlaceholder": "Password",
           "ForgotPassword": "Hai dimenticato la password?",
           "ForgotPasswordLink": "Reset",
-          "TermsAndConditions": "Continuando, accetti i Termini & Condizioni di fiamane",
+          "TermsAndConditions": "Continuando, accetti i di fiamane",
           "TermsAndConditionsLink": "Termini & Condizioni",
-          "DontHaveAccount": "Non hai un account? Registrati",
+          "DontHaveAccount": "Non hai un account?",
           "DontHaveAccountLink": "Registrati"
         }
       },
@@ -357,7 +357,7 @@
     "MyDeparatures": "Le mie partenze",
     "MyQuotations": "Le mie quotazioni",
     "MyProfile": "Il mio profilo",
-    "MyBookmars": "I miei agenti",
+    "MyBookmars": "I miei preferiti",
     "Settings": "Impostazioni"
   }
 }
