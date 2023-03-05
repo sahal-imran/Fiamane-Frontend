@@ -127,9 +127,6 @@ function StopoverDuringTrip() {
                   onChange={(newValue) => {
                     setDate(newValue);
                   }}
-                  renderInput={(params: any) => (
-                    <TextField name="date" {...params} />
-                  )}
                 />
               </LocalizationProvider>
             </div>

@@ -86,7 +86,6 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                       onChange={(newValue) => {
                         setValue(newValue);
                       }}
-                      renderInput={(params: any) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
                 </div>
@@ -137,7 +136,6 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                         onChange={(newValue) => {
                           setValue(newValue);
                         }}
-                        renderInput={(params: any) => <TextField {...params} />}
                       />
                     </LocalizationProvider>
                   </div>

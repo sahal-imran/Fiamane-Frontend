@@ -4,7 +4,7 @@ import ContainedCircle from "components/shared/Buttons/ContainedCircle";
 import InputFieldWithIcon from "components/shared/Buttons/InputFieldWithIcon";
 import { BiSearch } from "react-icons/bi";
 import { Dayjs } from "dayjs";
-import TextField from "@mui/material/TextField";
+import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -30,6 +30,8 @@ const OffersInformation: React.FC<Props> = ({
 
   // state to show address input
   const [showAddress, setShowAddress] = useState<boolean>(false);
+
+  const [Agency, setAgency] = useState<boolean>(false);
 
   // state to keep data  of all inputs
   const [Inputs, setInputs] = React.useState({
@@ -137,14 +139,16 @@ const OffersInformation: React.FC<Props> = ({
                       onChange={(newValue) => {
                         setDate(newValue);
                       }}
-                      renderInput={(params: any) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
                 </div>
               </div>
             </div>
             <div className="w-full flex flex-col p-[20px] gap-2">
-              <ToggleSwitch label="Dépôt en agence" />
+              <ToggleSwitch label="Dépôt en agence"
+                state={Agency}
+                Set_State={setAgency}
+              />
 
               <ToggleSwitch
                 label="Ramassage à domicile"

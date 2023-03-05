@@ -8,7 +8,7 @@ import SectionHeader from "components/shared/SectionHeader/SectionHeader";
 import TableRow from "components/shared/TableRow/TableRow";
 import OffersInformation from "components/app/Offers/OffersInformation";
 
-function Index() {
+function Offer() {
     // function convertStringToFile(stringData: any, fileName: any, fileType: any) {
     //   const blob = new Blob([stringData], { type: fileType });
     //   const file = new File([blob], fileName, { type: fileType });
@@ -169,4 +169,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Offer;

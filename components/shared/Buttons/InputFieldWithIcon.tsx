@@ -26,7 +26,6 @@ const InputFieldWithIcon: React.FC<Props> = ({
   Set_State,
   isLeft = true,
 }: Props) => {
-  console.log(state);
   return (
     <div className="w-full flex gap-1 flex-col">
       <label
