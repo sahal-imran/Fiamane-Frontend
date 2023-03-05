@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import MoreButton from "components/shared/Buttons/moreButton";
 import { AiOutlinePlus } from "react-icons/ai";
 import DialogueWrapper from "components/shared/Dialogue/DialogueWrapper";
@@ -17,72 +17,44 @@ const MarchandiseSnippet = () => {
   // ======> Add a commodity states
   const companyInputRef: any = useRef(null);
 
-  const [natureOfCommodity, setNatureOfCommodity] = React.useState("Neuve");
-  const [bodyWeight, setBodyWeight] = useState({
-    weight: "",
-    unit: "",
-  });
-
   //   =====> radio conditionally rendering
   const [dimensionRadio, setDimensionRadio] = useState("Je conais les dimensions de l’objet");
   const [bodyWeightRadio, setBodyWeightRadio] = useState("");
-
+  const [showCommodity, setShowCommodity] = React.useState(false);
   const [companyImages, Set_Company_Images] = useState<File[]>([]);
   const [addImage, Set_Add_Image] = useState<string>("/Assets/addGallery.png");
-  const [choseContent, setChoseContent] = React.useState<string[]>([]);
-  const [commodityBillOfMaterials, setCommodityBillOfMaterials] = useState("");
-  const [valueOfGood, setValueOfGood] = useState({ value: "", unit: "" });
-  const [dimension, setDimension] = useState({
+  const [CustomDimension, setCustomDimension] = useState({
     length: "",
     width: "",
     height: "",
     unit: "",
   });
 
-  const [showCommodity, setShowCommodity] = React.useState(false);
+  const [Inputs, setInputs] = React.useState({
+    commodityBillOfMaterials: "",
+    Content: [],
+    ValueOfGoods: "",
+    ValueOfGoodsUnit: "",
+    NatureOfCommodity: "Neuve",
+    Dimensions: "",
+    Weight: "",
+    WeightUnit: "",
+    AdditionalInfo: "",
+    CustomDimensions: {},
+  });
 
-  // ====> functions for updating bodyweight
-  const setWeight = (e: any) => {
-    setBodyWeight({ ...bodyWeight, weight: e.target.value });
-  };
-  const setWeightUnit = (e: any) => {
-    setBodyWeight({ ...bodyWeight, unit: e.target.value });
-  };
-  // ========> functions for updating dimension
-  const setLength = (e: any) => {
-    setDimension({ ...dimension, length: e.target.value });
-  };
-  const setWidth = (e: any) => {
-    setDimension({ ...dimension, width: e.target.value });
-  };
-  const setHeight = (e: any) => {
-    setDimension({ ...dimension, height: e.target.value });
-  };
-  const setUnit = (e: any) => {
-    setDimension({ ...dimension, unit: e.target.value });
-  };
-  // =========> functions for updating value of goods state object
-  const handleGodvalue = (e: any) => {
-    setValueOfGood({ ...valueOfGood, value: e.target.value });
-  };
-  const handleGodunit = (e: any) => {
-    setValueOfGood({ ...valueOfGood, unit: e.target.value });
-  };
-
-  const handleChoseContent = (event: any) => {
-    const {
-      target: { value },
-    } = event;
-    setChoseContent(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
+  useEffect(() => {
+    setInputs({
+      ...Inputs,
+      CustomDimensions: CustomDimension,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [CustomDimension])
+console.log(Inputs)
 
   const handleCompanyImage = (event: any) => {
     companyInputRef.current.click();
   };
-
   const handleCompanyFileChange = (event: any) => {
     const files = event.target.files;
     if (files) {
@@ -153,10 +125,13 @@ const MarchandiseSnippet = () => {
               <CustomSelect
                 label="Nomenclature de la marchandise"
                 inptLabel="Selectionnez une catègorie"
-                state={commodityBillOfMaterials}
-                setState={(e: any) =>
-                  setCommodityBillOfMaterials(e.target.value)
-                }
+                state={Inputs.commodityBillOfMaterials}
+                setState={(e: any) => {
+                  setInputs({
+                    ...Inputs,
+                    commodityBillOfMaterials: e.target.value,
+                  });
+                }}
                 selectData={selectACategoryData}
               />
             </div>
@@ -164,18 +139,36 @@ const MarchandiseSnippet = () => {
             <div className="w-full md:w-[50%]">
               <MultipleSelect
                 selectData={valueOfGoods}
-                state={choseContent}
-                setState={handleChoseContent}
+                state={Inputs.Content}
+                setState={(event: any) => {
+                  const {
+                    target: { value },
+                  } = event;
+                  setInputs({
+                    ...Inputs,
+                    Content: value,
+                  });
+                }}
               />
             </div>
           </div>
           {/* =======> value of goods */}
           <div className="w-[50%] pr-2 selectWithInput">
             <SelectWithInput
-              priceState={valueOfGood.value}
-              setPriceState={handleGodvalue}
-              unitState={valueOfGood.unit}
-              setUnitState={handleGodunit}
+              priceState={Inputs.ValueOfGoods}
+              setPriceState={(e: any) => {
+                setInputs({
+                  ...Inputs,
+                  ValueOfGoods: e.target.value
+                });
+              }}
+              unitState={Inputs.ValueOfGoodsUnit}
+              setUnitState={(e: any) => {
+                setInputs({
+                  ...Inputs,
+                  ValueOfGoodsUnit: e.target.value
+                });
+              }}
               selectData={valueOfGoodSelectData}
               label="Valeur de la marchandise"
             />
@@ -188,14 +181,24 @@ const MarchandiseSnippet = () => {
 
             <div className="w-full flex flex-col md:flex-row gap-3 md:justify-between items-start md:items-center">
               <CustomRadio
-                state={natureOfCommodity}
-                setState={(e: any) => setNatureOfCommodity(e.target.value)}
+                state={Inputs.NatureOfCommodity}
+                setState={(e: any) => {
+                  setInputs({
+                    ...Inputs,
+                    NatureOfCommodity: e.target.value
+                  });
+                }}
                 value="Neuve"
                 label="Neuve"
               />
               <CustomRadio
-                state={natureOfCommodity}
-                setState={(e: any) => setNatureOfCommodity(e.target.value)}
+                state={Inputs.NatureOfCommodity}
+                setState={(e: any) => {
+                  setInputs({
+                    ...Inputs,
+                    NatureOfCommodity: e.target.value
+                  });
+                }}
                 value="Occasion"
                 label="Occasion"
               />
@@ -226,26 +229,34 @@ const MarchandiseSnippet = () => {
             <div className="w-full grid grid-cols-[1fr,1fr,1fr,0.5fr] dimension justify-center items-center">
               {/* =====> length */}
               <InputFieldWithIcon
-                state={dimension.length}
-                Set_State={setLength}
+                state={CustomDimension.length}
+                Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setCustomDimension({ ...CustomDimension, length: e.target.value });
+                }}
                 placeholder="Longueur"
               />
               {/* =====> width */}
               <InputFieldWithIcon
-                state={dimension.width}
-                Set_State={setWidth}
+                state={CustomDimension.width}
+                Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setCustomDimension({ ...CustomDimension, width: e.target.value });
+                }}
                 placeholder="Largeur"
               />
               {/* ======> height */}
               <InputFieldWithIcon
-                state={dimension.height}
-                Set_State={setHeight}
+                state={CustomDimension.height}
+                Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setCustomDimension({ ...CustomDimension, height: e.target.value });
+                }}
                 placeholder="Hauteur"
               />
               {/* =======> select unit */}
               <CustomSelect
-                state={dimension.unit}
-                setState={setUnit}
+                state={CustomDimension.unit}
+                setState={(e: any) => {
+                  setCustomDimension({ ...CustomDimension, unit: e.target.value });
+                }}
                 selectData={units}
               />
             </div>
@@ -337,13 +348,23 @@ const MarchandiseSnippet = () => {
           </div>
 
           {/* ======>  */}
-          {bodyWeightRadio === "Je conais le poids " ? (
+          {bodyWeightRadio === "Je conais le poids" ? (
             <div className="w-[50%] pr-2 selectWithInput">
               <SelectWithInput
-                priceState={bodyWeight.weight}
-                setPriceState={setWeight}
-                unitState={bodyWeight.unit}
-                setUnitState={setWeightUnit}
+                priceState={Inputs.Weight}
+                setPriceState={(e: any) => {
+                  setInputs({
+                    ...Inputs,
+                    Weight: e.target.value
+                  });
+                }}
+                unitState={Inputs.WeightUnit}
+                setUnitState={(e: any) => {
+                  setInputs({
+                    ...Inputs,
+                    WeightUnit: e.target.value
+                  });
+                }}
                 selectData={weightUnits}
                 label="Valeur de la marchandise"
               />
@@ -377,12 +398,19 @@ const MarchandiseSnippet = () => {
                       <Radio
                         label={
                           <p className="flex justify-center items-center text-16 font-normal font-sans text-black-main">
-                            {item.label}
+                            {item.label + "kg"}
                           </p>
                         }
                         overlay
                         disableIcon
                         value={item.label}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          setInputs({
+                            ...Inputs,
+                            Weight: e.target.value,
+                            WeightUnit: "kg"
+                          });
+                        }}
                         slotProps={{
                           action: ({ checked }: any) => ({
                             sx: (theme: any) => ({
@@ -452,7 +480,7 @@ const MarchandiseSnippet = () => {
                     height={40}
                     className="cover"
                     alt="seo-text-here"
-                  ></Image>
+                  />
                 </div>
               </button>
             </div>
@@ -464,6 +492,13 @@ const MarchandiseSnippet = () => {
               Information complèmentaire sur votre offre
             </p>
             <textarea
+              value={Inputs.AdditionalInfo}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+                setInputs({
+                  ...Inputs,
+                  AdditionalInfo: e.target.value
+                });
+              }}
               className="w-full h-[150px] border-[1px] border-solid border-white-cool rounded-[8px] p-2 resize-none focus:outline-none profilePlaceholder"
               name="additionalInformationAboutYourOffer"
               id="additionalInformationAboutYourOffer"
@@ -574,19 +609,19 @@ const dimensionsData = [
 
 const weightData = [
   {
-    label: "-5kg",
+    label: "-5",
   },
   {
-    label: "5-10kg",
+    label: "5-10",
   },
   {
-    label: "10-50kg",
+    label: "10-50",
   },
   {
-    label: "50-100kg",
+    label: "50-100",
   },
   {
-    label: "+100kg",
+    label: "+100",
   },
 ];
 const valueOfGoodSelectData = [

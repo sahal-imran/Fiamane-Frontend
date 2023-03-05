@@ -57,7 +57,7 @@ const SelectWithInput = ({
           setState={setUnitState}
           inptLabel="Euro"
           selectData={selectData}
-        ></CustomSelect>
+        />
       </div>
     </div>
   );

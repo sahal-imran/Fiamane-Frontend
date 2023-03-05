@@ -66,7 +66,6 @@ const ToggleSwitch: React.FC<Props> = ({ label, state, Set_State }: Props) => {
       }),
     },
   }));
-
   return (
     <div>
       <FormControlLabel

@@ -57,12 +57,14 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
       ...Inputs,
       DepartureDate: PlaceOfDepartureDate?.format("YYYY-MM-DD"),
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [PlaceOfDepartureDate]);
   useEffect(() => {
     setInputs({
       ...Inputs,
       ArrivalDate: ArrivalDate?.format("YYYY-MM-DD"),
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ArrivalDate]);
 
   //====> Room array
