@@ -6,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Image from "next/image";
-import SelectWithInput from "../SelectWithInput/SelectWithInput";
 
 interface Props {
   selectData: any;
@@ -81,7 +80,7 @@ const MultipleSelect = ({ selectData, state, setState }: Props) => {
                   alt={name.label}
                   width={25}
                   height={25}
-                ></Image>
+                />
                 <span>{name.label}</span>
               </div>
             </MenuItem>

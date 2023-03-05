@@ -55,6 +55,7 @@ const OffersInformation: React.FC<Props> = ({
       ...Inputs,
       SendingDate: date?.format("YYYY-MM-DD"),
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formateDate]);
 
   // console.log(Inputs);
