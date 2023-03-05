@@ -239,8 +239,6 @@ const Index: React.FC = () => {
                 </div>
             </div>
 
-
-
             {/* email  dialgue boxe */}
             <DialogueWrapper
                 State={EditEmail}

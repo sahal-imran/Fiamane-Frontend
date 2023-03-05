@@ -27,18 +27,18 @@ const MarchandiseSnippet = () => {
     length: "",
     width: "",
     height: "",
-    unit: "",
+    unit: "cm",
   });
 
   const [Inputs, setInputs] = React.useState({
     commodityBillOfMaterials: "",
     Content: [],
     ValueOfGoods: "",
-    ValueOfGoodsUnit: "",
+    ValueOfGoodsUnit: "euro",
     NatureOfCommodity: "Neuve",
     Dimensions: "",
     Weight: "",
-    WeightUnit: "",
+    WeightUnit: "kg",
     AdditionalInfo: "",
     CustomDimensions: {},
   });
@@ -48,9 +48,9 @@ const MarchandiseSnippet = () => {
       ...Inputs,
       CustomDimensions: CustomDimension,
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [CustomDimension])
-console.log(Inputs)
+  // console.log(Inputs)
 
   const handleCompanyImage = (event: any) => {
     companyInputRef.current.click();

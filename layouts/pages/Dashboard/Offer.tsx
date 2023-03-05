@@ -9,12 +9,6 @@ import TableRow from "components/shared/TableRow/TableRow";
 import OffersInformation from "components/app/Offers/OffersInformation";
 
 function Offer() {
-    // function convertStringToFile(stringData: any, fileName: any, fileType: any) {
-    //   const blob = new Blob([stringData], { type: fileType });
-    //   const file = new File([blob], fileName, { type: fileType });
-    //   return file;
-    // }
-
     //   array containing the Offers data if there is some data
     const [Offers, setOffers] = useState<Array<object>>([
         {
@@ -30,19 +24,17 @@ function Offer() {
         },
     ]);
     //  State to display the offers information section
-
-    const [isOffers, setIsOffers] = useState<boolean>(false);
+    const [PublishDepart, setPublishDepart] = useState<boolean>(false);
 
     return (
         <div className="w-full h-full  bg-white-off md:p-8 p-4 ">
-            {!isOffers && (
+            {!PublishDepart && (
                 <React.Fragment>
-                    {/* Header here  */}
                     <SectionHeader
                         Title="Mes offres"
                         ButtonText="Publier une offre"
                         ButtonFunction={() => {
-                            setIsOffers(true);
+                            setPublishDepart(true);
                         }}
                         Icon={<AiOutlinePlus size={20} />}
                     />
@@ -160,9 +152,9 @@ function Offer() {
                 </React.Fragment>
             )}
 
-            {isOffers && (
+            {PublishDepart && (
                 <>
-                    <OffersInformation NavigateBack={() => setIsOffers(false)} />
+                    <OffersInformation NavigateBack={() => setPublishDepart(false)} />
                 </>
             )}
         </div>

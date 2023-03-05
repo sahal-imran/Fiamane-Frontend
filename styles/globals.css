@@ -156,10 +156,7 @@
 
 /* styling the calendar selected date color */
 
-.MuiDayPicker-weekContainer .Mui-selected,
-.MuiDayPicker-weekContainer .Mui-selected:hover,
-.PrivatePickersYear-root .Mui-selected,
-.PrivatePickersYear-root .Mui-selected:hover {
+.MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
 }
 /* @media screen and (max-width:768px) {

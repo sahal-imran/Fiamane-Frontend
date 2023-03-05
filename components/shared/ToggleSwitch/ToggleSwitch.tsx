@@ -5,8 +5,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 
 interface Props {
   label: string;
-  state: any;
-  Set_State: any;
+  state: boolean;
+  Set_State: (e: boolean) => void;
 }
 const ToggleSwitch: React.FC<Props> = ({ label, state, Set_State }: Props) => {
   // ======> ios material ui switch style

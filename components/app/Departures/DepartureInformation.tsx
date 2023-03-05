@@ -22,16 +22,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
   const [PlaceOfDepartureDate, setPlaceOfDepartureDate] = React.useState<any>();
   const [ArrivalDate, setArrivalDate] = React.useState<any>();
 
-  // ======> states for toggles witch
-  const [DepositeInAgencySwitch, SetDepositeAgencySwitch] =
-    useState<boolean>(false);
+  // ======> states for toggles switch
   const [HomePickUpPossibleSwitch, SetHomePickUpPossibleSwitch] =
     useState<boolean>(false);
-  const [WithdrawalInAgencySwitch, SetWithdrawalInAgencySwitch] =
-    useState<boolean>(false);
   const [HomeDeliveryAvailable, SetHomeDeliveryAvailable] =
-    useState<boolean>(false);
-  const [AcceptNegotiationSwitch, SetAcceptNegotiationSwitch] =
     useState<boolean>(false);
 
   const [Inputs, setInputs] = React.useState({
@@ -42,7 +36,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
     DispatchAddress: "",
     DestinationAddress: "",
     PricePerKg: "",
-    PricePerKgUnit: "",
+    PricePerKgUnit: "kg",
+    AcceptNegotiation: false,
+    WithdrawalInAgencySwitch: false,
+    DepositInBranch: false
   });
   const InputChange = (evt: any) => {
     const value = evt.target.value;
@@ -51,7 +48,6 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
       [evt.target.name]: value,
     });
   };
-  console.log(Inputs)
   useEffect(() => {
     setInputs({
       ...Inputs,
@@ -67,17 +63,9 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ArrivalDate]);
 
-  //====> Room array
+  //====> Room array to add dynamic inputs
   const [RoomNumber, SetRoomNumber] = useState<number[]>([]);
-  const AddNewRoom = (event: any) => {
-    let roomNu = RoomNumber.length + 1;
-    SetRoomNumber([...RoomNumber, roomNu]);
-  };
-  const RemoveNum = (event: any) => {
-    const rooms = [...RoomNumber];
-    rooms.pop();
-    SetRoomNumber(rooms);
-  };
+
 
   return (
     <div className="w-full flex flex-col justify-start items-center">
@@ -146,8 +134,13 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
               {/* ======> Deposit in agency switch */}
               <ToggleSwitch
                 label="Dépôt en agence"
-                state={DepositeInAgencySwitch}
-                Set_State={SetDepositeAgencySwitch}
+                state={Inputs.DepositInBranch}
+                Set_State={(Checked: boolean) => {
+                  setInputs({
+                    ...Inputs,
+                    DepositInBranch: Checked,
+                  });
+                }}
               />
 
               {/* Home pick-up possible switch */}
@@ -190,6 +183,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                     </label>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <DatePicker
+                        className="DatePicker"
                         value={ArrivalDate}
                         onChange={(newValue) => {
                           setArrivalDate(newValue);
@@ -203,8 +197,13 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
               {/*  Withdrawal in agency switch */}
               <ToggleSwitch
                 label="Retrait en agence"
-                state={WithdrawalInAgencySwitch}
-                Set_State={SetWithdrawalInAgencySwitch}
+                state={Inputs.WithdrawalInAgencySwitch}
+                Set_State={(Checked: boolean) => {
+                  setInputs({
+                    ...Inputs,
+                    WithdrawalInAgencySwitch: Checked,
+                  });
+                }}
               />
               {/* =========> Home delivery available switch */}
               <ToggleSwitch
@@ -249,6 +248,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                   <select
                     className="px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-r-[8px] border-solid border-white-cool h-[50px]"
                     name="PricePerKgUnit"
+                    value={Inputs.PricePerKgUnit}
                     onChange={InputChange}
                   >
                     {PricePerKgData.map((opt, index) => {
@@ -265,27 +265,31 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
               <div className="flex">
                 <ToggleSwitch
                   label="Accepter négociation"
-                  state={AcceptNegotiationSwitch}
-                  Set_State={SetAcceptNegotiationSwitch}
+                  state={Inputs.AcceptNegotiation}
+                  Set_State={(Checked: boolean) => {
+                    setInputs({
+                      ...Inputs,
+                      AcceptNegotiation: Checked,
+                    });
+                  }}
                 />
               </div>
-              {AcceptNegotiationSwitch && (
-                <div className="flex flex-col gap-3">
-                  <p className="w-full flex justify-start items-center text-[16px] text-brand-secondary font-semibold font-NunitoSans leading-[32px]">
-                    Prix par pièce
-                  </p>
-                  {RoomNumber.length === 0 && (
-                    <ContainedCircle
-                      Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
-                      Text="Ajouter une pièce"
-                      onClick={() => AddNewRoom(RoomNumber)}
-                      styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
-                    />
-                  )}
-                </div>
-              )}
+              <div className="flex flex-col gap-3">
+                <p className="w-full flex justify-start items-center text-[16px] text-brand-secondary font-semibold font-NunitoSans leading-[32px]">
+                  Prix par pièce
+                </p>
+                <ContainedCircle
+                  Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
+                  Text="Ajouter une pièce"
+                  onClick={() => {
+                    let roomNu = RoomNumber.length + 1;
+                    SetRoomNumber([...RoomNumber, roomNu]);
+                  }}
+                  styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
+                />
+              </div>
             </div>
-            {(RoomNumber.length > 0 && AcceptNegotiationSwitch) && (
+            {RoomNumber.length > 0 && (
               <div className="w-full flex flex-col justify-center items-start">
                 {/* Price + Piece input  */}
                 <div className="w-full flex flex-col justify-center items-start gap-4 py-4 px-4 ">
@@ -347,7 +351,11 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                         <div className="absolute md:relative right-0 -top-4 md:top-0">
                           <AiOutlineDelete
                             className="text-[30px] text-brand-main cursor-pointer"
-                            onClick={RemoveNum}
+                            onClick={(index) => {
+                              const rooms = [...RoomNumber];
+                              rooms.pop();
+                              SetRoomNumber(rooms);
+                            }}
                           />
                         </div>
                       </div>
@@ -357,7 +365,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                     <ContainedCircle
                       Text="Ajouter une autre pièce"
                       styles="bg-none text-brand-main px-4"
-                      onClick={AddNewRoom}
+                      onClick={() => {
+                        let roomNu = RoomNumber.length + 1;
+                        SetRoomNumber([...RoomNumber, roomNu]);
+                      }}
                       Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
                     />
                   )}
