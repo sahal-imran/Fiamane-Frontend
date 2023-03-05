@@ -110,6 +110,7 @@ const OffersInformation: React.FC<Props> = ({
                     placeholder="Selectionnez lieu"
                     isLeft={false}
                     name="PlaceOfDeparture"
+                    state={Inputs.PlaceOfDeparture}
                     Set_State={InputChange}
                     icon={<BiSearch className="text-black-cool text-[26px]" />}
                   />
@@ -118,7 +119,8 @@ const OffersInformation: React.FC<Props> = ({
                   <InputFieldWithIcon
                     label="Lieu d’arrivée"
                     placeholder="Selectionnez lieu"
-                    name=" ArrivalPoint"
+                    name="ArrivalPoint"
+                    state={Inputs.ArrivalPoint}
                     Set_State={InputChange}
                     isLeft={false}
                     icon={<BiSearch className="text-black-cool text-[26px]" />}
@@ -207,6 +209,7 @@ const OffersInformation: React.FC<Props> = ({
                   placeholder="Nom et pénom de destinataire"
                   name="RecieverName"
                   Set_State={InputChange}
+                  state={Inputs.RecieverName}
                   required={true}
                 />
                 <InputFieldWithIcon
@@ -216,6 +219,7 @@ const OffersInformation: React.FC<Props> = ({
                   name="RecieverEmail"
                   icon={<HiOutlineMail size={25} />}
                   Set_State={InputChange}
+                  state={Inputs.RecieverEmail}
                   required={true}
                 />
                 {Phone.map((item: any, index: number) => {

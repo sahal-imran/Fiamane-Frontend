@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import * as Icons from "SVG/Icons";
 import ContainedCircle from "components/shared/Buttons/ContainedCircle";
 import InputFieldWithIcon from "components/shared/Buttons/InputFieldWithIcon";
@@ -9,7 +9,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import ToggleSwitch from "components/shared/ToggleSwitch/ToggleSwitch";
-import Prix from "./Prix";
+import { AiOutlineDelete } from "react-icons/ai";
+import { HiOutlinePlus } from "react-icons/hi";
 import StopoverDuringTrip from "./StopoverDuringTrip";
 
 interface Props {
@@ -17,9 +18,11 @@ interface Props {
 }
 
 const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
-  // ========> state for date picker
-  const [value, setValue] = React.useState<Dayjs | null>(null);
-  // ======> states for toogleswitch
+  // ========> state for departure date picker
+  const [PlaceOfDepartureDate, setPlaceOfDepartureDate] = React.useState<any>();
+  const [ArrivalDate, setArrivalDate] = React.useState<any>();
+
+  // ======> states for toggles witch
   const [DepositeInAgencySwitch, SetDepositeAgencySwitch] =
     useState<boolean>(false);
   const [HomePickUpPossibleSwitch, SetHomePickUpPossibleSwitch] =
@@ -28,6 +31,51 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
     useState<boolean>(false);
   const [HomeDeliveryAvailable, SetHomeDeliveryAvailable] =
     useState<boolean>(false);
+  const [AcceptNegotiationSwitch, SetAcceptNegotiationSwitch] =
+    useState<boolean>(false);
+
+  const [Inputs, setInputs] = React.useState({
+    Departure: "",
+    DepartureDate: "",
+    Arrival: "",
+    ArrivalDate: "",
+    DispatchAddress: "",
+    DestinationAddress: "",
+    PricePerKg: "",
+    PricePerKgUnit: "",
+  });
+  const InputChange = (evt: any) => {
+    const value = evt.target.value;
+    setInputs({
+      ...Inputs,
+      [evt.target.name]: value,
+    });
+  };
+  console.log(Inputs)
+  useEffect(() => {
+    setInputs({
+      ...Inputs,
+      DepartureDate: PlaceOfDepartureDate?.format("YYYY-MM-DD"),
+    });
+  }, [PlaceOfDepartureDate]);
+  useEffect(() => {
+    setInputs({
+      ...Inputs,
+      ArrivalDate: ArrivalDate?.format("YYYY-MM-DD"),
+    });
+  }, [ArrivalDate]);
+
+  //====> Room array
+  const [RoomNumber, SetRoomNumber] = useState<number[]>([]);
+  const AddNewRoom = (event: any) => {
+    let roomNu = RoomNumber.length + 1;
+    SetRoomNumber([...RoomNumber, roomNu]);
+  };
+  const RemoveNum = (event: any) => {
+    const rooms = [...RoomNumber];
+    rooms.pop();
+    SetRoomNumber(rooms);
+  };
 
   return (
     <div className="w-full flex flex-col justify-start items-center">
@@ -69,7 +117,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                     label="Lieu de départ"
                     placeholder="Selectionnez lieu"
                     isLeft={false}
-                    icon=<BiSearch className="text-black-cool text-[26px]" />
+                    icon={<BiSearch className="text-black-cool text-[26px]" />}
+                    name="Departure"
+                    state={Inputs.Departure}
+                    Set_State={InputChange}
                   />
                 </div>
                 {/* sending date */}
@@ -82,9 +133,9 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                   </label>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
-                      value={value}
+                      value={PlaceOfDepartureDate}
                       onChange={(newValue) => {
-                        setValue(newValue);
+                        setPlaceOfDepartureDate(newValue);
                       }}
                     />
                   </LocalizationProvider>
@@ -106,7 +157,9 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
               {/* ====> show pick up address input when homePickSwitch is checked */}
               {HomePickUpPossibleSwitch && (
                 <div className="w-full">
-                  <InputFieldWithIcon label="Adresse de ramassage" />
+                  <InputFieldWithIcon label="Adresse de ramassage" name="DispatchAddress"
+                    state={Inputs.DispatchAddress}
+                    Set_State={InputChange} />
                 </div>
               )}
 
@@ -120,7 +173,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                       label="Lieu de départ"
                       placeholder="Selectionnez lieu"
                       isLeft={false}
-                      icon=<BiSearch className="text-black-cool text-[26px]" />
+                      icon={<BiSearch className="text-black-cool text-[26px]" />}
+                      name="Arrival"
+                      state={Inputs.Arrival}
+                      Set_State={InputChange}
                     />
                   </div>
                   <div className="w-full md:w-[50%] flex flex-col gap-1">
@@ -132,9 +188,9 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                     </label>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <DatePicker
-                        value={value}
+                        value={ArrivalDate}
                         onChange={(newValue) => {
-                          setValue(newValue);
+                          setArrivalDate(newValue);
                         }}
                       />
                     </LocalizationProvider>
@@ -157,13 +213,156 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
               {/* =====> dispatch address input show when Home delivery available is checked */}
               {HomeDeliveryAvailable && (
                 <div className="w-full">
-                  <InputFieldWithIcon label="Adresse de dispatch" />
+                  <InputFieldWithIcon label="Adresse de dispatch" name="DestinationAddress"
+                    state={Inputs.DestinationAddress}
+                    Set_State={InputChange} />
                 </div>
               )}
             </div>
           </div>
           {/* ===========> Prix Portion */}
-          <Prix />
+          <div className="w-full flex flex-col justify-center items-start bg-white-main shadow-md rounded-md pb-4">
+            <p className="w-full h-[60px] flex justify-start items-center text-[20px] text-brand-secondary font-semibold font-NunitoSans leading-[32px] border-b-[2px] border-solid border-white-cool px-4">
+              Prix
+            </p>
+            <div className="w-full flex flex-col justify-center items-start gap-4 px-4 mt-4">
+              {/* ========> Price per Kg */}
+              <div className="w-full md:w-[50%] flex flex-col justify-center items-start gap-2">
+                <label
+                  htmlFor=""
+                  className="text-[16px] font-sans text-black-cool font-normal leading-[24px]"
+                >
+                  Prix au Kg
+                </label>
+                <div className="w-full grid grid-cols-[3fr,1fr]">
+                  {/* ======> input */}
+                  <input
+                    className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
+                    type="text"
+                    name="PricePerKg"
+                    value={Inputs.PricePerKg}
+                    onChange={InputChange}
+                  />
+                  {/* ========> select box */}
+                  <select
+                    className="px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-r-[8px] border-solid border-white-cool h-[50px]"
+                    name="PricePerKgUnit"
+                    onChange={InputChange}
+                  >
+                    {PricePerKgData.map((opt, index) => {
+                      return (
+                        <option key={index} value={opt.value}>
+                          {opt.name}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              {/* Accept negotiation switch */}
+              <div className="flex">
+                <ToggleSwitch
+                  label="Accepter négociation"
+                  state={AcceptNegotiationSwitch}
+                  Set_State={SetAcceptNegotiationSwitch}
+                />
+              </div>
+              {AcceptNegotiationSwitch && (
+                <div className="flex flex-col gap-3">
+                  <p className="w-full flex justify-start items-center text-[16px] text-brand-secondary font-semibold font-NunitoSans leading-[32px]">
+                    Prix par pièce
+                  </p>
+                  {RoomNumber.length === 0 && (
+                    <ContainedCircle
+                      Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
+                      Text="Ajouter une pièce"
+                      onClick={() => AddNewRoom(RoomNumber)}
+                      styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
+                    />
+                  )}
+                </div>
+              )}
+            </div>
+            {(RoomNumber.length > 0 && AcceptNegotiationSwitch) && (
+              <div className="w-full flex flex-col justify-center items-start">
+                {/* Price + Piece input  */}
+                <div className="w-full flex flex-col justify-center items-start gap-4 py-4 px-4 ">
+                  {RoomNumber.map((room: number, index: number) => {
+                    return (
+                      <div key={index} className="w-full grid grid-cols-1 md:grid-cols-[3fr,3fr,0.3fr] gap-4 relative">
+                        {/* ======> piece selection */}
+                        <div className="flex flex-col gap-2">
+                          <label
+                            htmlFor=""
+                            className="text-[16px] font-sans text-black-cool font-normal leading-[24px]"
+                          >
+                            Pièce
+                          </label>
+                          <select
+                            className="w-full px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-[8px] border-solid border-white-cool h-[50px]"
+                            name=""
+                            placeholder="Séléctionner une pièce"
+                          >
+                            {PricePerKgData.map((opt, index) => {
+                              return (
+                                <option key={index} value={opt.value}>
+                                  {opt.name}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        </div>
+                        {/* ======> price selection */}
+                        <div className="flex flex-col justify-center items-start gap-2">
+                          <label
+                            htmlFor=""
+                            className="text-[16px] font-sans text-black-cool font-normal leading-[24px]"
+                          >
+                            Prix
+                          </label>
+                          <div className="w-full grid grid-cols-[3fr,1fr]">
+                            {/* ======> input */}
+                            <input
+                              className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
+                              type="text"
+                              id=""
+                              name=""
+                            />
+                            {/* ========> select box */}
+                            <select
+                              className="px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-r-[8px] border-solid border-white-cool h-[50px]"
+                              name=""
+                              id=""
+                            >
+                              <option value="volvo">Euro</option>
+                              <option value="saab">gram</option>
+                              <option value="mercedes">kg</option>
+                              <option value="audi">Audi</option>
+                            </select>
+                          </div>
+                        </div>
+                        {/* ======> delete icon */}
+                        <div className="absolute md:relative right-0 -top-4 md:top-0">
+                          <AiOutlineDelete
+                            className="text-[30px] text-brand-main cursor-pointer"
+                            onClick={RemoveNum}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {RoomNumber.length > 0 && (
+                    <ContainedCircle
+                      Text="Ajouter une autre pièce"
+                      styles="bg-none text-brand-main px-4"
+                      onClick={AddNewRoom}
+                      Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         {/* ========> right protion */}
         <div className="w-full lg:w-[35%] flex flex-col bg-white-main shadow-md rounded-md">
@@ -175,3 +374,22 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
 };
 
 export default DepartureInformation;
+
+const PricePerKgData = [
+  {
+    name: "Euro",
+    value: "euro",
+  },
+  {
+    name: "Gram",
+    value: "gram",
+  },
+  {
+    name: "Kg",
+    value: "kg",
+  },
+  {
+    name: "Dollar",
+    value: "dollar",
+  },
+];
