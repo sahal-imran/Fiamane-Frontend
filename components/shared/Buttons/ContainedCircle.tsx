@@ -4,9 +4,8 @@ interface Props {
   Icon?: any;
   Text: string;
   styles?: string;
-  icon?: any;
   rounded?: string;
-  onClick?: any;
+  onClick?: () => void;
   type?: any;
 }
 

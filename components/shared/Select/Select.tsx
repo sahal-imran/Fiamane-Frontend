@@ -40,6 +40,7 @@ const CustomSelect = ({
           onChange={setState}
           displayEmpty
           className="mySelect"
+          required
         >
           {inptLabel && (
             <>

@@ -55,16 +55,13 @@ function StopoverDuringTrip() {
         <p className="text-[16px] font-normal font-sans leading-[28px] text-black-main">
           Ajouter autant d’escale que vous voulez
         </p>
-        {StopOverData.length === 0 ? (
+        {StopOverData.length === 0 && (
           <ContainedCircle
             Text="Ajouter une nouvelle escale"
             styles="w-full max-w-[250px] bg-brand-main text-white-main"
             onClick={() => SetSuffleDialogue(true)}
             Icon={<HiOutlinePlus className="text-white-main text-[20px]" />}
-          />
-        ) : (
-          ""
-        )}
+          />)}
       </div>
       {/* ========> showing data */}
       {/* ===> bottom border */}
@@ -153,6 +150,7 @@ function StopoverDuringTrip() {
                 rounded="rounded-[10px]"
                 type="submit"
                 styles="max-w-[150px] w-full shadow-sm bg-brand-main text-white-main"
+                onClick={() => { }}
               />
             </div>
           </div>

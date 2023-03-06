@@ -84,7 +84,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
           </p>
         </div>
         {/* =======> button */}
-        <ContainedCircle Text="Publier" />
+        <ContainedCircle Text="Publier" onClick={() => {}} />
       </div>
       {/* =========> DepartureInformationform */}
       <div className="w-full flex flex-col lg:flex-row gap-6 justify-center items-start py-6">
@@ -239,7 +239,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                   {/* ======> input */}
                   <input
                     className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
-                    type="text"
+                    type="number"
                     name="PricePerKg"
                     value={Inputs.PricePerKg}
                     onChange={InputChange}
@@ -278,6 +278,8 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                 <p className="w-full flex justify-start items-center text-[16px] text-brand-secondary font-semibold font-NunitoSans leading-[32px]">
                   Prix par pièce
                 </p>
+                {
+                  RoomNumber.length === 0 &&
                 <ContainedCircle
                   Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
                   Text="Ajouter une pièce"
@@ -287,6 +289,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                   }}
                   styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
                 />
+                }
               </div>
             </div>
             {RoomNumber.length > 0 && (
@@ -330,7 +333,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                             {/* ======> input */}
                             <input
                               className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
-                              type="text"
+                              type="number"
                               id=""
                               name=""
                             />

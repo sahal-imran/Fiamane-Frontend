@@ -7,7 +7,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 
-const MoreButton: React.FC = () => {
+
+interface Props {
+  EditEvent: () => void;
+  CopyEvent: () => void;
+  DeleteEvent: () => void;
+}
+
+const MoreButton: React.FC<Props> = ({ EditEvent, DeleteEvent, CopyEvent }: Props) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -16,9 +23,8 @@ const MoreButton: React.FC = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
- 
+
   return (
-  
     <div>
       <button
         id="fade-button"
@@ -33,7 +39,7 @@ const MoreButton: React.FC = () => {
       </button>
 
       <Menu
-      sx={{marginTop:'10px'}}
+        sx={{ marginTop: '10px' }}
         id="fade-menu"
         MenuListProps={{
           "aria-labelledby": "fade-button",
@@ -42,12 +48,15 @@ const MoreButton: React.FC = () => {
         open={open}
         onClose={handleClose}
         TransitionComponent={Fade}
-        
+
       >
-       
-        <MenuItem>
+
+        <MenuItem onClick={() => {
+          EditEvent()
+          handleClose()
+        }} >
           <div className="flex gap-2">
-         <BiPencil size={25} />
+            <BiPencil size={25} />
             {" "}
             <p className="font-OpenSans font-[400] text-black-main text-[14px] leading-[24px]">
               Modifier
@@ -55,7 +64,10 @@ const MoreButton: React.FC = () => {
             {" "}
           </div>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => {
+          DeleteEvent()
+          handleClose()
+        }} >
           <div className="flex gap-2">
             <RiDeleteBinLine size={20} />
             <p className="font-OpenSans font-[400] text-black-main text-[14px] leading-[24px]">
@@ -63,7 +75,10 @@ const MoreButton: React.FC = () => {
             </p>
           </div>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => {
+          CopyEvent()
+          handleClose()
+        }} >
           <div className="flex gap-2">
             <HiOutlineDuplicate size={20} />
             <p className="font-OpenSans font-[400] text-black-main text-[14px] leading-[24px]">

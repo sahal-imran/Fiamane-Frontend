@@ -13,7 +13,7 @@ const StopOverSnippets = ({ country, date, address }: Props) => {
       {/* => country */}
       <div className="w-full flex justify-between items-center mb-3">
         <p>{country}</p>
-        <MoreButton />
+        <MoreButton CopyEvent={() => { }} DeleteEvent={() => { }} EditEvent={() => { }} />
       </div>
       {/* =====> date */}
       <div className="w-full flex justify-between items-center">

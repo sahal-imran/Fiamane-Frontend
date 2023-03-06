@@ -12,7 +12,7 @@ import ToggleSwitch from "components/shared/ToggleSwitch/ToggleSwitch";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
-import MarchandiseSnippet from "./MarchandiseSnippet";
+import MarchandiseSnippet from "./MerChandiseInformation";
 import { AiOutlineDelete } from "react-icons/ai";
 
 
@@ -70,7 +70,7 @@ const OffersInformation: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date]);
 
-  console.log(Inputs);
+  // console.log(Inputs);
 
   return (
     <div className="w-full flex flex-col justify-start items-center">
@@ -89,7 +89,7 @@ const OffersInformation: React.FC<Props> = ({
           </p>
         </div>
         {/* =======> button */}
-        <ContainedCircle Text="Publier" />
+        <ContainedCircle Text="Publier" onClick={() => { }} />
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-6 justify-center items-start py-6">
         {/* =======>left Portion */}
@@ -165,49 +165,51 @@ const OffersInformation: React.FC<Props> = ({
               {/* if switch is on then this section will be displayed else not */}
               {showAddress && (
                 <>
-                  <div className="w-full flex flex-col gap-3">
+                  <div className="w-full relative flex justify-center items-start flex-col gap-4">
                     {PickUpAddress.map((item: any, index: number) => {
                       return (
-                        <InputFieldWithIcon
-                          key={index}
-                          isLeft={false}
-                          name={`PickUpAddress${index + 1}`}
-                          placeholder="Exemple: Rue Mouhamed 5"
-                          label={item.label}
-                          Set_State={(e: any) => {
-                            const value = e.target.value;
-                            const name = e.target.name;
-                            const newInputs = [...PickUpAddress];
-                            const index = newInputs.findIndex((input) => input.name === name);
-                            newInputs[index].value = value;
-                            setPickUpAddress(newInputs);
-                          }}
-                        />
+                        <div key={index} className="w-full relative" >
+                          <InputFieldWithIcon
+                            key={index}
+                            isLeft={false}
+                            name={`PickUpAddress${index + 1}`}
+                            placeholder="Exemple: Rue Mouhamed 5"
+                            label={item.label}
+                            state={item.value}
+                            Set_State={(e: any) => {
+                              const value = e.target.value;
+                              const name = e.target.name;
+                              const newInputs = [...PickUpAddress];
+                              const index = newInputs.findIndex((input) => input.name === name);
+                              newInputs[index].value = value;
+                              setPickUpAddress(newInputs);
+                            }}
+                          />
+                          {
+                            PickUpAddress.length > 1 &&
+                            <AiOutlineDelete
+                              className="text-[20px] text-brand-main cursor-pointer absolute right-4 -top-2 bg-white-main"
+                              onClick={() => {
+                                const NewInputs = [...PickUpAddress];
+                                NewInputs.splice(index, 1);
+                                console.log(NewInputs)
+                                setPickUpAddress(NewInputs)
+                              }}
+                            />
+                          }
+                        </div>
                       );
                     })}
-                    <div className="flex justify-between items-center" >
-                      <button
-                        onClick={() => {
-                          const numInputs = PickUpAddress.length + 1;
-                          setPickUpAddress([...PickUpAddress, { name: `PickUpAddress${numInputs}`, value: "" }]);
-                        }}
-                        className="flex gap-2 items-center text-brand-main text-[14px] font-[600] font-NunitoSans leading-[24px] "
-                      >
-                        <AiOutlinePlus size={20} />
-                        Ajouter un autre numéro de téléphone
-                      </button>
-                      {
-                        PickUpAddress.length > 1 &&
-                        <AiOutlineDelete
-                          className="text-[30px] text-brand-main cursor-pointer"
-                          onClick={() => {
-                            const NewInputs = [...PickUpAddress];
-                            NewInputs.pop();
-                            setPickUpAddress(NewInputs);
-                          }}
-                        />
-                      }
-                    </div>
+                    <button
+                      onClick={() => {
+                        const numInputs = PickUpAddress.length + 1;
+                        setPickUpAddress([...PickUpAddress, { name: `PickUpAddress${numInputs}`, value: "" }]);
+                      }}
+                      className="flex gap-2 items-center text-brand-main text-[14px] font-[600] font-NunitoSans leading-[24px] "
+                    >
+                      <AiOutlinePlus size={20} />
+                      Ajouter un autre numéro de téléphone
+                    </button>
                   </div>
                 </>
               )}
@@ -243,49 +245,49 @@ const OffersInformation: React.FC<Props> = ({
                 />
                 {PhoneNumbers.map((item: any, index: number) => {
                   return (
-                    <InputFieldWithIcon
-                      key={index}
-                      isLeft={true}
-                      placeholder="Numéro de téléphone"
-                      name={`Number${index + 1}`}
-                      type="number"
-                      icon={<FiPhone size={20} />}
-                      Set_State={(e: any) => {
-                        const value = e.target.value;
-                        const name = e.target.name;
-                        const newInputs = [...PhoneNumbers];
-                        const index = newInputs.findIndex((input) => input.name === name);
-                        newInputs[index].value = value;
-                        setPhoneNumbers(newInputs);
-                      }}
-                      required={true}
-                    />
+                    <div key={index} className="w-full relative" >
+                      <InputFieldWithIcon
+                        isLeft={true}
+                        placeholder="Numéro de téléphone"
+                        name={`Number${index + 1}`}
+                        type="number"
+                        icon={<FiPhone size={20} />}
+                        state={item.value}
+                        Set_State={(e: any) => {
+                          const value = e.target.value;
+                          const name = e.target.name;
+                          const newInputs = [...PhoneNumbers];
+                          const index = newInputs.findIndex((input) => input.name === name);
+                          newInputs[index].value = value;
+                          setPhoneNumbers(newInputs);
+                        }}
+                        required={true}
+                      />
+                      {
+                        PhoneNumbers.length > 1 &&
+                        <AiOutlineDelete
+                          className="text-[20px] text-brand-main cursor-pointer absolute right-4 -top-2 bg-white-main"
+                          onClick={() => {
+                            const NewInputs = [...PhoneNumbers];
+                            NewInputs.splice(index, 1);
+                            setPhoneNumbers(NewInputs);
+                          }}
+                        />
+                      }
+                    </div>
                   );
                 })}
               </div>
-              <div className="w-full flex justify-between items-center gap-2 mt-4">
-                <button
-                  onClick={() => {
-                    const numInputs = PhoneNumbers.length + 1;
-                    setPhoneNumbers([...PhoneNumbers, { name: `Number${numInputs}`, value: "" }]);
-                  }}
-                  className="flex gap-2 items-center text-brand-main text-[14px] font-[600] font-NunitoSans disabled:cursor-not-allowed leading-[24px] "
-                >
-                  <AiOutlinePlus size={20} />
-                  Ajouter un autre numéro de téléphone
-                </button>
-                {
-                  PhoneNumbers.length > 1 &&
-                  <AiOutlineDelete
-                    className="text-[30px] text-brand-main cursor-pointer"
-                    onClick={() => {
-                      const NewInputs = [...PhoneNumbers];
-                      NewInputs.pop();
-                      setPhoneNumbers(NewInputs);
-                    }}
-                  />
-                }
-              </div>
+              <button
+                onClick={() => {
+                  const numInputs = PhoneNumbers.length + 1;
+                  setPhoneNumbers([...PhoneNumbers, { name: `Number${numInputs}`, value: "" }]);
+                }}
+                className="flex gap-2 items-center text-brand-main text-[14px] font-[600] font-NunitoSans mt-6 disabled:cursor-not-allowed leading-[24px] "
+              >
+                <AiOutlinePlus size={20} />
+                Ajouter un autre numéro de téléphone
+              </button>
             </div>
             {/* this add extra phone number button will only be displayed if there is no extra phone input displayed */}
 

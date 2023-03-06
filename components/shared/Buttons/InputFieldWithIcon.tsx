@@ -44,7 +44,7 @@ const InputFieldWithIcon: React.FC<Props> = ({
           {icon}
           <input
             className="focus:outline-none w-full h-full profilePlaceholder"
-            type="text"
+            type={type}
             id={name}
             name={name}
             value={state}
@@ -61,7 +61,7 @@ const InputFieldWithIcon: React.FC<Props> = ({
         >
           <input
             className="focus:outline-none w-full h-full profilePlaceholder"
-            type="text"
+            type={type}
             id={name}
             name={name}
             value={state}

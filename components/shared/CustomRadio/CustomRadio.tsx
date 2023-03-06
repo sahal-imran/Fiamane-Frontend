@@ -13,6 +13,7 @@ const CustomRadio = ({ label, state, setState, value }: Props) => {
     <div>
       <Radio
         checked={state === value}
+        required
         onChange={setState}
         value={value}
         name="radio-buttons"

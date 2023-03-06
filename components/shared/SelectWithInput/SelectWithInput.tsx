@@ -32,9 +32,10 @@ const SelectWithInput = ({
         {/* ======> input */}
         <input
           className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
-          type="text"
+          type="number"
           value={priceState}
           onChange={setPriceState}
+          required
           id=""
           name=""
         />

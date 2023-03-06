@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import MoreButton from "components/shared/Buttons/moreButton";
 import { AiOutlinePlus } from "react-icons/ai";
+import { RxCross2 } from "react-icons/rx";
 import DialogueWrapper from "components/shared/Dialogue/DialogueWrapper";
 import MultipleSelect from "components/shared/MultipleSelect/MultipleSelect";
 import CustomRadio from "components/shared/CustomRadio/CustomRadio";
@@ -12,6 +13,9 @@ import RadioGroup from "@mui/joy/RadioGroup";
 import Sheet from "@mui/joy/Sheet";
 import Radio from "@mui/joy/Radio";
 import ContainedCircle from "components/shared/Buttons/ContainedCircle";
+import { HiOutlinePlus } from "react-icons/hi";
+import MerchandiseSnippet from "./MerchandiseSnippet"
+
 
 const MarchandiseSnippet = () => {
   // ======> Add a commodity states
@@ -19,7 +23,7 @@ const MarchandiseSnippet = () => {
 
   //   =====> radio conditionally rendering
   const [dimensionRadio, setDimensionRadio] = useState("Je conais les dimensions de l’objet");
-  const [bodyWeightRadio, setBodyWeightRadio] = useState("");
+  const [bodyWeightRadio, setBodyWeightRadio] = useState("Je conais le poids");
   const [showCommodity, setShowCommodity] = React.useState(false);
   const [companyImages, Set_Company_Images] = useState<File[]>([]);
   const [addImage, Set_Add_Image] = useState<string>("/Assets/addGallery.png");
@@ -69,44 +73,69 @@ const MarchandiseSnippet = () => {
     }
   };
 
+  const [MerchandiseInformationData, Set_MerchandiseInformationData] = useState<Array<object>>([]);
+
+
+
+  // Form Here
+  const SubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let Dimen;
+    if (dimensionRadio === "Je conais les dimensions de l’objet") {
+      Dimen = `${CustomDimension.width} x ${CustomDimension.height} x ${CustomDimension.length} ${CustomDimension.unit}`
+    }
+    else {
+      Dimen = Inputs.Dimensions;
+    }
+    const NewMerchandise = [...MerchandiseInformationData];
+    NewMerchandise.push({
+      Dimensions: Dimen,
+      Weight: Inputs.Weight + " " + Inputs.WeightUnit
+    })
+    Set_MerchandiseInformationData(NewMerchandise)
+    setShowCommodity(false)
+    console.log("called")
+  }
+
+
   return (
     <React.Fragment>
       <div className="flex flex-col gap-[10px] bg-white-main rounded-[8px] ">
-        <div className=" w-full flex items-center text-[20px] font-NunitoSans font-[600] leading-[32px] border-b-[1px] border-b-white-off px-[20px] py-[10px]">
-          <p>Informations sur la marchandise</p>
+        <div className=" w-full border-b-[1px] border-b-white-off px-[20px] py-[10px]">
+          <p className="flex items-center text-[20px] font-NunitoSans font-[600] leading-[32px]" >Informations sur la marchandise</p>
         </div>
-        <div className="w-full flex items-center font-OpenSans font-[400] text-[16px] leading-[28px] border-b-[1px] border-b-white-off px-[20px] py-[10px]">
-          <p>
-            Décrivez votre marchandise que vous voulez transporter. Ajouter
-            autant de marchandise que vous voulez
-          </p>
-        </div>
-        <div className="flex flex-col gap-[10px] items-center w-full border-b-[1px] border-b-white-off px-[20px] py-[10px]">
-          <div className="w-full flex items-center justify-between">
-            <p className="font-NunitoSans font-[600] text-[16px] leading-[24px]">
-              Bagages
+        {
+          MerchandiseInformationData.length !== 0 &&
+          <div className="px-[20px] py-[10px]" >
+            <p>
+              Décrivez votre marchandise que vous voulez transporter. Ajouter
+              autant de marchandise que vous voulez
             </p>
-            <MoreButton />
           </div>
-
-          <div className="w-full flex items-center justify-between font-OpenSans text-[12px] font-[400] leading-[20px] ">
-            <p>Dimensions</p>
-            <p>20 x 20 x 10 cm</p>
-          </div>
-
-          <div className="w-full flex items-center justify-between font-OpenSans text-[12px] font-[400] leading-[20px] ">
-            <p>Poids</p>
-            <p>3 Kg</p>
-          </div>
-        </div>
+        }
+        {
+          MerchandiseInformationData?.map((item: any, index: number) => {
+            return <MerchandiseSnippet key={index} Title="Bagages" Dimensions={item.Dimensions} Weight={item.Weight} />
+          })
+        }
         <div className="flex items-center w-full text-brand-main font-OpenSans font-[600] text-[14px] leading-[20px] px-[20px] py-[10px]">
-          <button
-            onClick={() => setShowCommodity(true)}
-            className="flex items-center gap-2"
-          >
-            <AiOutlinePlus size={20} />
-            Ajouter une autre marchandise
-          </button>
+          {
+            MerchandiseInformationData.length === 0 ?
+              <ContainedCircle
+                Text="Ajouter une nouvelle escale"
+                styles="w-full max-w-[250px] bg-brand-main text-white-main"
+                onClick={() => setShowCommodity(true)}
+                Icon={<HiOutlinePlus className="text-white-main text-[20px]" />}
+              /> :
+              <button
+                onClick={() => setShowCommodity(true)}
+                className="flex items-center gap-2"
+              >
+                <AiOutlinePlus size={20} />
+                Ajouter une autre marchandise
+              </button>
+          }
+
         </div>
       </div>
 
@@ -117,7 +146,7 @@ const MarchandiseSnippet = () => {
         Title="Ajouter une nouvelle marchandise"
       // overflow="overflow-auto"
       >
-        <div className="w-full flex flex-col gap-6 justify-center items-start p-8">
+        <form onSubmit={SubmitForm} className="w-full flex flex-col gap-6 justify-center items-start p-8">
           {/* =======> Commodity Bill of Materials + value of goods  */}
           <div className="w-full flex md:flex-row flex-col justify-center items-center gap-4">
             {/* ======> Commodity Bill of Materials select */}
@@ -229,6 +258,8 @@ const MarchandiseSnippet = () => {
             <div className="w-full grid grid-cols-[1fr,1fr,1fr,0.5fr] dimension justify-center items-center">
               {/* =====> length */}
               <InputFieldWithIcon
+                required={true}
+                type='number'
                 state={CustomDimension.length}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setCustomDimension({ ...CustomDimension, length: e.target.value });
@@ -237,6 +268,8 @@ const MarchandiseSnippet = () => {
               />
               {/* =====> width */}
               <InputFieldWithIcon
+                required={true}
+                type='number'
                 state={CustomDimension.width}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setCustomDimension({ ...CustomDimension, width: e.target.value });
@@ -245,6 +278,8 @@ const MarchandiseSnippet = () => {
               />
               {/* ======> height */}
               <InputFieldWithIcon
+                required={true}
+                type='number'
                 state={CustomDimension.height}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setCustomDimension({ ...CustomDimension, height: e.target.value });
@@ -279,6 +314,7 @@ const MarchandiseSnippet = () => {
                       }}
                     >
                       <Radio
+                        required
                         label={
                           <div className="w-full flex justify-center items-center gap-3">
                             <div className="w-[65px] h-[65px] flex justify-center items-center rounded-full border-2 border-solid border-white-cool p-0">
@@ -287,7 +323,7 @@ const MarchandiseSnippet = () => {
                                 alt={item.image}
                                 width={30}
                                 height={30}
-                              ></Image>
+                              />
                             </div>
                             <div className="flex flex-col gap-[2px]">
                               {/* =====> title */}
@@ -304,6 +340,12 @@ const MarchandiseSnippet = () => {
                         overlay
                         disableIcon
                         value={item.title}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          setInputs({
+                            ...Inputs,
+                            Dimensions: e.target.value
+                          })
+                        }}
                         slotProps={{
                           action: ({ checked }: any) => ({
                             sx: (theme: any) => ({
@@ -396,6 +438,7 @@ const MarchandiseSnippet = () => {
                       }}
                     >
                       <Radio
+                        required
                         label={
                           <p className="flex justify-center items-center text-16 font-normal font-sans text-black-main">
                             {item.label + "kg"}
@@ -449,19 +492,29 @@ const MarchandiseSnippet = () => {
                 type="file"
                 multiple
                 accept="image/*"
+                name="ImageInput"
                 onChange={handleCompanyFileChange}
               />
               {companyImages.length > 0 && (
                 <div className="w-full h-[65px] sm:h-[150px] md:h-[150px] flex flex-wrap gap-3 justify-start items-center rounded-md overflow-auto">
                   {companyImages.map((image, index) => {
                     return (
-                      <div key={index} className="w-[100px] h-[100px] relative">
+                      <div key={index} className="w-[100px] h-[100px] relative" >
                         <Image
                           src={URL.createObjectURL(image)}
                           fill
                           className="cover rounded-md"
                           alt="seo-text-here"
-                        ></Image>
+                        />
+                        {/* Hover */}
+                        <div className="absolute w-full h-full bg-[#7E858B]/50 flex justify-center items-center cursor-pointer" >
+                          <RxCross2 onClick={() => {
+                            const NewImages = [...companyImages];
+                            NewImages.splice(index, 1);
+                            Set_Company_Images(NewImages);
+                            console.log(NewImages)
+                          }} size={20} color="E6E6E6" />
+                        </div>
                       </div>
                     );
                   })}
@@ -469,11 +522,10 @@ const MarchandiseSnippet = () => {
               )}
 
               <button
-                className="w-full"
                 type="button"
                 onClick={handleCompanyImage}
               >
-                <div className="w-full max-w-[90px] md:max-w-[100px] h-[40px] sm:h-[70px] md:h-[100px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
+                <div className="w-[116px] max-w-[90px] md:max-w-[100px] h-[40px] sm:h-[70px] md:h-[100px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
                   <Image
                     src={addImage}
                     width={40}
@@ -492,6 +544,7 @@ const MarchandiseSnippet = () => {
               Information complèmentaire sur votre offre
             </p>
             <textarea
+              required
               value={Inputs.AdditionalInfo}
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                 setInputs({
@@ -509,6 +562,7 @@ const MarchandiseSnippet = () => {
           <div className="w-full flex gap-4 justify-end items-center pt-4 pb-1">
             {/* ==> cancel button */}
             <ContainedCircle
+              onClick={() => { }}
               Text="Annuler"
               rounded="rounded-[10px]"
               type="button"
@@ -522,9 +576,9 @@ const MarchandiseSnippet = () => {
               styles="max-w-[150px] w-full shadow-sm bg-brand-main text-white-main"
             />
           </div>
-        </div>
+        </form>
       </DialogueWrapper>
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 
@@ -591,7 +645,7 @@ const dimensionsData = [
     subTitle: "Tient dans ............................",
   },
   {
-    image: "/Assets/offer/dimension1.svg",
+    image: "/Assets/offer/dimension4.svg",
     title: "Taille M",
     subTitle: "Tient dans ............................",
   },
@@ -602,6 +656,11 @@ const dimensionsData = [
   },
   {
     image: "/Assets/offer/dimension3.svg",
+    title: "Taille XL",
+    subTitle: "Tient dans .........................................",
+  },
+  {
+    image: "/Assets/offer/dimension1.svg",
     title: "Taille XXL",
     subTitle: "Tient dans .............................................",
   },

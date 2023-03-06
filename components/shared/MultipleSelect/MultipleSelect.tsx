@@ -41,7 +41,8 @@ const MultipleSelect = ({ selectData, state, setState }: Props) => {
           multiple
           value={state}
           onChange={setState}
-          input={<OutlinedInput sx={{ display: "flex" }} />}
+          input={<OutlinedInput />}
+          required
         >
           {state.length === 1 && (
             <MenuItem
@@ -60,10 +61,9 @@ const MultipleSelect = ({ selectData, state, setState }: Props) => {
               </InputLabel>
             </MenuItem>
           )}
-
-          {selectData.map((name: any, index:number) => (
+          {selectData.map((name: any, index: number) => (
             <MenuItem
-            key={index}
+              key={index}
               sx={{
                 display: "flex",
                 height: "48px",
