@@ -1,3 +1,5 @@
+import FindCarrier from "layouts/pages/FindCarrier";
+
 export default function Home() {
-  return <div>Trouver un transporteur</div>;
+  return <FindCarrier />;
 }

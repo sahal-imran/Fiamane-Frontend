@@ -25,21 +25,20 @@ const TableRow: React.FC<Props> = ({
 }: Props) => {
   return (
     <div
-      className={`grid w-full items-center ${
-        Cols
+      className={`grid w-full items-center ${Cols
           ? "grid-cols-[0.5fr_1fr_1fr_1fr_1fr_1fr_1fr_0.5fr]"
           : "grid-cols-[0.5fr_1fr_1fr_1fr_1fr_1fr_0.5fr]"
-      } gap-[8px] border-b-[1px] border-b-white-off md:py-[10px] py-[8px] `}
+        } gap-[8px] border-b-[1px] border-b-white-off md:py-[10px] py-[8px] `}
     >
       <div className="flex items-center cursor-pointer justify-center w-full">
-      <Checkbox
-        sx={{
-          color:'#A3ADC2',borderRadius:"6px",
-          '&.Mui-checked': {
-            color: '#FF8501',
-          },
-        }}
-      />
+        <Checkbox
+          sx={{
+            color: '#A3ADC2', borderRadius: "6px",
+            '&.Mui-checked': {
+              color: '#FF8501',
+            },
+          }}
+        />
       </div>
       <div className="flex gap-2 items-center justify-center">
         {image && (
@@ -72,7 +71,7 @@ const TableRow: React.FC<Props> = ({
       </p>
       <div className="flex items-center justify-center">
         {/* Note : Don't forget to pass your props so you don't get errors at build time  */}
-        {/* <MoreButton  /> */}
+        <MoreButton CopyEvent={() => { }} DeleteEvent={() => { }} EditEvent={() => { }} />
       </div>
     </div>
   );

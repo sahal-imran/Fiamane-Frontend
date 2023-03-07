@@ -15,6 +15,7 @@ function Confirmation({ State, Event, children, Duration }: Props) {
         Duration && setTimeout(() => {
             Event(false)
         }, Duration);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [State])
 
     return <Dialog
