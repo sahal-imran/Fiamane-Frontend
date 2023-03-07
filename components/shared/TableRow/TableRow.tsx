@@ -71,7 +71,8 @@ const TableRow: React.FC<Props> = ({
         {Quote}
       </p>
       <div className="flex items-center justify-center">
-        <MoreButton />
+        {/* Note : Don't forget to pass your props so you don't get errors at build time  */}
+        {/* <MoreButton  /> */}
       </div>
     </div>
   );

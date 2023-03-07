@@ -5,7 +5,7 @@ interface Props {
   Title: string;
   Icon?: any;
   ButtonText: string;
-  ButtonFunction: (value: React.SetStateAction<boolean>) => void;
+  ButtonFunction: () => void;
 }
 
 const SectionHeader: React.FC<Props> = ({
