@@ -75,7 +75,7 @@ function Index({ LoginState, LoginEvent, SignUpEvent, ForgetPasswordEvent }: Pro
                   <Icons.Mail ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                 </div>
                 <div className='md:w-[90%] w-[85%] h-full' >
-                  <input required autoComplete='off' name='Email' value={Inputs.Email} onChange={InputChange} type="email" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Login.LoginStep.InputEmailPlaceholder")} />
+                  <input required autoComplete='off' name='Email' value={Inputs.Email} onChange={InputChange} type="email" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Login.LoginStep.InputEmailPlaceholder")} />
                 </div>
               </div>
               <div className='w-full h-[48px] rounded-[8px] overflow-hidden border-[1px] border-[#E6E6E6 flex justify-center items-center]' >
@@ -83,7 +83,7 @@ function Index({ LoginState, LoginEvent, SignUpEvent, ForgetPasswordEvent }: Pro
                   <Icons.HiddenPassword ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                 </div>
                 <div className='md:w-[90%] w-[85%] h-full' >
-                  <input required autoComplete='off' name='Password' value={Inputs.Password} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Login.LoginStep.InputPassPlaceholder")} />
+                  <input required autoComplete='off' name='Password' value={Inputs.Password} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Login.LoginStep.InputPassPlaceholder")} />
                 </div>
               </div>
               <div onClick={() => {
@@ -100,7 +100,7 @@ function Index({ LoginState, LoginEvent, SignUpEvent, ForgetPasswordEvent }: Pro
                 {translate("Buttons.Login")}
               </button>
               <p className='font-NunitoSans font-[400] text-[12px] leading-[20px] text-[#7A7A7A] py-6 text-center m-auto md:max-w-[296px]' >
-              {translate("Modals.Auth.Login.LoginStep.TermsAndConditions")} <Link onClick={() => SignUpEvent(false)} href={""} className="text-brand-main" >{translate("Modals.Auth.Login.LoginStep.TermsAndConditionsLink")}</Link>
+                {translate("Modals.Auth.Login.LoginStep.TermsAndConditions")} <Link onClick={() => SignUpEvent(false)} href={""} className="text-brand-main" >{translate("Modals.Auth.Login.LoginStep.TermsAndConditionsLink")}</Link>
               </p>
               <div className='w-full h-[1px] bg-[#E6E6E6] ' />
               <p className='font-OpenSans font-[400] text-[12px] leading-[20px] text-black-cool text-center pb-6' >

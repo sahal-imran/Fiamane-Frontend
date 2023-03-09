@@ -87,7 +87,7 @@ const ForgetPassword: React.FC<Props> = ({ ForgetPasswordEvent, ForgetPasswordSt
                                         <Icons.Mail ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                                     </div>
                                     <div className='md:w-[90%] w-[85%] h-full' >
-                                        <input required autoComplete='off' name='EmailCode' value={Inputs.EmailCode} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder= {translate("Modals.Auth.ForgotPassword.InputEmailPlaceholder")} />
+                                        <input required autoComplete='off' name='EmailCode' value={Inputs.EmailCode} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder= {translate("Modals.Auth.ForgotPassword.InputEmailPlaceholder")} />
                                     </div>
                                 </div>
                                 {/* Button */}

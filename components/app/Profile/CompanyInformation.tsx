@@ -107,7 +107,7 @@ const CompanyInformation: React.FC<Props> = ({
                   >
                     Logo
                   </label>
-                  <div className="w-full">
+                  <div className="w-full h-full">
                     <input
                       className="hidden"
                       id="logo"
@@ -116,7 +116,7 @@ const CompanyInformation: React.FC<Props> = ({
                       onChange={handleFileChange}
                     />
                     <button
-                      className="w-full"
+                      className="w-[144px] h-[144px]"
                       type="button"
                       onClick={handleClick}
                     >
@@ -132,7 +132,7 @@ const CompanyInformation: React.FC<Props> = ({
                           </div>
                         </div>
                       ) : (
-                        <div className="w-full h-[65px] sm:h-[150px] md:h-[150px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
+                        <div className="w-full h-full flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
                           <Image
                             src="/Assets/addGallery.png"
                             width={40}
@@ -176,7 +176,7 @@ const CompanyInformation: React.FC<Props> = ({
             >
               Photos sur votre société
             </label>
-            <div className="w-full">
+            <div className="w-[144px] h-[144px]">
               <input
                 className="hidden"
                 id="logo"
@@ -187,12 +187,12 @@ const CompanyInformation: React.FC<Props> = ({
                 onChange={handleCompanyFileChange}
               />
               <button
-                className="w-full"
+                className="w-full h-full"
                 type="button"
                 onClick={handleCompanyImage}
               >
                 {companyImages.length === 0 ? (
-                  <div className="w-full max-w-[100px] md:max-w-[184px] h-[65px] sm:h-[150px] md:h-[150px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
+                  <div className="w-full h-full flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
                     <Image
                       src={addImage}
                       width={40}

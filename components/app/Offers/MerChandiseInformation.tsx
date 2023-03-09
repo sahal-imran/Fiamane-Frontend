@@ -15,6 +15,7 @@ import Radio from "@mui/joy/Radio";
 import ContainedCircle from "components/shared/Buttons/ContainedCircle";
 import { HiOutlinePlus } from "react-icons/hi";
 import MerchandiseSnippet from "./MerchandiseSnippet"
+import RadioGroupButton from "components/shared/CustomRadio/RadioGroupButton";
 
 
 const MarchandiseSnippet = () => {
@@ -209,28 +210,12 @@ const MarchandiseSnippet = () => {
             </p>
 
             <div className="w-full flex flex-col md:flex-row gap-3 md:justify-between items-start md:items-center">
-              <CustomRadio
-                state={Inputs.NatureOfCommodity}
-                setState={(e: any) => {
-                  setInputs({
-                    ...Inputs,
-                    NatureOfCommodity: e.target.value
-                  });
-                }}
-                value="Neuve"
-                label="Neuve"
-              />
-              <CustomRadio
-                state={Inputs.NatureOfCommodity}
-                setState={(e: any) => {
-                  setInputs({
-                    ...Inputs,
-                    NatureOfCommodity: e.target.value
-                  });
-                }}
-                value="Occasion"
-                label="Occasion"
-              />
+              <RadioGroupButton DefaultValue="Neuve" FirstValue="Neuve" FirstLabel="Neuve" SecondValue="Occasion" SecondLabel="Occasion" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setInputs({
+                  ...Inputs,
+                  NatureOfCommodity: e.target.value
+                });
+              }} />
             </div>
           </div>
           {/* =========> dimension radio */}
@@ -240,18 +225,9 @@ const MarchandiseSnippet = () => {
             </p>
 
             <div className="w-full flex md:flex-row flex-col gap-3 md:justify-between items-start md:items-center">
-              <CustomRadio
-                state={dimensionRadio}
-                setState={(e: any) => setDimensionRadio(e.target.value)}
-                value="Je conais les dimensions de l’objet"
-                label="Je conais les dimensions de l’objet"
-              />
-              <CustomRadio
-                state={dimensionRadio}
-                setState={(e: any) => setDimensionRadio(e.target.value)}
-                value="Je ne conais pas les dimensions"
-                label="Je ne conais pas les dimensions"
-              />
+              <RadioGroupButton DefaultValue="Je conais les dimensions de l’objet" FirstValue="Je conais les dimensions de l’objet" FirstLabel="Je conais les dimensions de l’objet" SecondValue="Je ne conais pas les dimensions" SecondLabel="Je ne conais pas les dimensions" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setDimensionRadio(e.target.value)
+              }} />
             </div>
           </div>
           {dimensionRadio === "Je conais les dimensions de l’objet" ? (
@@ -373,20 +349,9 @@ const MarchandiseSnippet = () => {
               Poids
             </p>
 
-            <div className="w-full flex flex-col gap-3 md:gap-0 md:flex-row md:justify-between justify-center items-start">
-              <CustomRadio
-                state={bodyWeightRadio}
-                setState={(e: any) => setBodyWeightRadio(e.target.value)}
-                value="Je conais le poids"
-                label="Je conais le poids"
-              />
-              <CustomRadio
-                state={bodyWeightRadio}
-                setState={(e: any) => setBodyWeightRadio(e.target.value)}
-                value="Je ne conais pas le poids"
-                label="Je ne conais pas le poids"
-              />
-            </div>
+            <RadioGroupButton DefaultValue="Je conais le poids" FirstValue="Je conais le poids" FirstLabel="Je conais le poids" SecondValue="Je ne conais pas le poids" SecondLabel="Je ne conais pas le poids" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setBodyWeightRadio(e.target.value)
+            }} />
           </div>
 
           {/* ======>  */}

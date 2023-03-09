@@ -4,9 +4,10 @@ import * as Icons from "../../SVG/Icons"
 import Image from 'next/image';
 import Link from 'next/link';
 import Dropdown from 'components/shared/Dropdown/Dropdown';
-import PhoneInput from 'react-phone-input-2'
+import CountryCodeDropdown from 'components/shared/Dropdown/CountryCodeDropdown';
 import 'react-phone-input-2/lib/style.css'
 import { useTranslation } from 'hooks/useTranslation';
+import { countries } from "../../constants/data/countries/index"
 
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
 }
 
 function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
+  const [CountryCode, setCountryCode] = React.useState<boolean>(false);
   const translate = useTranslation();
   const [Inputs, setInputs] = React.useState({
     FullName: "",
@@ -24,7 +26,9 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
     Password: "",
     CPassword: "",
     Company: "",
-    KBIS: ""
+    KBIS: "",
+    PhoneNumber: "",
+    CountryCode: ""
   });
   const InputChange = (evt: any) => {
     const value = evt.target.value;
@@ -37,7 +41,6 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
   const [PyasValue, SetPyasValue] = React.useState<string | null>(null)
   const [carrier_typeDropDown, Setcarrier_typeDropDown] = React.useState<boolean>(false)
   const [carrier_typeValue, Setcarrier_typeValue] = React.useState<string | null>(null)
-  const [Phone, SetPhone] = React.useState<any>()
 
 
 
@@ -178,7 +181,7 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
                     <Icons.Mail ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                   </div>
                   <div className='md:w-[90%] w-[85%] h-full' >
-                    <input required autoComplete='off' name='Email' value={Inputs.Email} onChange={InputChange} type="email" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputEmailPlaceholder")} />
+                    <input required autoComplete='off' name='Email' value={Inputs.Email} onChange={InputChange} type="email" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputEmailPlaceholder")} />
                   </div>
                 </div>
                 <div className='w-full h-[48px] rounded-[8px] overflow-hidden border-[1px] border-[#E6E6E6 flex justify-center items-center]' >
@@ -186,7 +189,7 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
                     <Icons.HiddenPassword ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                   </div>
                   <div className='md:w-[90%] w-[85%] h-full' >
-                    <input required autoComplete='off' name='Password' value={Inputs.Password} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputPassPlaceholder")} />
+                    <input required autoComplete='off' name='Password' value={Inputs.Password} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputPassPlaceholder")} />
                   </div>
                 </div>
                 <div className='w-full h-[48px] rounded-[8px] overflow-hidden border-[1px] border-[#E6E6E6 flex justify-center items-center]' >
@@ -194,7 +197,7 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
                     <Icons.HiddenPassword ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                   </div>
                   <div className='md:w-[90%] w-[85%] h-full' >
-                    <input required autoComplete='off' name='CPassword' value={Inputs.CPassword} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputConfirmPassPlaceholder")} />
+                    <input required autoComplete='off' name='CPassword' value={Inputs.CPassword} onChange={InputChange} type="password" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.EmailStep.InputConfirmPassPlaceholder")} />
                   </div>
                 </div>
                 {/* Button */}
@@ -229,16 +232,28 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
                     <Icons.UserHollow ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                   </div>
                   <div className='md:w-[90%] w-[85%] h-full' >
-                    <input required autoComplete='off' name='FullName' value={Inputs.FullName} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder='Nom et prénom' />
+                    <input required autoComplete='off' name='FullName' value={Inputs.FullName} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder='Nom et prénom' />
                   </div>
                 </div>
                 {/* dropdown */}
                 <Dropdown State={PyasDropDown} Event={SetPyasDropDown} GetValueEvent={SetPyasValue} Placeholder={translate("Modals.Auth.Register.ClientInfoStep.SelectContryPlaceHolder")} Item={PaysDropdownItem} />
-                <PhoneInput
+                <div className='w-full h-[48px] rounded-[8px] border-[1px] border-[#E6E6E6] ] flex justify-center items-center' >
+                  {/* Country code dropDown */}
+                  <div className='w-[25%] h-full' >
+                    <CountryCodeDropdown Styles="w-full h-full z-100 rounded-r-[8px]" Item={countries} Placeholder="Code" State={CountryCode} Event={setCountryCode} GetValueEvent={(value: string) => {
+                      setInputs({
+                        ...Inputs,
+                        CountryCode: value
+                      })
+                    }} />
+                  </div>
+                  <input required autoComplete='off' name='PhoneNumber' value={Inputs.PhoneNumber} onChange={InputChange} type="number" className='w-[75%] h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder='Nom et prénom' />
+                </div>
+                {/* <PhoneInput
                   country={'us'}
                   value={Phone}
                   onChange={SetPhone}
-                />
+                /> */}
                 <button onClick={GoToFinal} className='w-full h-[48px] rounded-[8px] bg-brand-main flex justify-center items-center font-NunitoSans font-[600] text-[16px] leading-[24px] text-white-main mt-2'>
                   {translate("Buttons.Next")}
                 </button>
@@ -259,11 +274,11 @@ function Index({ SignUpState, SignUpEvent, LoginState, LoginEvent }: Props) {
                     <Icons.Company ClassName='w-[18px] h-[18px]' fill='#1A1A1A' />
                   </div>
                   <div className='md:w-[90%] w-[85%] h-full' >
-                    <input required autoComplete='off' name='Company' value={Inputs.Company} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.CompanyInfoStep.CompanyNamePlaceholder")} />
+                    <input required autoComplete='off' name='Company' value={Inputs.Company} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder={translate("Modals.Auth.Register.CompanyInfoStep.CompanyNamePlaceholder")} />
                   </div>
                 </div>
                 <div className='w-full h-[48px] rounded-[8px] overflow-hidden border-[1px] border-[#E6E6E6] flex justify-center items-center]' >
-                  <input required autoComplete='off' name='KBIS' value={Inputs.KBIS} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#B3B3B3] placeholder:text-[#B3B3B3] px-4' placeholder={translate("Modals.Auth.Register.CompanyInfoStep.CompanyCodePlaceholder")} />
+                  <input required autoComplete='off' name='KBIS' value={Inputs.KBIS} onChange={InputChange} type="text" className='w-full h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3] px-4' placeholder={translate("Modals.Auth.Register.CompanyInfoStep.CompanyCodePlaceholder")} />
                 </div>
                 <Dropdown State={carrier_typeDropDown} Event={Setcarrier_typeDropDown} GetValueEvent={Setcarrier_typeValue} Placeholder={translate("Modals.Auth.Register.CompanyInfoStep.SelectClientTypePLaceHolder")} Item={carrier_typeDropdownItem} />
                 {/* Button */}

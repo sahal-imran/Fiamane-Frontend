@@ -159,6 +159,9 @@
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
 }
+.CountryCodeDropdown::-webkit-scrollbar{
+  width: 0px;
+}
 /* @media screen and (max-width:768px) {
   .Menu{
     right: 0px;

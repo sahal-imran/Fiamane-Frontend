@@ -12,6 +12,7 @@ import ToggleSwitch from "components/shared/ToggleSwitch/ToggleSwitch";
 import { AiOutlineDelete } from "react-icons/ai";
 import { HiOutlinePlus } from "react-icons/hi";
 import StopoverDuringTrip from "./StopoverDuringTrip";
+import Dropdown from "components/shared/Dropdown/Dropdown";
 
 interface Props {
   NavigateBack: any;
@@ -21,6 +22,10 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
   // ========> state for departure date picker
   const [PlaceOfDepartureDate, setPlaceOfDepartureDate] = React.useState<any>();
   const [ArrivalDate, setArrivalDate] = React.useState<any>();
+  const [PricePerKgUnit, setPricePerKgUnit] = React.useState<boolean>(false);
+  const [PrixUnit, setPrixUnit] = React.useState<boolean>(false);
+  const [PièceDropDown, setPièceDropDown] = React.useState<boolean>(false);
+
 
   // ======> states for toggles switch
   const [HomePickUpPossibleSwitch, SetHomePickUpPossibleSwitch] =
@@ -36,7 +41,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
     DispatchAddress: "",
     DestinationAddress: "",
     PricePerKg: "",
-    PricePerKgUnit: "kg",
+    PricePerKgUnit: "euro",
     AcceptNegotiation: false,
     WithdrawalInAgencySwitch: false,
     DepositInBranch: false
@@ -84,7 +89,7 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
           </p>
         </div>
         {/* =======> button */}
-        <ContainedCircle Text="Publier" onClick={() => {}} />
+        <ContainedCircle Text="Publier" onClick={() => { }} />
       </div>
       {/* =========> DepartureInformationform */}
       <div className="w-full flex flex-col lg:flex-row gap-6 justify-center items-start py-6">
@@ -235,30 +240,23 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                 >
                   Prix au Kg
                 </label>
-                <div className="w-full grid grid-cols-[3fr,1fr]">
+                <div className="w-full h-[50px] grid grid-cols-[3fr,1.3fr] border-[1px] border-white-cool rounded-[8px]">
                   {/* ======> input */}
                   <input
-                    className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
+                    className="px-2 h-full rounded-[8px] outline-none"
                     type="number"
                     name="PricePerKg"
                     value={Inputs.PricePerKg}
                     onChange={InputChange}
                   />
                   {/* ========> select box */}
-                  <select
-                    className="px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-r-[8px] border-solid border-white-cool h-[50px]"
-                    name="PricePerKgUnit"
-                    value={Inputs.PricePerKgUnit}
-                    onChange={InputChange}
-                  >
-                    {PricePerKgData.map((opt, index) => {
-                      return (
-                        <option key={index} value={opt.value}>
-                          {opt.name}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <Dropdown Styles="w-full h-full z-100 border-l-[1px] border-l-white-cool" Item={PricePerKgData} Placeholder="Unit" State={PricePerKgUnit} Event={setPricePerKgUnit} GetValueEvent={(value: string) => {
+                    setInputs({
+                      ...Inputs,
+                      PricePerKgUnit: value,
+                    });
+                  }} />
+
                 </div>
               </div>
               {/* Accept negotiation switch */}
@@ -280,15 +278,15 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                 </p>
                 {
                   RoomNumber.length === 0 &&
-                <ContainedCircle
-                  Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
-                  Text="Ajouter une pièce"
-                  onClick={() => {
-                    let roomNu = RoomNumber.length + 1;
-                    SetRoomNumber([...RoomNumber, roomNu]);
-                  }}
-                  styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
-                />
+                  <ContainedCircle
+                    Icon={<HiOutlinePlus className="text-brand-main text-[20px]" />}
+                    Text="Ajouter une pièce"
+                    onClick={() => {
+                      let roomNu = RoomNumber.length + 1;
+                      SetRoomNumber([...RoomNumber, roomNu]);
+                    }}
+                    styles="bg-none border-2 border-solid border-brand-main rounded-full text-brand-main w-[170px]"
+                  />
                 }
               </div>
             </div>
@@ -307,19 +305,12 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                           >
                             Pièce
                           </label>
-                          <select
-                            className="w-full px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-[8px] border-solid border-white-cool h-[50px]"
-                            name=""
-                            placeholder="Séléctionner une pièce"
-                          >
-                            {PricePerKgData.map((opt, index) => {
-                              return (
-                                <option key={index} value={opt.value}>
-                                  {opt.name}
-                                </option>
-                              );
-                            })}
-                          </select>
+                          <Dropdown Styles="w-full border-[1px] rounded-[8px] border-solid border-white-cool h-[50px] z-100 border-l-[1px] border-l-white-cool" Item={PriceData} Placeholder="Séléctionner une pièce" State={PièceDropDown} Event={setPièceDropDown} GetValueEvent={(value: string) => {
+                            setInputs({
+                              ...Inputs,
+                              PricePerKgUnit: value,
+                            });
+                          }} />
                         </div>
                         {/* ======> price selection */}
                         <div className="flex flex-col justify-center items-start gap-2">
@@ -329,25 +320,18 @@ const DepartureInformation: React.FC<Props> = ({ NavigateBack }: Props) => {
                           >
                             Prix
                           </label>
-                          <div className="w-full grid grid-cols-[3fr,1fr]">
+                          <div className="w-full grid grid-cols-[3fr,1.2fr] border-[1px] rounded-[8px] border-solid border-white-cool">
                             {/* ======> input */}
                             <input
-                              className="px-2 h-[50px] border-[1px] rounded-l-[8px] border-solid border-white-cool outline-none"
+                              className="px-2 h-[50px] rounded-l-[8px] outline-none"
                               type="number"
                               id=""
                               name=""
                             />
                             {/* ========> select box */}
-                            <select
-                              className="px-2 text-base font-sans text-black-main outline-none border-[1px] rounded-r-[8px] border-solid border-white-cool h-[50px]"
-                              name=""
-                              id=""
-                            >
-                              <option value="volvo">Euro</option>
-                              <option value="saab">gram</option>
-                              <option value="mercedes">kg</option>
-                              <option value="audi">Audi</option>
-                            </select>
+                            <Dropdown Styles="w-full h-full z-100 rounded-r-[8px] border-l-[1px] border-l-white-cool" Item={PricePerKgData} Placeholder="Unit" State={PrixUnit} Event={setPrixUnit} GetValueEvent={(value: string) => {
+
+                            }} />
                           </div>
                         </div>
                         {/* ======> delete icon */}
@@ -393,19 +377,38 @@ export default DepartureInformation;
 
 const PricePerKgData = [
   {
-    name: "Euro",
-    value: "euro",
+    Name: "Euro",
+    Value: "euro",
   },
   {
-    name: "Gram",
-    value: "gram",
+    Name: "Gram",
+    Value: "gram",
   },
   {
-    name: "Kg",
-    value: "kg",
+    Name: "Kg",
+    Value: "kg",
   },
   {
-    name: "Dollar",
-    value: "dollar",
+    Name: "Dollar",
+    Value: "dollar",
+  },
+];
+
+const PriceData = [
+  {
+    Name: "Euro",
+    Value: "euro",
+  },
+  {
+    Name: "Gram",
+    Value: "gram",
+  },
+  {
+    Name: "Kg",
+    Value: "kg",
+  },
+  {
+    Name: "Dollar",
+    Value: "dollar",
   },
 ];

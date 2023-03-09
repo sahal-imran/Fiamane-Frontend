@@ -14,6 +14,8 @@ import { FiPhone } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import MarchandiseSnippet from "./MerChandiseInformation";
 import { AiOutlineDelete } from "react-icons/ai";
+import CountryCodeDropdown from "components/shared/Dropdown/CountryCodeDropdown";
+import { countries } from "constants/data/countries";
 
 
 interface Props {
@@ -25,6 +27,7 @@ const OffersInformation: React.FC<Props> = ({
 }: Props) => {
   // for storing date
   const [date, setDate] = React.useState<any>();
+  const [CountryCode, setCountryCode] = React.useState<boolean>(false);
 
   // Toggle state to show and hide address
   const [showAddress, setShowAddress] = useState<boolean>(false);
@@ -246,23 +249,25 @@ const OffersInformation: React.FC<Props> = ({
                 {PhoneNumbers.map((item: any, index: number) => {
                   return (
                     <div key={index} className="w-full relative" >
-                      <InputFieldWithIcon
-                        isLeft={true}
-                        placeholder="Numéro de téléphone"
-                        name={`Number${index + 1}`}
-                        type="number"
-                        icon={<FiPhone size={20} />}
-                        state={item.value}
-                        Set_State={(e: any) => {
+                      <div className='w-full h-[48px] rounded-[8px] border-[1px] border-[#E6E6E6] ] flex justify-center items-center' >
+                        {/* Country code dropDown */}
+                        <div className='w-[15%] h-full' >
+                          <CountryCodeDropdown Styles="w-full h-full z-100 rounded-r-[8px] " Item={countries} Placeholder="Code" State={CountryCode} Event={setCountryCode} GetValueEvent={(value: string) => {
+                            setInputs({
+                              ...Inputs,
+                              CountryCode: value
+                            })
+                          }} />
+                        </div>
+                        <input required autoComplete='off' name={`Number${index + 1}`} value={item.value} onChange={(e: any) => {
                           const value = e.target.value;
                           const name = e.target.name;
                           const newInputs = [...PhoneNumbers];
                           const index = newInputs.findIndex((input) => input.name === name);
                           newInputs[index].value = value;
                           setPhoneNumbers(newInputs);
-                        }}
-                        required={true}
-                      />
+                        }} type="number" className='w-[85%] pr-2 h-full bg-transparent font-OpenSans font-normal text-[14px] leading-[24px] outline-none text-[#1A1A1A] placeholder:text-[#B3B3B3]' placeholder='Numéro de téléphone' />
+                      </div>
                       {
                         PhoneNumbers.length > 1 &&
                         <AiOutlineDelete
