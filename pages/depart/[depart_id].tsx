@@ -320,7 +320,7 @@ const DepartsDetail = () => {
                               {data.deliveryPoint?.map(
                                 (deliveryData, index) => {
                                   return (
-                                    <div className="flex flex-col items-start gap-1 ">
+                                    <div key={index} className="flex flex-col items-start gap-1 ">
                                       <p className="text-brand-main text-[18px] font-NunitoSans font-semibold">
                                         {deliveryData.title}
                                       </p>
@@ -360,7 +360,7 @@ const DepartsDetail = () => {
                               {data.AgencyDeposite?.map(
                                 (agencyDeposite, index) => {
                                   return (
-                                    <div className="flex flex-col items-start gap-1">
+                                    <div key={index} className="flex flex-col items-start gap-1">
                                       <p className="text-brand-main text-[18px] font-NunitoSans font-semibold">
                                         {agencyDeposite.title}
                                       </p>
