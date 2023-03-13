@@ -130,6 +130,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
       ...Data,
       category: Category,
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Category]);
 
   useEffect(() => {
@@ -137,6 +138,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
       ...Data,
       size: Size,
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Size]);
 
   //  useClickOutside handler
@@ -353,7 +355,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
                 </div>
 
                 {IsOpen.category && (
-                  <div className="w-full sm:w-[580px] md:w-[600px] lg:w-[900px] bg-white-main flex flex-col shadow-lg rounded-[10px] absolute top-[60px] left-[0px] z-30 shadow-lg">
+                  <div className="w-full sm:w-[580px] md:w-[600px] lg:w-[900px] bg-white-main flex flex-col rounded-[10px] absolute top-[60px] left-[0px] z-30 shadow-lg">
                     {/* =====> upper category type */}
                     <div className="w-full flex flex-col sm:flex-row justify-start items-center gap-6 sm:gap-20 p-8">
                       {/* ====> first category */}
