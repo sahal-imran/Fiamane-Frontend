@@ -34,6 +34,7 @@ const OffersInformation: React.FC<Props> = ({
   // state to keep data  of all inputs
   const [PickUpAddress, setPickUpAddress] = useState([{ name: "PickUpAddress1", value: "" }]);
   const [PhoneNumbers, setPhoneNumbers] = useState([{ name: "Number1", value: "" }]);
+  console.log(PhoneNumbers)
   const [Inputs, setInputs] = React.useState<any>({
     PlaceOfDeparture: "",
     PlaceOfArrival: "",
@@ -253,10 +254,7 @@ const OffersInformation: React.FC<Props> = ({
                         {/* Country code dropDown */}
                         <div className='w-[15%] h-full' >
                           <CountryCodeDropdown Styles="w-full h-full z-100 rounded-r-[8px] " Item={countries} Placeholder="Code" State={CountryCode} Event={setCountryCode} GetValueEvent={(value: string) => {
-                            setInputs({
-                              ...Inputs,
-                              CountryCode: value
-                            })
+                            
                           }} />
                         </div>
                         <input required autoComplete='off' name={`Number${index + 1}`} value={item.value} onChange={(e: any) => {

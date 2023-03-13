@@ -10,8 +10,9 @@ interface Props {
   state?: string;
   Set_State?: any;
   isLeft?: any;
-  required?:boolean;
-  type?:string;
+  required?: boolean;
+  type?: string;
+  eventHandle?: any;
 }
 
 const InputFieldWithIcon: React.FC<Props> = ({
@@ -21,9 +22,10 @@ const InputFieldWithIcon: React.FC<Props> = ({
   height,
   name,
   state,
-  type='text',
+  type = "text",
   required,
   Set_State,
+  eventHandle,
   isLeft = true,
 }: Props) => {
   return (
@@ -36,9 +38,9 @@ const InputFieldWithIcon: React.FC<Props> = ({
       </label>
       {isLeft ? (
         <div
-          className={`flex gap-2 ${
-            height ? height : "h-[50px]"
-          } justify-start items-center border-[1px] border-solid border-white-cool rounded-[8px] px-2`}
+          className={`flex gap-2 ${height ? height : "h-[50px]"
+            } justify-start items-center border-[1px] border-solid border-white-cool rounded-[8px] px-2`}
+          onClick={eventHandle}
         >
           {/* =====>icon */}
           {icon}
@@ -55,9 +57,9 @@ const InputFieldWithIcon: React.FC<Props> = ({
         </div>
       ) : (
         <div
-          className={`flex gap-2 ${
-            height ? height : "h-[50px]"
-          } justify-start items-center border-[1px] border-solid border-white-cool rounded-[8px] px-2`}
+          className={`flex gap-2 ${height ? height : "h-[50px]"
+            } justify-start items-center border-[1px] border-solid border-white-cool rounded-[8px] px-2`}
+          onClick={eventHandle}
         >
           <input
             className="focus:outline-none w-full h-full profilePlaceholder"
