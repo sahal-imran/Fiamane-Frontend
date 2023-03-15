@@ -31,6 +31,12 @@ module.exports = {
           secondary: "#240046",
           tertiary: "#442769",
         },
+        grey: {
+          main: "#7E858B",
+          off: "#3D4852",
+          cool: "#F2F2F2",
+          dark: "#B3B3B3",
+        },
       },
     },
   },
