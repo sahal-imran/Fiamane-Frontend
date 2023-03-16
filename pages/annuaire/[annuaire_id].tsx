@@ -15,7 +15,7 @@ import Review from "components/Annuaire/Review";
 import ClaimAccount from "components/Annuaire/ClaimAccount";
 const AnnuaireDetail = () => {
   const router = useRouter();
-  const id = router.query.slug as string;
+  const id = router.query.annuaire_id as string;
 
   const FilteredItem = Data.Annuaire.Agences.filter((item) => item.id === id);
   // state to display claim account component

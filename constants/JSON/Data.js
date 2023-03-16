@@ -31,7 +31,7 @@ const Data = {
       },
       {
         Name: "AppSideBar.MyQuotations",
-        Route: "/myquotes",
+        Route: "/my-quote",
       },
       {
         Name: "AppSideBar.MyProfile",
@@ -39,7 +39,7 @@ const Data = {
       },
       {
         Name: "AppSideBar.MyBookmars",
-        Route: "/myfavourites",
+        Route: "/favorite",
       },
       {
         Name: "AppSideBar.Settings",
@@ -443,7 +443,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 4,
             Date: "28/03/2022",
@@ -452,7 +452,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 5,
             Date: "20/05/2022",
@@ -481,7 +481,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -490,7 +490,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -519,7 +519,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -528,7 +528,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -537,7 +537,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -566,7 +566,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -575,7 +575,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -604,7 +604,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -613,7 +613,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -642,7 +642,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -651,7 +651,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -660,7 +660,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -669,7 +669,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -698,7 +698,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 4,
             Date: "28/03/2022",
@@ -707,7 +707,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 5,
             Date: "20/05/2022",
@@ -716,7 +716,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -745,7 +745,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -754,7 +754,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -763,7 +763,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -792,7 +792,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 4,
             Date: "28/03/2022",
@@ -801,7 +801,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 5,
             Date: "20/05/2022",
@@ -830,7 +830,7 @@ const Data = {
         Clients: [
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/girl.png',
+            Picture: "/Assets/Annuaire/girl.png",
             Address: "LA, California",
             Rating: 5,
             Date: "28/03/2022",
@@ -839,7 +839,7 @@ const Data = {
           },
           {
             Name: "LoremIpsum",
-            Picture:'/Assets/Annuaire/boy.png',
+            Picture: "/Assets/Annuaire/boy.png",
             Address: "Oujda centre, Oujda",
             Rating: 4,
             Date: "20/05/2022",
@@ -847,6 +847,52 @@ const Data = {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nulla aliquam aliquet pellentesque ridiculus. At molestie augue ullamcorper convallis a cursus sed dolor tempus. Massa neque commodo tellus adipiscing. Sit gravida elementum  At turpis mauris sit venenatis ut enim fames. Bibendum nunc mauris donec amet eget senectus purus maecenas sed. Tellus placerat ac arcu sit eget posuere. Eleifend justo est eros, integer neque, dis morbi tincidunt. Vitae nec egestas consectetur varius bibendum quis.",
           },
         ],
+      },
+    ],
+  },
+  MyQuotesData: {
+    reciptsData: [
+      {
+        img: "/Assets/Bags.png",
+        title: "Bagages",
+        location: "De Madrid à Tanger",
+        date: "Date prévue d’envoi vendredi, 09 Dec",
+        devis: "2",
+        messages: "0",
+        accepts: "0",
+        subProducts: [
+          {
+            img: "/Assets/MTT.png",
+            title: "Maghreb Tourisme & Transport",
+            rating: "3",
+            price: "100 €",
+            message: "Urna, purus ac eleifend quisque magna.",
+          },
+          {
+            img: "/Assets/Prans.png",
+            title: "P Trans Logistics",
+            rating: "5",
+            price: "150 €",
+            message: "Urna, purus ac eleifend quisque magna.",
+          },
+          {
+            img: "/Assets/Prans.png",
+            title: "P Trans Logistics",
+            rating: "5",
+            price: "150 €",
+            message: "Urna, purus ac eleifend quisque magna.",
+          },
+        ],
+      },
+      {
+        img: "/Assets/Bags.png",
+        title: "Bagages",
+        location: "De Madrid à Tanger",
+        date: "Date prévue d’envoi vendredi, 09 Dec",
+        devis: "2",
+        messages: "0",
+        accepts: "0",
+        subProducts: [],
       },
     ],
   },

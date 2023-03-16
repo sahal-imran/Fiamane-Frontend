@@ -19,7 +19,9 @@ export default function Layout({ children }: Props) {
       Router.pathname === "/departure" ||
       Router.pathname === "/settings" ||
       Router.pathname === "/favorite" ||
-      Router.pathname === "/quotation"
+      Router.pathname === "/quotation" ||
+      Router.pathname === "/my-quote" ||
+      Router.pathname === "/myfavourites"
     ) {
       return true;
     } else {

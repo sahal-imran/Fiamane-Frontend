@@ -14,7 +14,7 @@ import ToggleSwitch from "components/shared/ToggleSwitch/ToggleSwitch";
 import Data from "constants/JSON/Data";
 const OfferDetails: NextPage = () => {
   const router = useRouter();
-  const id = router.query.slug as string;
+  const id = router.query.carrier_id as string;
 
   const FilteredItem = Data.FindCarrier.OfferData.filter(
     (item) => item.id === id
@@ -59,7 +59,7 @@ const OfferDetails: NextPage = () => {
     });
   };
 
- 
+
 
   return (
     <div className="w-full flex flex-col  justify-center items-center">

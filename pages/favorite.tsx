@@ -1,8 +1,9 @@
+import Favorites from 'layouts/pages/Dashboard/Favourites'
 import React from 'react'
 
 function favourite() {
   return (
-    <div>favourite</div>
+    <Favorites />
   )
 }
 
