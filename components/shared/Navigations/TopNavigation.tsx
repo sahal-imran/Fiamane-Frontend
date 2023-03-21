@@ -161,7 +161,23 @@ function TopNavigation() {
                     }
 
                     {/* Hamburger */}
-                    <div className='md:hidden block' >
+                    <div className='md:hidden flex justify-center items-center gap-2' >
+                        {/* Language dropdown */}
+                        <div className='inline-block relative language-dropdown' >
+                            <button onMouseOver={() => setUserMenu(false)} className='w-[60px] h-[30px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
+                                <Image src={"/flags/France.svg"} alt="" width={28} height={20} className='object-contain' />
+                                <Icons.ArrowDown ClassName='md:w-[10px] w-[8px] md:h-[10px] h-[8px]' fill='none' stroke='#1A1A1A' />
+                            </button>
+                            <div className='absolute z-50 bg-white-main opacity-0 pointer-events-none top-[100%] left-0 rounded-bl-[8px] rounded-br-[8px] w-[65%] min-h-[162px] p-2 dropDown' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }} >
+                                {
+                                    [1, 3, 4, 5, 6, 6].map((item: number, index: number) => {
+                                        return <button key={index} >
+                                            <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
+                                        </button>
+                                    })
+                                }
+                            </div>
+                        </div>
                         <Hamburger toggled={isOpen} toggle={setOpen} />
                     </div>
                 </div>
@@ -173,7 +189,7 @@ function TopNavigation() {
                 direction='left'
                 style={{ width: "75%" }}
             >
-                <div className='w-full h-full bg-[#E3E1F2]/20' >
+                <div className='w-full h-full bg-[#E3E1F2]/20 overflow-auto' >
                     {/* Auth bar */}
                     {
                         !isAuthenticated &&

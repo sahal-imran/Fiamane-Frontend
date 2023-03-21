@@ -184,7 +184,7 @@ const OfferDetails: NextPage = () => {
           State={IsQuote}
           Event={SetIsQuote}
           Title="Envoyer un devis"
-          styles=" md:w-[597px] sm:w-[500px] w-[320px] "
+          styles=" md:w-[597px] sm:w-[500px] w-full "
         >
           <form
             onSubmit={(e) => {
@@ -193,10 +193,10 @@ const OfferDetails: NextPage = () => {
             }}
             className="w-full flex flex-col gap-2  p-4"
           >
-            <div className="w-full h-[50px] grid grid-cols-[3fr,1.3fr] border-[1px] border-white-cool rounded-[8px]">
+            <div className="w-full h-[50px] grid md:grid-cols-[3fr,1.3fr] grid-cols-6 border-[1px] border-white-cool rounded-[8px]">
               {/* ======> input */}
               <input
-                className="px-2 h-full rounded-[8px] focus:outline-none"
+                className="px-2 h-full rounded-[8px] focus:outline-none md:col-auto col-span-4"
                 type="number"
                 name="Amount"
                 value={Inputs.Amount}
@@ -204,7 +204,7 @@ const OfferDetails: NextPage = () => {
               />
               {/* ========> select box */}
               <Dropdown
-                Styles="w-full h-full z-100 border-l-[1px] border-l-white-cool"
+                Styles="w-full h-full z-100 border-l-[1px] border-l-white-cool md:col-auto col-span-2"
                 Item={DropDownItems}
                 Placeholder="Unit"
                 State={PriceOfferd}

@@ -25,7 +25,7 @@ function ProductCard({ data }: Props) {
 
   return (
     <div className="w-full flex lg:flex-row flex-col lg:gap-0 gap-6 justify-between items-start py-4">
-      <div className="flex justify-center md:flex-row flex-col items-center md:gap-2 gap-3 md:items-start">
+      <div className="w-full flex justify-center md:flex-row flex-col items-center md:gap-2 gap-3 md:items-start">
         {/* ====> product image */}
         <div className="w-[140px] h-[110px] border-[2px] border-[#F2F2F2] relative rounded-[8px]">
           <Image src={data.img} fill className="cover" alt=""></Image>
@@ -84,12 +84,12 @@ function ProductCard({ data }: Props) {
           {/* cancel button */}
           <ContainedCircle
             Text="Decliner"
-            styles="w-[100px] bg-none text-[14px] font-sans font-semibold text-brand-secoundary border-[1px] border-white-cool rounded-[20px]"
+            styles="w-[100px] bg-none text-[14px] font-sans font-semibold text-brand-secoundary border-[1px] border-white-cool rounded-[20px] md:pb-0 pb-1"
           />
           {/* Accept button */}
           <ContainedCircle
             Text="Accepter"
-            styles="w-[160px] bg-brand-main text-[14px] font-sans font-semibold text-white-main rounded-[20px]"
+            styles="w-[160px] bg-brand-main text-[14px] md:leading-[20px] md:pb-0 pb-1 font-sans font-semibold text-white-main rounded-[20px] flex justify-center items-center"
           />
         </div>
       </div>

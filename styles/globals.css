@@ -167,7 +167,7 @@
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
 }
-.CountryCodeDropdown::-webkit-scrollbar {
+.CountryCodeDropdown::-webkit-scrollbar, .Drawer-Scroll::-webkit-scrollbar {
   width: 0px;
 }
 
@@ -207,4 +207,14 @@
 }
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
+}
+@media screen and (max-width: 700px) {
+  .drawer {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .drawer {
+    width: 100% !important;
+  }
 }

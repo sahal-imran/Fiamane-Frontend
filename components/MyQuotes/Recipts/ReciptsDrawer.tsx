@@ -23,10 +23,9 @@ function ReciptsDrawer({ isOPen, handleOpen }: Props) {
       <Drawer
         open={isOPen}
         onClose={handleOpen}
-        className="drawer"
+        className="drawer Drawer-Scroll"
         direction="right"
         style={{
-          width: "63%",
           height: "100%",
           overflow: "auto",
           borderTopLeftRadius: "10px"
@@ -108,7 +107,7 @@ function ReciptsDrawer({ isOPen, handleOpen }: Props) {
             </div>
             {/* =====> when estimate button true */}
             {Buttons.estimate && (
-              <div className="w-full flex flex-col">
+              <div className="w-full flex justify-center items-center flex-col gap-4">
                 {Data.MyQuotesData.reciptsData[0].subProducts.map(
                   (pro, index) => {
                     return (

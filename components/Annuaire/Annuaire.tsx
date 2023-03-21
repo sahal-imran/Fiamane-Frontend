@@ -10,7 +10,7 @@ function Annuaire() {
     searchByName: "",
     country: "",
     city: "",
-    agencies: false,
+    agencies: true,
     carrier: false,
     filter: false,
     favorite: false,

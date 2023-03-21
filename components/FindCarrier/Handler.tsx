@@ -176,7 +176,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
     <div className="w-full px-4 md:px-[10px]">
       <div className="w-full max-w-[1200px]  flex flex-col justify-center items-start bg-white-main rounded-[20px] shadow-xl p-3 m-auto">
         {/* ======> find an offer + find an depart button */}
-        <div className="w-full h-[44px] flex justify-center bg-grey-cool p-[2px] rounded-[8px] items-center">
+        <div className={`w-full h-[44px] flex justify-center bg-grey-cool p-[2px] rounded-[8px] items-center`}>
           <button
             onClick={() => {
               setButtons({
@@ -187,9 +187,9 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
               setState(true);
             }}
             className={`w-[50%] h-full flex justify-center items-center ${Buttons.offerButton
-                ? "border-[2px] border-solid border-brand-main text-brand-main rounded-[8px]"
+                ? "border-[2px] border-solid border-brand-main text-brand-main rounded-[8px] bg-white-main"
                 : "text-grey-main"
-              }  text-[16px] font-semibold font-sans bg-white-main`}
+              }  text-[16px] font-semibold font-sans `}
           >
             Trouver une offre
           </button>
