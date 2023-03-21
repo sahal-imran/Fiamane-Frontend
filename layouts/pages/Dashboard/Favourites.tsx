@@ -176,9 +176,9 @@ function Favourites() {
                     {item.Description}
                   </p>
                   <button
-                    onClick={(e) => {
-                      removeItem(e, item);
-                    }}
+                    // onClick={(e) => {
+                    //   removeItem(e, item);
+                    // }}
                     className="flex items-center justify-center bg-brand-mainCool text-brand-main absolute top-[12px] right-[10px] rounded-full p-1 "
                   >
                     <RxCross2 size={20} />

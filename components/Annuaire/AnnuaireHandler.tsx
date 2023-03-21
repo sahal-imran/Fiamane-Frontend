@@ -3,8 +3,8 @@ import { BiSearch } from "react-icons/bi";
 import InputFieldWithIcon from "components/shared/Buttons/InputFieldWithIcon";
 import * as Icons from "../../SVG/Icons";
 
-interface Props{
-  State:{
+interface Props {
+  State: {
     searchByName: string;
     country: string;
     city: string;
@@ -16,8 +16,8 @@ interface Props{
     arivalCity: boolean;
     topRated: boolean;
     verifiedByFiamane: boolean;
-}
-  SetState:React.Dispatch<React.SetStateAction<{
+  }
+  SetState: React.Dispatch<React.SetStateAction<{
     searchByName: string;
     country: string;
     city: string;
@@ -29,11 +29,11 @@ interface Props{
     arivalCity: boolean;
     topRated: boolean;
     verifiedByFiamane: boolean;
-}>>;
+  }>>;
 }
 
 
-const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
+const AnnuaireHandler: React.FC<Props> = ({ State, SetState }: Props) => {
 
   return (
     <div className="w-full mt-4 lg:px-[10px]">
@@ -49,11 +49,10 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                   agencies: !State.agencies,
                 });
               }}
-              className={`w-[50%] h-[44px] flex justify-center items-center ${
-                State.agencies
+              className={`w-[50%] h-[44px] flex justify-center items-center ${State.agencies
                   ? "border-[2px] border-solid border-brand-main text-brand-main rounded-[8px] bg-white-main"
                   : "text-grey-main"
-              } md:text-[16px] text-[13px] font-semibold font-sans`}
+                } md:text-[16px] text-[13px] font-semibold font-sans`}
             >
               Agences
             </button>
@@ -64,11 +63,10 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                   carrier: !State.carrier,
                 });
               }}
-              className={`w-[50%] h-[44px] flex md:flex-row flex-col justify-center items-center md:text-[16px] text-[13px] font-semibold font-sans ${
-                State.carrier
+              className={`w-[50%] h-[44px] flex md:flex-row flex-col justify-center items-center md:text-[16px] text-[13px] font-semibold font-sans ${State.carrier
                   ? "border-[2px] border-solid border-brand-main rounded-[8px] text-brand-main bg-white-main"
                   : "text-grey-main"
-              } `}
+                } `}
             >
               Transporteurs
             </button>
@@ -188,7 +186,7 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                     })
                   }
                   isLeft={true}
-                  eventHandle={() => {}}
+                  eventHandle={() => { }}
                   icon={<BiSearch className="text-[30px] text-grey-main" />}
                 />
               </div>
@@ -199,13 +197,13 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                   height="h-[44px]"
                   state={State.city}
                   Set_State={(e: any) =>
-                   SetState({
+                    SetState({
                       ...State,
                       city: e.target.value,
                     })
                   }
                   isLeft={true}
-                  eventHandle={() => {}}
+                  eventHandle={() => { }}
                   icon={<BiSearch className="text-[30px] text-grey-main" />}
                 />
               </div>
