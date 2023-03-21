@@ -104,9 +104,9 @@
 
 /* =====> multiple select style */
 .MuiSelect-select {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  display: flex !important;
+  justify-content: start !important;
+  align-items: center !important;
   gap: 10px;
 }
 .selectWithInput fieldset {
@@ -167,7 +167,8 @@
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
 }
-.CountryCodeDropdown::-webkit-scrollbar, .Drawer-Scroll::-webkit-scrollbar {
+.CountryCodeDropdown::-webkit-scrollbar,
+.Drawer-Scroll::-webkit-scrollbar {
   width: 0px;
 }
 
