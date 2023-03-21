@@ -36,7 +36,7 @@ interface Props{
 const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
 
   return (
-    <div className="w-full my-4 px-4 lg:px-[10px]">
+    <div className="w-full mt-4 lg:px-[10px]">
       <div className="w-full max-w-[1200px]  flex flex-col gap-4 justify-center items-start bg-white-main rounded-[20px] shadow-xl p-3 m-auto py-8">
         {/* ======> Agencies + Carriers +  serach bar */}
         <div className="w-full gap-5 grid grid-cols-1 md:grid-cols-[2fr,3fr]">

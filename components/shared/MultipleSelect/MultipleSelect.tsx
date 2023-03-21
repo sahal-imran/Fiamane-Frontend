@@ -36,6 +36,7 @@ const MultipleSelect = ({ selectData, state, setState }: Props) => {
 
       <FormControl>
         <Select
+         sx={{boder:"2px solid red",pr:"34px"}}
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           multiple
@@ -91,4 +92,4 @@ const MultipleSelect = ({ selectData, state, setState }: Props) => {
   );
 };
 
-export default MultipleSelect;
+export default MultipleSelect;

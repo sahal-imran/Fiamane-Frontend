@@ -143,11 +143,14 @@ const MarchandiseSnippet = () => {
       <DialogueWrapper
         State={showCommodity}
         Event={setShowCommodity}
-        styles="w-[340px] md:w-[687px]"
+        styles="w-full md:w-[687px]"
         Title="Ajouter une nouvelle marchandise"
       // overflow="overflow-auto"
       >
-        <form onSubmit={SubmitForm} className="w-full flex flex-col gap-6 justify-center items-start p-8">
+        <form
+          onSubmit={SubmitForm}
+          className="w-full flex flex-col gap-6 justify-center items-start p-4 sm:p-8"
+        >
           {/* =======> Commodity Bill of Materials + value of goods  */}
           <div className="w-full flex md:flex-row flex-col justify-center items-center gap-4">
             {/* ======> Commodity Bill of Materials select */}
@@ -183,20 +186,20 @@ const MarchandiseSnippet = () => {
             </div>
           </div>
           {/* =======> value of goods */}
-          <div className="w-[50%] pr-2 selectWithInput">
+          <div className="w-full sm:w-[50%] pr-2 selectWithInput">
             <SelectWithInput
               priceState={Inputs.ValueOfGoods}
               setPriceState={(e: any) => {
                 setInputs({
                   ...Inputs,
-                  ValueOfGoods: e.target.value
+                  ValueOfGoods: e.target.value,
                 });
               }}
               unitState={Inputs.ValueOfGoodsUnit}
               setUnitState={(e: any) => {
                 setInputs({
                   ...Inputs,
-                  ValueOfGoodsUnit: e.target.value
+                  ValueOfGoodsUnit: e.target.value,
                 });
               }}
               selectData={valueOfGoodSelectData}
@@ -210,12 +213,19 @@ const MarchandiseSnippet = () => {
             </p>
 
             <div className="w-full flex flex-col md:flex-row gap-3 md:justify-between items-start md:items-center">
-              <RadioGroupButton DefaultValue="Neuve" FirstValue="Neuve" FirstLabel="Neuve" SecondValue="Occasion" SecondLabel="Occasion" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setInputs({
-                  ...Inputs,
-                  NatureOfCommodity: e.target.value
-                });
-              }} />
+              <RadioGroupButton
+                DefaultValue="Neuve"
+                FirstValue="Neuve"
+                FirstLabel="Neuve"
+                SecondValue="Occasion"
+                SecondLabel="Occasion"
+                ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setInputs({
+                    ...Inputs,
+                    NatureOfCommodity: e.target.value,
+                  });
+                }}
+              />
             </div>
           </div>
           {/* =========> dimension radio */}
@@ -225,40 +235,60 @@ const MarchandiseSnippet = () => {
             </p>
 
             <div className="w-full flex md:flex-row flex-col gap-3 md:justify-between items-start md:items-center">
-              <RadioGroupButton DefaultValue="Je conais les dimensions de l’objet" FirstValue="Je conais les dimensions de l’objet" FirstLabel="Je conais les dimensions de l’objet" SecondValue="Je ne conais pas les dimensions" SecondLabel="Je ne conais pas les dimensions" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setDimensionRadio(e.target.value)
-              }} />
+              <RadioGroupButton
+                DefaultValue="Je conais les dimensions de l’objet"
+                FirstValue="Je conais les dimensions de l’objet"
+                FirstLabel="Je conais les dimensions de l’objet"
+                SecondValue="Je ne conais pas les dimensions"
+                SecondLabel="Je ne conais pas les dimensions"
+                ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setDimensionRadio(e.target.value);
+                }}
+              />
             </div>
           </div>
           {dimensionRadio === "Je conais les dimensions de l’objet" ? (
             <div className="w-full grid grid-cols-[1fr,1fr,1fr,0.5fr] dimension justify-center items-center">
               {/* =====> length */}
               <InputFieldWithIcon
+
                 required={true}
-                type='number'
+                type="number"
+                className="dimensionStyle"
                 state={CustomDimension.length}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setCustomDimension({ ...CustomDimension, length: e.target.value });
+                  setCustomDimension({
+                    ...CustomDimension,
+                    length: e.target.value,
+                  });
                 }}
                 placeholder="Longueur"
               />
               {/* =====> width */}
               <InputFieldWithIcon
                 required={true}
-                type='number'
+                type="number"
+                className="dimensionStyle"
                 state={CustomDimension.width}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setCustomDimension({ ...CustomDimension, width: e.target.value });
+                  setCustomDimension({
+                    ...CustomDimension,
+                    width: e.target.value,
+                  });
                 }}
                 placeholder="Largeur"
               />
               {/* ======> height */}
               <InputFieldWithIcon
                 required={true}
-                type='number'
+                type="number"
+                className="dimensionStyle"
                 state={CustomDimension.height}
                 Set_State={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setCustomDimension({ ...CustomDimension, height: e.target.value });
+                  setCustomDimension({
+                    ...CustomDimension,
+                    height: e.target.value,
+                  });
                 }}
                 placeholder="Hauteur"
               />
@@ -266,7 +296,10 @@ const MarchandiseSnippet = () => {
               <CustomSelect
                 state={CustomDimension.unit}
                 setState={(e: any) => {
-                  setCustomDimension({ ...CustomDimension, unit: e.target.value });
+                  setCustomDimension({
+                    ...CustomDimension,
+                    unit: e.target.value,
+                  });
                 }}
                 selectData={units}
               />
@@ -319,8 +352,8 @@ const MarchandiseSnippet = () => {
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           setInputs({
                             ...Inputs,
-                            Dimensions: e.target.value
-                          })
+                            Dimensions: e.target.value,
+                          });
                         }}
                         slotProps={{
                           action: ({ checked }: any) => ({
@@ -349,9 +382,16 @@ const MarchandiseSnippet = () => {
               Poids
             </p>
 
-            <RadioGroupButton DefaultValue="Je conais le poids" FirstValue="Je conais le poids" FirstLabel="Je conais le poids" SecondValue="Je ne conais pas le poids" SecondLabel="Je ne conais pas le poids" ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setBodyWeightRadio(e.target.value)
-            }} />
+            <RadioGroupButton
+              DefaultValue="Je conais le poids"
+              FirstValue="Je conais le poids"
+              FirstLabel="Je conais le poids"
+              SecondValue="Je ne conais pas le poids"
+              SecondLabel="Je ne conais pas le poids"
+              ChangeEvent={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setBodyWeightRadio(e.target.value);
+              }}
+            />
           </div>
 
           {/* ======>  */}
@@ -362,14 +402,14 @@ const MarchandiseSnippet = () => {
                 setPriceState={(e: any) => {
                   setInputs({
                     ...Inputs,
-                    Weight: e.target.value
+                    Weight: e.target.value,
                   });
                 }}
                 unitState={Inputs.WeightUnit}
                 setUnitState={(e: any) => {
                   setInputs({
                     ...Inputs,
-                    WeightUnit: e.target.value
+                    WeightUnit: e.target.value,
                   });
                 }}
                 selectData={weightUnits}
@@ -378,10 +418,9 @@ const MarchandiseSnippet = () => {
             </div>
           ) : (
             <>
-              <div className="w-full flex justify-center items-start weightRadio">
+              <div className="w-full  weightRadio">
                 <RadioGroup
                   aria-labelledby="storage-label"
-                  defaultValue="512GB"
                   size="lg"
                   sx={{
                     gap: 1.5,
@@ -393,7 +432,7 @@ const MarchandiseSnippet = () => {
                       key={index}
                       sx={{
                         p: "12px",
-                        py: "14px",
+                        py: { xs: "8px", md: "12px" },
                         borderRadius: "md",
                         boxShadow: "sm",
                         bgcolor: "background.body",
@@ -405,7 +444,7 @@ const MarchandiseSnippet = () => {
                       <Radio
                         required
                         label={
-                          <p className="flex justify-center items-center text-16 font-normal font-sans text-black-main">
+                          <p className="flex justify-center items-center text-[10px] sm:text-[16px] font-normal font-sans text-black-main">
                             {item.label + "kg"}
                           </p>
                         }
@@ -416,7 +455,7 @@ const MarchandiseSnippet = () => {
                           setInputs({
                             ...Inputs,
                             Weight: e.target.value,
-                            WeightUnit: "kg"
+                            WeightUnit: "kg",
                           });
                         }}
                         slotProps={{
@@ -464,7 +503,7 @@ const MarchandiseSnippet = () => {
                 <div className="w-full h-[65px] sm:h-[150px] md:h-[150px] flex flex-wrap gap-3 justify-start items-center rounded-md overflow-auto">
                   {companyImages.map((image, index) => {
                     return (
-                      <div key={index} className="w-[100px] h-[100px] relative" >
+                      <div key={index} className="w-[100px] h-[100px] relative">
                         <Image
                           src={URL.createObjectURL(image)}
                           fill
@@ -472,13 +511,17 @@ const MarchandiseSnippet = () => {
                           alt="seo-text-here"
                         />
                         {/* Hover */}
-                        <div className="absolute w-full h-full bg-[#7E858B]/50 flex justify-center items-center cursor-pointer" >
-                          <RxCross2 onClick={() => {
-                            const NewImages = [...companyImages];
-                            NewImages.splice(index, 1);
-                            Set_Company_Images(NewImages);
-                            console.log(NewImages)
-                          }} size={20} color="E6E6E6" />
+                        <div className="absolute w-full h-full bg-[#7E858B]/50 flex justify-center items-center cursor-pointer">
+                          <RxCross2
+                            onClick={() => {
+                              const NewImages = [...companyImages];
+                              NewImages.splice(index, 1);
+                              Set_Company_Images(NewImages);
+                              console.log(NewImages);
+                            }}
+                            size={20}
+                            color="E6E6E6"
+                          />
                         </div>
                       </div>
                     );
@@ -486,11 +529,8 @@ const MarchandiseSnippet = () => {
                 </div>
               )}
 
-              <button
-                type="button"
-                onClick={handleCompanyImage}
-              >
-                <div className="w-[116px] max-w-[90px] md:max-w-[100px] h-[40px] sm:h-[70px] md:h-[100px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
+              <button type="button" onClick={handleCompanyImage}>
+                <div className="w-[70px] md:w-[100px] h-[55px] sm:h-[70px] md:h-[80px] flex justify-center items-center border-[1px] border-dashed rounded-md border-brand-main">
                   <Image
                     src={addImage}
                     width={40}
@@ -514,7 +554,7 @@ const MarchandiseSnippet = () => {
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                 setInputs({
                   ...Inputs,
-                  AdditionalInfo: e.target.value
+                  AdditionalInfo: e.target.value,
                 });
               }}
               className="w-full h-[150px] border-[1px] border-solid border-white-cool rounded-[8px] p-2 resize-none focus:outline-none profilePlaceholder"

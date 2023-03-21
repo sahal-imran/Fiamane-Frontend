@@ -145,13 +145,21 @@
 .css-18zy15p-JoyRadio-action {
   border: 2px solid #e6e6e6 !important;
 }
-
+.dimensionStyle {
+  border-right: 0px !important;
+}
 .MuiSheet-root {
   width: 100% !important;
 }
 .weightRadio .MuiRadioGroup-root {
-  display: flex !important;
-  flex-direction: row !important;
+  display: grid !important;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+@media screen and (max-width: 500px) {
+  .weightRadio .MuiRadioGroup-root {
+    grid-template-columns: auto auto auto;
+  }
 }
 
 /* styling the calendar selected date color */
@@ -200,11 +208,3 @@
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ff8501 !important;
 }
-/* @media screen and (max-width:768px) {
-  .Menu{
-    right: 0px;
-  }
-  .Menu::after{
-    left: 90%;
-  }
-} */
