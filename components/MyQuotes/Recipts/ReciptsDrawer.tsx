@@ -26,6 +26,7 @@ function ReciptsDrawer({ isOPen, handleOpen }: Props) {
         className="drawer Drawer-Scroll"
         direction="right"
         style={{
+          width:"65%",
           height: "100%",
           overflow: "auto",
           borderTopLeftRadius: "10px"

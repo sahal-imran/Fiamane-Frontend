@@ -41,7 +41,7 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
         {/* ======> Agencies + Carriers +  serach bar */}
         <div className="w-full gap-5 grid grid-cols-1 md:grid-cols-[2fr,3fr]">
           {/* =====> Agencies buttons */}
-          <div className="w-full flex md:flex-row flex-col gap-2 justify-center items-center bg-grey-cool rounded-[8px]">
+          <div className="w-full flex flex-row gap-2 justify-center items-center bg-grey-cool rounded-[8px]">
             <button
               onClick={() => {
                 SetState({
@@ -49,7 +49,7 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                   agencies: !State.agencies,
                 });
               }}
-              className={`w-full md:w-[50%] h-[44px] flex justify-center items-center ${
+              className={`w-[50%] h-[44px] flex justify-center items-center ${
                 State.agencies
                   ? "border-[2px] border-solid border-brand-main text-brand-main rounded-[8px] bg-white-main"
                   : "text-grey-main"
@@ -64,7 +64,7 @@ const AnnuaireHandler:React.FC<Props>=({State,SetState}:Props)=> {
                   carrier: !State.carrier,
                 });
               }}
-              className={`w-full md:w-[50%] h-[44px] flex md:flex-row flex-col justify-center items-center md:text-[16px] text-[13px] font-semibold font-sans ${
+              className={`w-[50%] h-[44px] flex md:flex-row flex-col justify-center items-center md:text-[16px] text-[13px] font-semibold font-sans ${
                 State.carrier
                   ? "border-[2px] border-solid border-brand-main rounded-[8px] text-brand-main bg-white-main"
                   : "text-grey-main"
