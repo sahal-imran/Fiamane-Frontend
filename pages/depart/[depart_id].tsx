@@ -16,7 +16,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 const DepartsDetail = () => {
   const router = useRouter();
-  const id = router.query.slug as string;
+  const id = router.query.depart_id as string;
 
   const FilteredItem = Data.FindCarrier.Departs.filter(
     (item) => item.Id === id
