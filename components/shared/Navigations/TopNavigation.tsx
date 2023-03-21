@@ -68,7 +68,7 @@ function TopNavigation() {
                 <div className='w-full m-auto h-full lg:px-24 md:8 px-4 flex justify-between items-center' >
                     {/* Logo and Nav items */}
                     <div className='flex justify-center items-center gap-8' >
-                        <Link href={"/"} className='w-[109px] h-[42px] relative' >
+                        <Link href={"/"} className='sm:w-[109px] w-[65px] sm:h-[42px] h-[28px] relative' >
                             <Image src={"/logo.svg"} alt="" fill className='object-contain' />
                         </Link>
 
@@ -161,7 +161,7 @@ function TopNavigation() {
                     }
 
                     {/* Hamburger */}
-                    <div className='md:hidden flex justify-center items-center gap-2' >
+                    <div className='md:hidden flex justify-center items-center gap-3' >
                         {/* Language dropdown */}
                         <div className='inline-block relative language-dropdown' >
                             <button onMouseOver={() => setUserMenu(false)} className='w-[60px] h-[30px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
@@ -178,8 +178,10 @@ function TopNavigation() {
                                 }
                             </div>
                         </div>
-                        <Bedge Content='4' >
-                            <Hamburger toggled={isOpen} toggle={setOpen} />
+                        <Bedge Content='5' >
+                            <button onClick={toggleDrawer} >
+                                <Icons.Hamburger ClassName='w-[28.7px] h-[20px]' fill='#240046' />
+                            </button>
                         </Bedge>
                     </div>
                 </div>
@@ -189,7 +191,7 @@ function TopNavigation() {
                 open={isOpen}
                 onClose={toggleDrawer}
                 direction='left'
-                style={{ width: "75%" }}
+                style={{ width: "85%" }}
             >
                 <div className='w-full h-full bg-[#E3E1F2]/20 overflow-auto' >
                     {/* Auth bar */}
@@ -248,7 +250,7 @@ function TopNavigation() {
                     <div className='w-full bg-white-main px-4 py-6 border-t-[1px] border-b-2 border-white-cool' >
                         {
                             Data.TopNavigation.NavItemPhone.map((item: any, index: number) => {
-                                return <Link key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
+                                return <Link onClick={toggleDrawer} key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
                                     {item.Icon}
                                     {item.Name}
                                 </Link>
@@ -265,7 +267,7 @@ function TopNavigation() {
                     <div className='w-full px-4 py-4' >
                         {
                             Data.LeftNavigation.NavItemPhone.map((item: any, index: number) => {
-                                return <Link key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
+                                return <Link onClick={toggleDrawer} key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
                                     {item.Icon}
                                     {item.Name}
                                 </Link>

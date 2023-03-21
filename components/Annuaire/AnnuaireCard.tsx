@@ -232,11 +232,14 @@ const AnnuaireCard: React.FC<Props> = ({
                 stroke=""
                 fill=""
               />
-              <p className="font-NunitoSans font-[400] text-blak-main text-[8px] leading-3">
+              <div className="font-NunitoSans font-[400] text-blak-main text-[8px] leading-3">
                 Urna, purus ac eleifend quisque magna. Odio fermentum,
                 suspendisse cursus rhoncus. Metus parturient fringilla viverra
-                proin.... Lire plus
-              </p>
+                proin....
+                <Link className="ml-1 font-bold" href={Route}>
+                  voir plus
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -245,4 +248,4 @@ const AnnuaireCard: React.FC<Props> = ({
   );
 };
 
-export default AnnuaireCard;
+export default AnnuaireCard;

@@ -189,7 +189,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
             className={`w-[50%] h-full flex justify-center items-center ${Buttons.offerButton
                 ? "border-[2px] border-solid border-brand-main text-brand-main rounded-[8px] bg-white-main"
                 : "text-grey-main"
-              }  text-[16px] font-semibold font-sans `}
+              } md:text-[16px] text-[13px] font-semibold font-sans `}
           >
             Trouver une offre
           </button>
@@ -202,7 +202,7 @@ const Handler: React.FC<Props> = ({ setState, state }: Props) => {
               });
               setState(false);
             }}
-            className={`w-[50%] h-full flex justify-center items-center  text-[16px] font-semibold font-sans ${Buttons.departButton
+            className={`w-[50%] h-full flex justify-center items-center md:text-[16px] text-[13px] font-semibold font-sans ${Buttons.departButton
                 ? "border-[2px] border-solid border-brand-main rounded-[8px] text-brand-main bg-white-main"
                 : "text-grey-main"
               } `}
