@@ -10,6 +10,9 @@ import SignUp from "../../../layouts/pages/SignUp"
 import Login from "../../../layouts/pages/Login"
 import ForgetPassword from '../../../layouts/pages/ForgetPassword';
 import { useTranslation } from 'hooks/useTranslation';
+import Avatar from '@mui/material/Avatar';
+import { useAuth } from "hooks/useAuth"
+import Bedge from '../Bedge/Bedge';
 
 import Drawer from 'react-modern-drawer'
 //import styles 👇
@@ -17,6 +20,7 @@ import 'react-modern-drawer/dist/index.css'
 
 
 function TopNavigation() {
+    const { isAuthenticated, setIsAuthenticated } = useAuth()
     const translate = useTranslation();
     const Router = useRouter();
     const [UserMenu, setUserMenu] = useState<boolean>(false)
@@ -81,46 +85,80 @@ function TopNavigation() {
                     </div>
 
                     {/* User Icon and Language dropdown */}
-                    <div className='md:flex hidden justify-center items-center gap-6' >
-                        <ContainedCircle Icon={<Icons.Location ClassName='w-[12.8px] h-[15.96px]' fill='white' />} Text={translate("Navbar.Links.TrackAnItem")} />
-                        {/* Language dropdown */}
-                        <div className='inline-block relative language-dropdown' >
-                            <button onMouseOver={() => setUserMenu(false)} className='w-[76px] h-[40px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
-                                <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
-                                <Icons.ArrowDown ClassName='w-[10px] h-[10px]' fill='none' stroke='#1A1A1A' />
-                            </button>
-                            <div className='absolute bg-white-main opacity-0 pointer-events-none top-[100%] left-0 rounded-bl-[8px] rounded-br-[8px] w-[65%] min-h-[162px] p-2 dropDown' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }} >
+                    {
+                        !isAuthenticated && <div className='md:flex hidden justify-center items-center gap-6' >
+                            <ContainedCircle Icon={<Icons.Location ClassName='w-[12.8px] h-[15.96px]' fill='white' />} Text={translate("Navbar.Links.TrackAnItem")} />
+                            {/* Language dropdown */}
+                            <div className='inline-block relative language-dropdown' >
+                                <button onMouseOver={() => setUserMenu(false)} className='w-[76px] h-[40px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
+                                    <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
+                                    <Icons.ArrowDown ClassName='w-[10px] h-[10px]' fill='none' stroke='#1A1A1A' />
+                                </button>
+                                <div className='absolute z-50 bg-white-main opacity-0 pointer-events-none top-[100%] left-0 rounded-bl-[8px] rounded-br-[8px] w-[65%] min-h-[162px] p-2 dropDown' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }} >
+                                    {
+                                        [1, 3, 4, 5, 6].map((item: number, index: number) => {
+                                            return <button key={index} >
+                                                <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
+                                            </button>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            {/* User Menu */}
+                            <div className='relative inline-block User z-50' >
+                                <button onClick={() => setUserMenu(true)} className="flex justify-center items-center" ><Icons.User ClassName='w-[40px] h-[40px]' fill='none' stroke='#FF8501' /></button>
                                 {
-                                    [1, 3, 4, 5, 6].map((item: number, index: number) => {
-                                        return <button key={index} >
-                                            <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
-                                        </button>
-                                    })
+                                    UserMenu && <div ref={domNode} className={`flex p-3 justify-center items-center flex-col bg-white-main Menu`} >
+                                        <div onClick={() => {
+                                            Set_LoginDialogueBox(true)
+                                            setUserMenu(false)
+                                        }} >
+                                            <ContainedCircle Text={translate("Navbar.LoginAvatar.LoginText")} />
+                                        </div>
+                                        <div className='flex justify-center items-center mt-2 gap-2' >
+                                            <p className='font-OpenSans font-normal text-brand-secondary text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.NewAccountText")}</p>
+                                            <button onClick={() => {
+                                                Set_SignUpDialogueBox(true)
+                                                setUserMenu(false)
+                                            }} className='font-Roboto font-semibold text-brand-main text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.MarkedText")}</button>
+                                        </div>
+                                    </div>
                                 }
                             </div>
                         </div>
-                        {/* User Menu */}
-                        <div className='relative inline-block User z-50' >
-                            <button onClick={() => setUserMenu(true)} className="flex justify-center items-center" ><Icons.User ClassName='w-[40px] h-[40px]' fill='none' stroke='#FF8501' /></button>
-                            {
-                                UserMenu && <div ref={domNode} className={`flex p-3 justify-center items-center flex-col bg-white-main Menu`} >
-                                    <div onClick={() => {
-                                        Set_LoginDialogueBox(true)
-                                        setUserMenu(false)
-                                    }} >
-                                        <ContainedCircle Text={translate("Navbar.LoginAvatar.LoginText")} />
-                                    </div>
-                                    <div className='flex justify-center items-center mt-2 gap-2' >
-                                        <p className='font-OpenSans font-normal text-brand-secondary text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.NewAccountText")}</p>
-                                        <button onClick={() => {
-                                            Set_SignUpDialogueBox(true)
-                                            setUserMenu(false)
-                                        }} className='font-Roboto font-semibold text-brand-main text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.MarkedText")}</button>
-                                    </div>
+                    }
+                    {
+                        isAuthenticated &&
+                        <div className='md:flex hidden justify-center items-center gap-6' >
+                            <Bedge Content='4' >
+                                <button>
+                                    <Icons.Bag ClassName='w-[24px] h-[21.6px]' fill='#240046' />
+                                </button>
+                            </Bedge>
+                            <Bedge Content='1' >
+                                <button>
+                                    <Icons.Bell ClassName='w-[24px] h-[21.6px]' fill='#240046' />
+                                </button>
+                            </Bedge>
+                            <Avatar sx={{ bgcolor: "#E0E4EB", fontFamily: "Inter", width: "40px", height: "40px", color: "#15181E", fontSize: "14px", lineHeight: "22px", letterSpacing: "-0.012em", fontWeight: 600, }}>AM</Avatar>
+                            {/* Language dropdown */}
+                            <div className='inline-block relative language-dropdown' >
+                                <button onMouseOver={() => setUserMenu(false)} className='w-[76px] h-[40px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
+                                    <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
+                                    <Icons.ArrowDown ClassName='w-[10px] h-[10px]' fill='none' stroke='#1A1A1A' />
+                                </button>
+                                <div className='absolute bg-white-main opacity-0 pointer-events-none top-[100%] left-0 rounded-bl-[8px] rounded-br-[8px] w-[65%] min-h-[162px] p-2 dropDown z-50' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }} >
+                                    {
+                                        [1, 3, 4, 5, 6].map((item: number, index: number) => {
+                                            return <button key={index} >
+                                                <Image src={"/flags/France.svg"} alt="" width={34} height={26} className='object-contain' />
+                                            </button>
+                                        })
+                                    }
                                 </div>
-                            }
+                            </div>
                         </div>
-                    </div>
+                    }
 
                     {/* Hamburger */}
                     <div className='md:hidden block' >
@@ -133,12 +171,13 @@ function TopNavigation() {
                 open={isOpen}
                 onClose={toggleDrawer}
                 direction='left'
-                style={{ width: "100%" }}
+                style={{ width: "75%" }}
             >
-                <div className='w-full h-full bg-white-off' >
-                    {/* Cross bar */}
-                    <div className='w-full px-4 py-3 flex justify-between items-center' >
-                        <div className='flex justify-center items-center gap-4' >
+                <div className='w-full h-full bg-[#E3E1F2]/20' >
+                    {/* Auth bar */}
+                    {
+                        !isAuthenticated &&
+                        <div className='w-full px-4 py-3 flex justify-start items-center gap-3' >
                             {/* Language dropdown */}
                             <div className='inline-block relative language-dropdown' >
                                 <button onMouseOver={() => setUserMenu(false)} className='w-[76px] h-[40px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
@@ -169,37 +208,53 @@ function TopNavigation() {
                                 }
                             </div>
                         </div>
-                        <Hamburger toggled={isOpen} toggle={setOpen} />
-                    </div>
-                    <div className={`w-full h-[40px] flex justify-center items-center my-3 gap-6 bg-brand-secondary`} >
-                        <button onClick={() => setMainMenu(true)} className={`font-NunitoSans font-semibold text-[16px] ${Is_SiteMenu ? "text-brand-main" : "text-white-main"} capitalize font-semibold`} >Site Menu</button>
-                        <button onClick={() => setMainMenu(false)} className={`font-NunitoSans font-semibold text-[16px] ${!Is_SiteMenu ? "text-brand-main" : "text-white-main"} capitalize font-semibold`} >My Menu</button>
-                    </div>
-                    {/* Menu */}
+                    }
                     {
-                        Is_SiteMenu && <div className='w-full flex justify-center items-center flex-col gap-4 mt-8 p-4' >
-                            {
-                                Data.TopNavigation.NavItems.map((item: any, index: number) => {
-                                    return <Link key={index} onClick={toggleDrawer} href={item.Route} className="font-NunitoSans font-semibold text-brand-secondary text-[16px]" >
-                                        {item.Name}
-                                    </Link>
-                                })
-                            }
-                            <ContainedCircle Icon={<Icons.Location ClassName='w-[12.8px] h-[15.96px]' fill='white' />} Text="Suivre un colis" />
+                        isAuthenticated &&
+                        <div className='w-full px-4 py-3 flex justify-start items-center gap-6' >
+                            <Avatar sx={{ bgcolor: "#E0E4EB", fontFamily: "Inter", width: "51px", height: "51px", color: "#15181E", fontSize: "20px", lineHeight: "22px", letterSpacing: "-0.012em", fontWeight: 600, }}>AM</Avatar>
+                            <Bedge Content='4' >
+                                <button>
+                                    <Icons.Bag ClassName='w-[24px] h-[21.6px]' fill='#240046' />
+                                </button>
+                            </Bedge>
+                            <Bedge Content='1' >
+                                <button>
+                                    <Icons.Bell ClassName='w-[21.6px] h-[21.15px]' fill='#240046' />
+                                </button>
+                            </Bedge>
                         </div>
                     }
-                    {/* My Menu */}
-                    {
-                        !Is_SiteMenu && <div className='w-full h-full' >
-                            {
-                                Data.LeftNavigation.NavItems.map((item: any, index: number) => {
-                                    return <Link onClick={toggleDrawer} key={index} href={item.Route} className={`w-full h-[48px] flex justify-start items-center px-8 font-OpenSans text-[18px] leading-[28px] tracking-[-0.01em] hover:bg-brand-tertiary ${Router.pathname === item.Route ? "font-semibold bg-brand-tertiary text-white-main" : "font-normal text-brand-secondary"} `} >
-                                        {item.Name}
-                                    </Link>
-                                })
-                            }
-                        </div>
-                    }
+
+                    {/* Client navigation */}
+                    <div className='w-full bg-white-main px-4 py-6 border-t-[1px] border-b-2 border-white-cool' >
+                        {
+                            Data.TopNavigation.NavItemPhone.map((item: any, index: number) => {
+                                return <Link key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
+                                    {item.Icon}
+                                    {item.Name}
+                                </Link>
+                            })
+                        }
+
+                    </div>
+
+                    {/* Dashboard navigation */}
+                    <div className='w-full p-4 flex justify-between items-center border-b-[1px] border-b-grey-cool' >
+                        <h4 className='font-OpenSans font-bold text-[14px] leading-[20px] text-grey-off' >Mon espace perso</h4>
+                        <Icons.MyAccount ClassName="w-[20px] h-[20px]" fill='#3D4852' />
+                    </div>
+                    <div className='w-full px-4 py-4' >
+                        {
+                            Data.LeftNavigation.NavItemPhone.map((item: any, index: number) => {
+                                return <Link key={index} href={item.Route} className="w-full py-2 whitespace-nowrap flex justify-start items-center gap-3 font-OpenSans font-semibold text-[14px] leading-[20px] text-brand-secondary" >
+                                    {item.Icon}
+                                    {item.Name}
+                                </Link>
+                            })
+                        }
+
+                    </div>
                 </div>
             </Drawer>
 

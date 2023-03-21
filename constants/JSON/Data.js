@@ -1,3 +1,5 @@
+import * as Icons from "SVG/Icons";
+
 const Data = {
   TopNavigation: {
     NavItems: [
@@ -16,6 +18,30 @@ const Data = {
       {
         Name: "Navbar.Links.FiamaneCompany", //Fiamane company
         Route: "",
+      },
+    ],
+    NavItemPhone: [
+      {
+        Name: "Trouver un transporteur", //Find a carrier
+        Route: "/",
+        Icon: (
+          <Icons.Search ClassName="w-[16.2px] h-[16.2px]" stroke="#240046" />
+        ),
+      },
+      {
+        Name: "Annuaire", //Phone book
+        Route: "/annuaire",
+        Icon: <Icons.Annuaire ClassName="w-[18px] h-[14.23px]" />,
+      },
+      {
+        Name: "Suivre un colis", //Track a package
+        Route: "",
+        Icon: <Icons.Service ClassName="w-[18px] h-[18px]" fill="#240046" />,
+      },
+      {
+        Name: "Fiamane entreprise", //Fiamane company
+        Route: "",
+        Icon: <Icons.Home ClassName="w-[18px] h-[16px]" fill="#240046" />,
       },
     ],
   },
@@ -44,6 +70,33 @@ const Data = {
       {
         Name: "AppSideBar.Settings",
         Route: "/settings",
+      },
+    ],
+    NavItemPhone: [
+      {
+        Name: "Mes offres",
+        Route: "/offer",
+        Icon: <Icons.Offer ClassName="max-w-[19px] max-h-[19px]" fill="#240046" />,
+      },
+      {
+        Name: "Mes départs",
+        Route: "/departure",
+        Icon: <Icons.Depart ClassName="w-[18px] h-[21.84px]" fill="#240046" />,
+      },
+      {
+        Name: "Mes devis",
+        Route: "/my-quote",
+        Icon: <Icons.Devis ClassName="w-[18px] h-[18px]" fill="#240046" />,
+      },
+      {
+        Name: "Mes favoris",
+        Route: "/favorite",
+        Icon: <Icons.Favorite ClassName="w-[18px] h-[18px]" stroke="#240046" />,
+      },
+      {
+        Name: "Paramétres",
+        Route: "/settings",
+        Icon: <Icons.Settings ClassName="w-[18px] h-[18px]" fill="#240046" stroke="#240046" />,
       },
     ],
   },

@@ -3,17 +3,17 @@ import { AuthProviderProps, IAuthContext } from "types/useAuth.types";
 
 const AuthContext = createContext<IAuthContext>({
   isAuthenticated: false,
-  setIsAuthenticated: () => {},
-  logout: () => {},
+  setIsAuthenticated: () => { },
+  logout: () => { },
   user: null,
-  setUser: () => {},
+  setUser: () => { },
 });
 
 /**
  * Auth provider
  */
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
