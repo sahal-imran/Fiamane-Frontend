@@ -178,7 +178,9 @@ function TopNavigation() {
                                 }
                             </div>
                         </div>
-                        <Hamburger toggled={isOpen} toggle={setOpen} />
+                        <Bedge Content='4' >
+                            <Hamburger toggled={isOpen} toggle={setOpen} />
+                        </Bedge>
                     </div>
                 </div>
             </div>
