@@ -73,7 +73,7 @@ function TopNavigation() {
                         </Link>
 
                         {/* Item */}
-                        <div className='md:flex hidden justify-center items-center gap-6' >
+                        <div className='lg:flex hidden justify-center items-center gap-6' >
                             {
                                 Data.TopNavigation.NavItems.map((item: any, index: number) => {
                                     return <Link key={index} href={item.Route} className="font-NunitoSans font-semibold text-brand-secondary text-[14px] leading-[20px]" >
@@ -86,7 +86,7 @@ function TopNavigation() {
 
                     {/* User Icon and Language dropdown */}
                     {
-                        !isAuthenticated && <div className='md:flex hidden justify-center items-center gap-6' >
+                        !isAuthenticated && <div className='lg:flex hidden justify-center items-center gap-6' >
                             <ContainedCircle Icon={<Icons.Location ClassName='w-[12.8px] h-[15.96px]' fill='white' />} Text={translate("Navbar.Links.TrackAnItem")} />
                             {/* Language dropdown */}
                             <div className='inline-block relative language-dropdown' >
@@ -129,7 +129,7 @@ function TopNavigation() {
                     }
                     {
                         isAuthenticated &&
-                        <div className='md:flex hidden justify-center items-center gap-6' >
+                        <div className='lg:flex hidden justify-center items-center gap-6' >
                             <Bedge Content='4' >
                                 <button>
                                     <Icons.Bag ClassName='w-[24px] h-[21.6px]' fill='#240046' />
@@ -161,7 +161,7 @@ function TopNavigation() {
                     }
 
                     {/* Hamburger */}
-                    <div className='md:hidden flex justify-center items-center gap-3' >
+                    <div className='lg:hidden flex justify-center items-center gap-3' >
                         {/* Language dropdown */}
                         <div className='inline-block relative language-dropdown' >
                             <button onMouseOver={() => setUserMenu(false)} className='w-[60px] h-[30px] border-[1px] border-[#E6E6E6] rounded-[8px] rounded-bl-[0px] p-2 flex justify-between items-center' >
@@ -178,6 +178,7 @@ function TopNavigation() {
                                 }
                             </div>
                         </div>
+
                         <Bedge Content='5' >
                             <button onClick={toggleDrawer} >
                                 <Icons.Hamburger ClassName='w-[28.7px] h-[20px]' fill='#240046' />
@@ -215,14 +216,24 @@ function TopNavigation() {
                                 </div>
                             </div>
                             {/* User Menu */}
-                            <div ref={domNode} className='relative inline-block User z-50' >
+                            <div className='relative inline-block User z-50' >
                                 <button onClick={() => setUserMenu(true)} className="flex justify-center items-center" ><Icons.User ClassName='w-[40px] h-[40px]' fill='none' stroke='#FF8501' /></button>
                                 {
-                                    UserMenu && <div className={`flex p-3 justify-center items-center flex-col bg-white-main Menu`} >
-                                        <ContainedCircle Text="Connexion" />
+                                    UserMenu && <div ref={domNode} className={`flex p-3 justify-center items-center flex-col bg-white-main Menu`} >
+                                        <div onClick={() => {
+                                            Set_LoginDialogueBox(true)
+                                            setUserMenu(false);
+                                            toggleDrawer()
+                                        }} >
+                                            <ContainedCircle Text={translate("Navbar.LoginAvatar.LoginText")} />
+                                        </div>
                                         <div className='flex justify-center items-center mt-2 gap-2' >
-                                            <p className='font-OpenSans font-normal text-brand-secondary text-[12px] leading-[20px] whitespace-nowrap' >Nouveau client ?</p>
-                                            <button className='font-Roboto font-semibold text-brand-main text-[12px] leading-[20px] whitespace-nowrap' >Inscrivez-vous</button>
+                                            <p className='font-OpenSans font-normal text-brand-secondary text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.NewAccountText")}</p>
+                                            <button onClick={() => {
+                                                Set_SignUpDialogueBox(true)
+                                                setUserMenu(false);
+                                                toggleDrawer();
+                                            }} className='font-Roboto font-semibold text-brand-main text-[12px] leading-[20px] whitespace-nowrap' >{translate("Navbar.LoginAvatar.MarkedText")}</button>
                                         </div>
                                     </div>
                                 }

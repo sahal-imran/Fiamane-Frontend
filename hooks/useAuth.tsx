@@ -13,7 +13,7 @@ const AuthContext = createContext<IAuthContext>({
  * Auth provider
  */
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {

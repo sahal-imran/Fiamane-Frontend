@@ -60,7 +60,7 @@ const ForgetPassword: React.FC<Props> = ({ ForgetPasswordEvent, ForgetPasswordSt
                     }
                 }}
                 open={ForgetPasswordState}>
-                <div className={`w-[465px] min-h-[600px] `} >
+                <div className={`md:w-[465px] w-full min-h-[600px] `} >
                     {/* Title and cross bar */}
                     <div className='w-full h-[78px] px-6 flex justify-end items-center' >
                         <button onClick={() => ForgetPasswordEvent(false)} className='w-[32px] h-[32px] rounded-full flex justify-center items-center ' >
